@@ -1,4 +1,4 @@
-# Katana-Software
+# Katana® Software.
 ![Katana](picture.gif)
 #
 ### What's Katana Software?,
