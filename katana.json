@@ -2,7 +2,6 @@
   "name": "katana-soft.",
   "version": "0.0.3",
   "description": "Katana Software",
-  "main": "",
   "scripts": {
     "cmd": "src/katana-cmd.bat",
     "setup": "src/katana-setup.bat",
