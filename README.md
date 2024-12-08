@@ -7,7 +7,7 @@ What is Katana Software?, Katana Software is Compiler Software for Compiling Paw
 - Tutorial installing: install the batch file from "/src/" into your gamemode directory. and follow the preview: [YouTube Video](https://www.youtube.com/watch?v=Xn5ZiOmkCPM)
 - VSCode Tasks Tutorial: [YouTube Video](https://youtu.be/D9VTjfzJBBo?si=tHYmBqDBiqEpenN2)
 #
-### Example HelloWorld & Infinity loop.
+### Example HelloWorld & Looping.
 ```cpp
 #include "a_samp"
 
