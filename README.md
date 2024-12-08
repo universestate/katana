@@ -19,5 +19,5 @@ main() {
   }
 }
 ```
-Output:
+**Output**:
 ![image](loop.png)
