@@ -29,7 +29,7 @@ main() {
 
 main() {}
 
-public OnPlayerSpawn(playerid) {
+public OnPlayerUpdate(playerid) {
   new ping = GetPlayerPing(playerid);
 
   if (ping > 999 || ping >= 1000 || ping <= 0) {
