@@ -30,9 +30,19 @@ main() {
 main() {}
 
 public OnPlayerSpawn(playerid) {
-  new string[123+4];
-    format(string, sizeof(string), "Your Game Score: %d", GetPlayerScore(playerid);
-      SendClientMessage playerid, -1, string; // allowed structure.
+  new ping = GetPlayerPing(playerid);
+
+  if (ping > 999 || ping >= 1000 || ping <= 0) {
+    goto end;
+  } else {
+    // do here..
+  }
+
+end:
+  // do here..
+  Kick(playerid);
+
+  return 1;
 }
 ```
 ### **Output**:
