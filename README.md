@@ -13,7 +13,8 @@ requirements:
 main()
   print "Hello, World"
 
-  /* loop */
-  for (new i = 0; true; i++) // infinity looping.
-    printf "%i", i
+  for (new i = 0; i >= 0; i++) { // infinity loop.
+      printf "%d", i;
+  }
+
 ```
