@@ -25,4 +25,4 @@ main() {
 }
 ```
 **Output**:
-![image](loop.png)
+![image](space.png)
