@@ -96,8 +96,8 @@ if exist "!katana_path_gm!\!katana_path_file!.pwn" (
 ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
     set "file_extension=.p"
 ) else (
-    echo :: No .pwn, .p file found for gamemode !katana_path_file!..
-    echo :: The required .pwn, .p file for gamemode was not found.
+echo :: No .pwn, .p file found for gamemode !katana_path_file!..
+echo :: The required .pwn, .p file for gamemode was not found.
     pause
     exit /b
 )
@@ -110,12 +110,8 @@ echo Starting compilation...
 if exist "!katana_path_gm!\!katana_path_file!.amx" (
 echo Compilation successful: !katana_path_file!.amx created in the folder.
 echo.
-    for %%A in ("!katana_path_gm!\!katana_path_file!.pwn") do (
-echo :: Size of !katana_path_file!.pwn: %%~zA bytes
-    )
-    for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
-echo :: Size of !katana_path_file!.amx: %%~zA bytes
-    )
+    for %%A in ("!katana_path_gm!\!katana_path_file!.pwn") do ( echo :: Size of !katana_path_file!.pwn: %%~zA bytes )
+    for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do ( echo :: Size of !katana_path_file!.amx: %%~zA bytes )
 ) else (
 echo :: Compilation failed for !katana_path_file!..
 )
