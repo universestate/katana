@@ -27,7 +27,6 @@ echo :: Starting %date% %time%
 
 :next
 echo.
-
 set /p input=":: Enter drive (Directory Path): > "
 
 if "%input%"=="" (
