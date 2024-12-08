@@ -4,4 +4,4 @@ What is Katana Software?, Katana Software is Compiler Software for Compiling Paw
 requirements:
 - You only need your SA-MP GameMode, whether version 0.3.7 or 0.3.DL. and also you must have a Pawn Compiler file called "pawncc.exe" and if you don't have it please get it from [Pawn Lang](https://github.com/pawn-lang/compiler/releases)
 - Tutorial installing: install the batch file from "/src/" into your gamemode directory. and follow the preview: [YouTube Video](https://www.youtube.com/watch?v=Xn5ZiOmkCPM)
-- VSCode Tasks Tutorial: https://youtu.be/D9VTjfzJBBo?si=tHYmBqDBiqEpenN2
+- VSCode Tasks Tutorial: [YouTube Video](https://youtu.be/D9VTjfzJBBo?si=tHYmBqDBiqEpenN2)
