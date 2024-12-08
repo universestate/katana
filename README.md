@@ -1,5 +1,5 @@
 # Katana® Software.
-![Katana](picture.gif)
+![Katana](unix.gif)
 #
 ### What's Katana Software?,
 `Katana is Compiler Software for Compiling Pawn Code of San Andreas Multiplayer (SA-MP)`
