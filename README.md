@@ -19,3 +19,5 @@ main() {
   }
 }
 ```
+Output:
+![image](looping.png)
