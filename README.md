@@ -16,4 +16,4 @@ main()
   /* loop */
   for (new i = 0; true; i++) // infinity looping.
     printf "%i", i
-}```
+```
