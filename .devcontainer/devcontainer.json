@@ -1,0 +1,19 @@
+{
+  "name": ".NET Core 6.0, including pwsh (Ubuntu 18.04)",
+  "dockerFile": "Dockerfile",
+
+  "workspaceMount": "source=${localWorkspaceFolder},target=/src,type=bind",
+  "workspaceFolder": "/src",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azure-devops.azure-pipelines",
+        "ms-dotnettools.csharp",
+        "ms-vscode.powershell",
+        "DavidAnson.vscode-markdownlint",
+        "vitaliymaz.vscode-svg-previewer"
+      ]
+    }
+  }
+}
