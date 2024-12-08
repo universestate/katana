@@ -21,3 +21,5 @@ main() {
 ```
 **Output**:
 ![image](loop.png)
+**if installed with the entire personal gamemode**
+![Image](stats.png)
