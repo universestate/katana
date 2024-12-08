@@ -84,11 +84,13 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     start "" "katana-start.bat"
 
 ) else if "%command%"=="running" (
-    start "" samp-server.exe
+    start "" "samp-server.exe"
 
-    timeout /t 0 /nobreak >nul
+    timeout /t 1 >nul
 
-    if %ERRORLEVEL% neq 0 (
+    tasklist | find /i "samp-server.exe" >nul
+
+    if errorlevel 1 (
         echo :: The program failed to run. Checking logs...Program failed to run. Checking logs...
         
         if exist "server_log.txt" (
@@ -109,11 +111,13 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     echo Press any key to Start Your Server's . . .
     pause >nul
 
-    start "" samp-server.exe
+    start "" "samp-server.exe"
 
-    timeout /t 0 /nobreak >nul
+    timeout /t 1 >nul
 
-    if %ERRORLEVEL% neq 0 (
+    tasklist | find /i "samp-server.exe" >nul
+
+    if errorlevel 1 (
         echo :: The program failed to run. Checking logs...Program failed to run. Checking logs...
         
         if exist "server_log.txt" (
