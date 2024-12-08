@@ -13,7 +13,7 @@ $ git clone https://github.com/universestate/Katana-Software
 - **VSCode Tasks Tutorial**: [YouTube Video](https://youtu.be/D9VTjfzJBBo?si=tHYmBqDBiqEpenN2)
 #
 ### Example HelloWorld & Looping.
-```cpp
+```pwn
 #include "a_samp"
 
 main() {
