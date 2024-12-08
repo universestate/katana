@@ -5,7 +5,7 @@ What is Katana Software?, Katana Software is Compiler Software for Compiling Paw
 #
 ## installation:
 ```
-git clone https://github.com/universestate/Katana-Software
+$ git clone https://github.com/universestate/Katana-Software
 ```
 #
 ## requirements:
@@ -50,4 +50,3 @@ main() {
   ⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⡇
   ⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⡇
   ⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⡇
-  ⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⡇ 
