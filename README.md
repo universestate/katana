@@ -1,5 +1,5 @@
 # Katana-Software
-![Katana](Thumbnail.png)
+![Katana](profile.png)
 What is Katana Software?, Katana Software is Compiler Software for Compiling Pawn Code which is used for the Programming Language of San Andreas Multiplayer (SA-MP)
 #
 ## requirements:
@@ -21,5 +21,3 @@ main() {
 ```
 **Output**:
 ![image](loop.png)
-**if-installed with private gamemode.**
-![Image](stats.png)
