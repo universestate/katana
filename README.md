@@ -20,4 +20,4 @@ main() {
 }
 ```
 Output:
-![image](helloworld.png)
+![image](output.png)
