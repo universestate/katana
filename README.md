@@ -8,7 +8,6 @@ What is Katana Software?, Katana Software is Compiler Software for Compiling Paw
 - VSCode Tasks Tutorial: [YouTube Video](https://youtu.be/D9VTjfzJBBo?si=tHYmBqDBiqEpenN2)
 #
 ### Example HelloWorld & Infinity loop.
-#
 ```cpp
 #include "a_samp"
 
