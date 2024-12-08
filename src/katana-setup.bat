@@ -27,6 +27,7 @@ echo :: Starting %date% %time%
 
 :next
 echo.
+
 set /p input=":: Enter drive (Directory Path): > "
 
 if "%input%"=="" (
@@ -53,7 +54,6 @@ dir /c "!input!"
 
 :back
 echo.
-
 set /p input2=":: Enter the name of the target file: > "
 
 if "%input2%"=="" (
@@ -118,9 +118,21 @@ if not errorlevel 1 (
     goto back
 )
 
+if exist "!input!\!input2!.pwn" (
+    echo :: found !input2!.pwn
+) else if exist "!input!\!input2!.p" (
+    echo :: found !input2!.p
+) else (
+    echo :: No .pwn, .p file found for gamemode !input2!..
+    echo :: The required .pwn, .p file for gamemode was not found.
+    echo.
+    echo :: Press any key to return . . .
+    pause >nul
+    goto back
+)
+
 echo :: Creating system.ini...
 (
-    echo ; KATANA®
     echo [General]
     echo ; no effect
     echo win= 
