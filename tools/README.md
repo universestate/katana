@@ -1,5 +1,5 @@
-**[Visual Studio](https://visualstudio.microsoft.com/downloads/)** – Official download page for Visual Studio (for full-featured development with support for various programming languages).
-**[Visual Studio Code](https://code.visualstudio.com/Download)** – Official download page for Visual Studio Code (a lightweight code editor with extensions for multiple programming languages including Pawn, batch scripting, etc.).
-**[Sublime Text 3](https://www.sublimetext.com/3)** – Official download page for Sublime Text 3 (a powerful text editor for coding and script development).
-**[Vim](https://www.vim.org/download.php)** – Official download page for Vim (a highly configurable text editor for efficient text editing).
-**[Notepad++](https://notepad-plus-plus.org/downloads/)** – Official download page for Notepad++ (a popular text editor with support for various programming languages).
+- **[Visual Studio](https://visualstudio.microsoft.com/downloads/)** – Official download page for Visual Studio (for full-featured development with support for various programming languages).
+- **[Visual Studio Code](https://code.visualstudio.com/Download)** – Official download page for Visual Studio Code (a lightweight code editor with extensions for multiple programming languages including Pawn, batch scripting, etc.).
+- **[Sublime Text 3](https://www.sublimetext.com/3)** – Official download page for Sublime Text 3 (a powerful text editor for coding and script development).
+- **[Vim](https://www.vim.org/download.php)** – Official download page for Vim (a highly configurable text editor for efficient text editing).
+- **[Notepad++](https://notepad-plus-plus.org/downloads/)** – Official download page for Notepad++ (a popular text editor with support for various programming languages).
