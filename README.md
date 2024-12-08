@@ -2,7 +2,7 @@
 ![Katana](unix.jpg)
 #
 ### What's Katana Software?,
-`Katana is Compiler Software for Compiling Pawn Code of San Andreas Multiplayer (SA-MP)`
+`Katana is Compiler Software for Compiling Pawn Code of San Andreas Multiplayer (SA-MP). Katana Soft. Inspired by the figure of Ken Thompson, the scientist who created UNIX and the C language.`
 #
 ## installation:
 ```
