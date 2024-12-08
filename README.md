@@ -20,4 +20,4 @@ main() {
 }
 ```
 Output:
-![image](output.png)
+![image](loop.png)
