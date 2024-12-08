@@ -23,5 +23,17 @@ main() {
   }
 }
 ```
+```pwn
+// goto..
+#include "a_samp"
+
+main() {}
+
+public OnPlayerSpawn(playerid) {
+  new string[123+4];
+    format(string, sizeof(string), "Your Game Score: %d", GetPlayerScore(playerid);
+      SendClientMessage playerid, -1, string; // allowed structure.
+}
+```
 ### **Output**:
 ![image](space.png)
