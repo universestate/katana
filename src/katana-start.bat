@@ -26,8 +26,9 @@ set "SystemFile=%SystemExDir%system.ini"
 
 :next
 if not exist "%SystemFile%" (
-    echo :: system.ini is required to determine the gamemode.
+    echo :: system.ini is required to determine the gamemode..
 
+start "" "katana-setup.bat"
     echo.
     echo ; Go out...
     timeout /t 5
