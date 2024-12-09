@@ -76,7 +76,6 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
 ) else if "%command%"=="-build" (
 
 echo :: Building compiler...
-
     start "" "katana-setup.bat"
     goto cmd
 
