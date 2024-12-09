@@ -79,15 +79,16 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
 
 ) else if "%command%"=="build" (
 
-    echo :: Building compiler...
+echo :: Building compiler...
     start "" "katana-setup.bat"
 
 ) else if "%command%"=="start" (
 
-    echo :: Compiling...
+echo :: Compiling...
     start "" "katana-start.bat"
 
 ) else if "%command%"=="runn" (
+
     start "" "samp-server.exe"
 
     timeout /t 1 >nul
@@ -109,7 +110,7 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
 
 ) else if "%command%"=="start-run" (
 
-    echo :: Compiling..
+echo :: Compiling..
     start "" "katana-start.bat"
     
     echo Press any key to Start Your Server's . . .
@@ -135,29 +136,38 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     )
 
 ) else if "%command%"=="build-start" (
+
     start "" "katana-setup.bat"
 
     echo Press any key to open Compiler . . .
     pause >nul
 
     start "" "katana-start.bat"
+
 ) else if "%command%"=="version" (
+
     echo.
-    echo Your Katana Version =^> %version%
+    echo Current Katana Version =^> %version%
     echo.
 
     echo msgbox "Your Katana Version: 2024.latest.Now - build (0.0.3)" > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
     del "%tmp%\tmp.vbs"
+
 ) else if "%command%"=="time" (
+
     echo.
-    echo %time%
+    echo Current Time =^> %time%
     echo.
+
 ) else if "%command%"=="date" (
+
     echo.
-    echo %date%
+    echo Current Date =^> %date%
     echo.
+
 ) else if "%command%"=="tasks" (
+
     if not exist ".vscode" (
         mkdir ".vscode"
     ) else ( 
@@ -199,10 +209,14 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     echo.
 
     goto end
+
 ) else if "%command%"=="clear" (
+
     cls
     goto cmd
+
 ) else if "%command%"=="example" (
+
     if not exist "guidelines" (
         mkdir "guidelines"
     ) else (
@@ -246,7 +260,9 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     echo.
     
     goto end
+
 )  else if "%command%"=="pawncc" (
+
     echo         -A^<num^>  alignment in bytes of the data segment and the stack
     echo         -a       output assembler code
     echo         -C[+/-]  compact encoding for output file (default=+)
@@ -282,29 +298,42 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     echo         sym=val  define constant "sym" with value "val"
     echo         sym=     define constant "sym" with value 0
 
-        echo.
+    echo.
+
 ) else if "%command%"=="profile" (
+
     echo.
     echo :: Profile: %userprofile%
     echo.
+
 ) else if "%command%"=="username" (
+
     echo.
     echo :: Current user: %username%
     echo.
+
 ) else if "%command%"=="help" (
+
     goto cmd
+
 ) else if "%command%"=="hello" (
+
     echo msgbox "Hello, Man :>" > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
     del "%tmp%\tmp.vbs"
+
 ) else if "%command%"=="" (
+
     goto cmd
+
 ) else (
+
     echo.
     echo :: $ '%command%' : This command does not exist. Please try again..
 
     timeout /t 1
     goto cmd
+
 )
 
 :end
