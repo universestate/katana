@@ -54,12 +54,12 @@ public OnPlayerUpdate(playerid) {
   new ping = GetPlayerPing(playerid);
 
   if (ping > 999 || ping >= 1000 || ping <= 0) {
-    goto end;
+    goto end; // to goto struct..
   } else {
     // do here..
   }
 
-end:
+end: // struct of goto..
   // do here..
   Kick(playerid);
 
