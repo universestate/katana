@@ -18,7 +18,7 @@ setlocal enabledelayedexpansion
 
 :: set variable.
 set "katanaDir=%~dp0"
-set "SystemFile=%katanaDir%system.ini"
+set "katanaFile=%katanaDir%system.ini"
 
 :start
 echo.
@@ -135,7 +135,7 @@ echo :: Creating system.ini...
             echo drive=!input! ; drive - allowed editing in here..
         echo    target=!input2! ; files - allowed editing in here..
     echo ; end
-) > "%SystemFile%"
+) > "%katanaFile%"
 
 echo.
 
