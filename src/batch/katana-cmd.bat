@@ -17,7 +17,6 @@ title %date%
 setlocal enabledelayedexpansion
 
 :: set variable.
-set "katanaDir=%~dp0" :: current dir
 set "version=2024.latest.Now ^(0.0.3^)" :: current version.
 
 echo oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       .o.       
