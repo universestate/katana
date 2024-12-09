@@ -20,7 +20,7 @@ stock getPlayerName(playerid) {
 
 stock sendClientMessage(playerid, color, const str[], {Float,_}:...)
 {
-    static args, start, end, string[144];
+    static args, start, end, string[144]
     #emit LOAD.S.pri 8
     #emit STOR.pri args
 
@@ -40,7 +40,7 @@ stock sendClientMessage(playerid, color, const str[], {Float,_}:...)
         #emit PUSH.C args
         #emit SYSREQ.C format
 
-        SendClientMessage(playerid, color, string);
+        SendClientMessage(playerid, color, string)
 
         #emit LCTRL 5
         #emit SCTRL 4
