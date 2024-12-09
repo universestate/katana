@@ -2,11 +2,13 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Katana SA-MP CMD",
+      "label": "run katana",
       "type": "shell",
       "command": "start",
       "args": [
           "${workspaceRoot}/katana-start.bat"
+          // "${workspaceRoot}/katana-cmd.bat"
+          // "${workspaceRoot}/katana-setup.bat"
       ],
       "group": {
           "kind": "build",
