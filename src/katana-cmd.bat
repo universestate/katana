@@ -49,7 +49,7 @@ echo * Katana     :       time          : Your Current Time.
 echo * Katana     :       date          : Your Current Date.
 echo.
 echo ** [Startup]
-echo * Katana     :       ascii         : Katana ASCII.
+echo * Katana     :       pawncc        : pawncc guides usage.
 echo * Katana     :       tasks         : Create VSCode Task Katana Compiler.
 echo * Katana     :       example       : Create Example Katana Funcc SA-MP.
 echo * Katana     :       clear         : Clear Terminal Screen, Back to main menu.
@@ -246,14 +246,45 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     echo.
     
     goto end
-)  else if "%command%"=="credit" (
-        echo oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       .o.       
-        echo `888   .8P'       .888.      8'   888   `8      .888.      `888b.     `8'      .888.      
-        echo  888  d8'        .8"888.          888          .8"888.      8 `88b.    8      .8"888.     
-        echo  88888[         .8' `888.         888         .8' `888.     8   `88b.  8     .8' `888.    
-        echo  888`88b.      .88ooo8888.        888        .88ooo8888.    8     `88b.8    .88ooo8888.   
-        echo  888  `88b.   .8'     `888.       888       .8'     `888.   8       `888   .8'     `888.  
-        echo o888o  o888o o88o     o8888o     o888o     o88o     o8888o o8o        `8  o88o     o8888o 
+)  else if "%command%"=="pawncc" (
+echo pawncc <filename> [filename...] [options]
+
+echo Options:
+    echo         -A<num>  alignment in bytes of the data segment and the stack
+    echo         -a       output assembler code
+    echo         -C[+/-]  compact encoding for output file (default=+)
+    echo         -c<name> codepage name or number; e.g. 1252 for Windows Latin-1
+    echo         -Dpath   active directory path
+    echo         -d<num>  debugging level (default=-d1)
+        echo             0    no symbolic information, no run-time checks
+        echo             1    run-time checks, no symbolic information
+        echo             2    full debug information and dynamic checking
+        echo             3    same as -d2, but implies -O0
+    echo         -e<name> set name of error file (quiet compile)
+    echo         -H<hwnd> window handle to send a notification message on finish
+    echo         -i<name> path for include files
+    echo         -l       create list file (preprocess only)
+    echo         -o<name> set base name of (P-code) output file
+    echo         -O<num>  optimization level (default=-O1)
+        echo             0    no optimization
+        echo             1    JIT-compatible optimizations only
+        echo             2    full optimizations
+    echo         -p<name> set name of "prefix" file
+    echo         -r[name] write cross reference report to console or to specified file
+    echo         -S<num>  stack/heap size in cells (default=4096)
+    echo         -s<num>  skip lines from the input file
+    echo         -t<num>  TAB indent size (in character positions, default=8)
+    echo         -v<num>  verbosity level; 0=quiet, 1=normal, 2=verbose (default=1)
+    echo         -w<num>  disable a specific warning by its number
+    echo         -X<num>  abstract machine size limit in bytes
+    echo         -XD<num> abstract machine data/stack size limit in bytes
+    echo         -\       use '\' for escape characters
+    echo         -^       use '^' for escape characters
+    echo         -;[+/-]  require a semicolon to end each statement (default=-)
+    echo         -([+/-]  require parentheses for function invocation (default=-)
+    echo         sym=val  define constant "sym" with value "val"
+    echo         sym=     define constant "sym" with value 0
+
         echo.
 ) else if "%command%"=="profile" (
     echo.
