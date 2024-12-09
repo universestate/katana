@@ -26,9 +26,8 @@ set "SystemFile=%SystemExDir%system.ini"
 
 :next
 if not exist "%SystemFile%" (
-    echo :: system.ini is required to determine the gamemode..
-
-start "" "katana-setup.bat"
+echo :: system.ini is required to determine the gamemode..
+    start "" "katana-setup.bat"
     echo.
     echo ; Go out...
     timeout /t 5
@@ -46,12 +45,12 @@ for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%SystemFile%"') do (
 )
 
 if not defined katana_path_file (
-    echo :: system.ini is missing gamemode information.
+echo :: system.ini is missing gamemode information.
     timeout /t 5
     exit
 )
 
-echo -- target gamemode: !katana_path_file!
+echo -- target: !katana_path_file!
 
 set "katana_path_gm="
 for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SystemFile%"') do (
@@ -66,12 +65,12 @@ if not defined katana_path_gm (
     exit
 )
 
-echo Gamemodes folder: !katana_path_gm!
+echo -- drive: !katana_path_gm!
 
 set "katana_path_gm=%SystemExDir%!katana_path_gm!"
 
 if not exist "!katana_path_gm!" (
-    echo :: Gamemodes folder not found: !katana_path_gm!.
+echo :: Gamemodes folder not found: !katana_path_gm!.
     timeout /t 5
     exit
 )
@@ -86,23 +85,19 @@ for /r "%SystemExDir%" %%p in (pawncc.exe) do (
 
 :found_pawncc
 if not defined katana_pawncc_path (
-    echo :: pawncc.exe not found in any subdirectories.
+echo :: pawncc.exe not found in any subdirectories.
     pause
     exit /b
 )
 
-if exist "!katana_path_gm!\!katana_path_file!.pwn" (
-    set "file_extension=.pwn"
-) else if exist "!katana_path_gm!\!katana_path_file!.p" (
-    set "file_extension=.p"
-) else (
+if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" ) else if exist "!katana_path_gm!\!katana_path_file!.p" ( set "file_extension=.p" ) else (
 echo :: [ERROR]: No '.pwn' or '.p' =^> !katana_path_file! in drive "!katana_path_gm!"
     pause
     exit /b
 )
 
 echo Found file: !katana_path_file!!file_extension!
-echo Starting compilation...
+    echo Starting compilation...
 
 "!katana_pawncc_path!" "!katana_path_gm!\!katana_path_file!!file_extension!" -o"!katana_path_gm!\!katana_path_file!.amx"
 
