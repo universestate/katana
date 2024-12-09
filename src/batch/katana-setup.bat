@@ -122,10 +122,8 @@ if exist "!input!\!input2!.pwn" (
 ) else if exist "!input!\!input2!.p" (
     echo :: found !input2!.p
 ) else (
-    echo :: [ERROR]: No '.pwn' or '.p' for !input2! in drive "!input!"..
+    echo :: [ERROR]: No '.pwn' or '.p' =^> !input2! in drive "!input!"..
     echo.
-    echo :: Press any key to return . . .
-    pause >nul
     goto back
 )
 
