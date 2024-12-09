@@ -291,6 +291,8 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     echo.
     echo :: Current user: %username%
     echo.
+) else if "%command%"=="help" (
+    goto cmd
 ) else if "%command%"=="hello" (
     echo msgbox "Hello, Man :>" > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
