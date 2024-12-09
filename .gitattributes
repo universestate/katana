@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: GPL-2.0-only
 *.[ch] diff=cpp
+*.pwn diff=pawn
 *.dts diff=dts
 *.dts[io] diff=dts
 *.rs diff=rust
