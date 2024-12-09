@@ -99,7 +99,7 @@ if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" )
 echo Found file: !katana_path_file!!file_extension!
     echo Starting compilation...
 
-"!katana_pawncc_path!" "!katana_path_gm!\!katana_path_file!!file_extension!" -o"!katana_path_gm!\!katana_path_file!.amx"
+"!katana_pawncc_path!" "!katana_path_gm!\!katana_path_file!!file_extension!" -o"!katana_path_gm!\!katana_path_file!.amx" :: docs, please see: https://github.com/universestate/katana/tree/main/docs#:~:text=2%20hours%20ago-,README.md,-Update%20README.md
 
 if exist "!katana_path_gm!\!katana_path_file!.amx" (
 echo Compilation successful: !katana_path_file!.amx created in the folder.
