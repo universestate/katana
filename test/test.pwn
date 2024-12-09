@@ -5,7 +5,6 @@
 #include "string"
 
 #pragma tabsize 4
-#pragma dynamic 1000000
 
 main() {
   print "Hello, World"
