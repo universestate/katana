@@ -1,5 +1,5 @@
 # Katana® Software.
-![Katana](profiler.png)
+![Katana](profilers.png)
 #
 ### What's Katana Software?,
 - `Katana is a compiler software used for compiling Pawn code in San Andreas Multiplayer (SA-MP).`
