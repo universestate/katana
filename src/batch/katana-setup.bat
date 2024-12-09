@@ -17,8 +17,8 @@ title %date%
 setlocal enabledelayedexpansion
 
 :: set variable.
-set "SystemExDir=%~dp0"
-set "SystemFile=%SystemExDir%system.ini"
+set "katanaDir=%~dp0"
+set "SystemFile=%katanaDir%system.ini"
 
 :start
 echo.
