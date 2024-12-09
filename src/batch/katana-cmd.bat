@@ -140,6 +140,12 @@ echo :: Compiling..
         pause >nul
             start "" "katana-start.bat"
 
+) else if "%command%"=="-username" (
+
+    echo.
+        echo Current Username =^> %username%
+            echo.
+
 ) else if "%command%"=="-version" (
 
     echo.
@@ -149,18 +155,6 @@ echo :: Compiling..
     echo msgbox "Your Katana Version: 2024.latest.Now - build (0.0.3)" > "%tmp%\tmp.vbs"
         cscript /nologo "%tmp%\tmp.vbs"
             del "%tmp%\tmp.vbs"
-
-) else if "%command%"=="-time" (
-
-    echo.
-        echo Current Time =^> %time%
-    echo.
-
-) else if "%command%"=="-date" (
-
-    echo.
-        echo Current Date =^> %date%
-    echo.
 
 ) else if "%command%"=="-tasks" (
 
@@ -205,11 +199,6 @@ echo :: Compiling..
             echo.
 
     goto end
-
-) else if "%command%"=="-clear" (
-
-    cls
-    goto cmd
 
 ) else if "%command%"=="-example" (
 
@@ -256,11 +245,10 @@ echo :: Compiling..
     
     goto end
 
-) else if "%command%"=="-username" (
+) else if "%command%"=="-clear" (
 
-    echo.
-        echo Current Username =^> %username%
-            echo.
+    cls
+    goto cmd
 
 ) else if "%command%"=="help" (
 
