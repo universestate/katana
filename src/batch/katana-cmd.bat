@@ -17,6 +17,7 @@ title %date%
 setlocal enabledelayedexpansion
 
 :: set variable.
+set "katanaDir=%~dp0" :: current dir
 set "version=2024.latest.Now ^(0.0.3^)" :: current version.
 
 echo oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       .o.       
@@ -36,9 +37,9 @@ echo **************************
     echo * Katana     :       -katana        : What's Katana?
     echo * Katana     :       -build         : build Katana compiler.
     echo * Katana     :       -start         : Start Katana compiler.
+    echo * Katana     :       -bstart        : build - compile..
     echo * Katana     :       -runn          : running server's.
-    echo * Katana     :       -start-run     : compile - run server..
-    echo * Katana     :       -build-start   : build - compile..
+    echo * Katana     :       -srunn         : compile - run server..
     echo.
     echo ** [Mod]
     echo * Katana     :       -version       : Your Katana Version.
@@ -83,6 +84,14 @@ echo :: Building compiler...
 echo :: Compiling...
     start "" "katana-start.bat"
 
+)  else if "%command%"=="-bstart" (
+
+    start "" "katana-setup.bat"
+
+    echo Press any key to open Compiler . . .
+        pause >nul
+            start "" "katana-start.bat"
+
 ) else if "%command%"=="-runn" (
 
     start "" "samp-server.exe"
@@ -104,7 +113,7 @@ echo :: Compiling...
         echo :: The program was executed successfully.
     )
 
-) else if "%command%"=="-start-run" (
+) else if "%command%"=="-srunn" (
 
 echo :: Compiling..
     start "" "katana-start.bat"
@@ -130,14 +139,6 @@ echo :: Compiling..
     ) else (
         echo :: The program was executed successfully.
     )
-
-) else if "%command%"=="-build-start" (
-
-    start "" "katana-setup.bat"
-
-    echo Press any key to open Compiler . . .
-        pause >nul
-            start "" "katana-start.bat"
 
 ) else if "%command%"=="-username" (
 
