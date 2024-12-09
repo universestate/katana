@@ -37,16 +37,16 @@ echo ** [General]
 echo * Katana     :       katana        : What is Katana?
 echo * Katana     :       build         : build Katana compiler.
 echo * Katana     :       start         : Start Katana compiler.
-echo * Katana     :       running       : running server's.
-echo * Katana     :       start-run     : compile + run server..
-echo * Katana     :       build-start   : build + compile..
+echo * Katana     :       runn          : running server's.
+echo * Katana     :       start-run     : compile - run server..
+echo * Katana     :       build-start   : build - compile..
 echo.
 echo ** [Random]
-echo * Katana     :       version       : Check Your Katana Version.
-echo * Katana     :       profile       : Check Your Windows User Profile.
-echo * Katana     :       username      : Check Your Windows Username.
-echo * Katana     :       time          : Check Your Current Time.
-echo * Katana     :       date          : Check Your Current Date.
+echo * Katana     :       version       : Your Katana Version.
+echo * Katana     :       profile       : Your Windows User Profile.
+echo * Katana     :       username      : Your Windows Username.
+echo * Katana     :       time          : Your Current Time.
+echo * Katana     :       date          : Your Current Date.
 echo.
 echo ** [Startup]
 echo * Katana     :       credit        : Katana Credit.
@@ -87,7 +87,7 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     echo :: Compiling...
     start "" "katana-start.bat"
 
-) else if "%command%"=="running" (
+) else if "%command%"=="runn" (
     start "" "samp-server.exe"
 
     timeout /t 1 >nul
