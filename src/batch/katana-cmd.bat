@@ -223,7 +223,6 @@ echo :: Compiling..
         echo.>> "guidelines\helloworld.pwn"
         
         echo #pragma tabsize 4 >> "guidelines\helloworld.pwn"
-        echo #pragma warning disable 217 >> "guidelines\helloworld.pwn"
         echo.>> "guidelines\helloworld.pwn"
 
         echo ^main(^) {>> "guidelines\helloworld.pwn"
