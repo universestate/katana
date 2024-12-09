@@ -22,10 +22,10 @@ echo.
 
 :: set variable.
 set "katanaDir=%~dp0"
-set "SystemFile=%katanaDir%system.ini"
+set "katanaFile=%katanaDir%system.ini"
 
 :next
-if not exist "%SystemFile%" (
+if not exist "%katanaFile%" (
 echo :: system.ini is required to determine the gamemode..
     start "" "katana-setup.bat"
         echo.
@@ -38,7 +38,7 @@ echo :: system.ini found..
 echo.
 
 set "katana_path_file="
-for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%SystemFile%"') do (
+for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%katanaFile%"') do (
     if not "%%b"=="" (
         set "katana_path_file=%%b"
     )
@@ -53,7 +53,7 @@ if not defined katana_path_file (
 echo -- target: !katana_path_file!
 
 set "katana_path_gm="
-for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SystemFile%"') do (
+for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%katanaFile%"') do (
     if not "%%b"=="" (
         set "katana_path_gm=%%b"
     )
