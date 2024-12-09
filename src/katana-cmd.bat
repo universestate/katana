@@ -49,7 +49,7 @@ echo * Katana     :       time          : Your Current Time.
 echo * Katana     :       date          : Your Current Date.
 echo.
 echo ** [Startup]
-echo * Katana     :       credit        : Katana Credit.
+echo * Katana     :       ascii         : Katana ASCII.
 echo * Katana     :       tasks         : Create VSCode Task Katana Compiler.
 echo * Katana     :       example       : Create Example Katana Funcc SA-MP.
 echo * Katana     :       clear         : Clear Terminal Screen, Back to main menu.
@@ -247,11 +247,14 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     
     goto end
 )  else if "%command%"=="credit" (
-    echo msgbox "Katana Credit: anonymous (S)" > "%tmp%\tmp.vbs"
-    cscript /nologo "%tmp%\tmp.vbs"
-    del "%tmp%\tmp.vbs"
-
-    echo github ^(S*^) : https://github.com/universestate/
+        echo oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       .o.       
+        echo `888   .8P'       .888.      8'   888   `8      .888.      `888b.     `8'      .888.      
+        echo  888  d8'        .8"888.          888          .8"888.      8 `88b.    8      .8"888.     
+        echo  88888[         .8' `888.         888         .8' `888.     8   `88b.  8     .8' `888.    
+        echo  888`88b.      .88ooo8888.        888        .88ooo8888.    8     `88b.8    .88ooo8888.   
+        echo  888  `88b.   .8'     `888.       888       .8'     `888.   8       `888   .8'     `888.  
+        echo o888o  o888o o88o     o8888o     o888o     o88o     o8888o o8o        `8  o88o     o8888o 
+        echo.
 ) else if "%command%"=="profile" (
     echo.
     echo :: Profile: %userprofile%
