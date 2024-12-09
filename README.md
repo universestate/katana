@@ -28,6 +28,10 @@ $ git clone https://github.com/universestate/Katana-Software
 ![image](katana/katana-start.png)
 ## Example Helloworld & Looping.
 ```pwn
+/**
+* Helloworld
+* Infinity Loop.
+*/
 #include "a_samp"
 
 main() {
@@ -39,7 +43,9 @@ main() {
 }
 ```
 ```pwn
-// goto..
+/**
+* goto struct.
+*/
 #include "a_samp"
 
 main() {}
