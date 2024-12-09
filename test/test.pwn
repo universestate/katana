@@ -18,9 +18,39 @@ stock getPlayerName(playerid) {
   return 1;
 }
 
+stock sendClientMessage(playerid, color, const str[], {Float,_}:...)
+{
+    static args, start, end, string[144];
+    #emit LOAD.S.pri 8
+    #emit STOR.pri args
+
+    if (args > 12)
+    {
+        #emit ADDR.pri str
+        #emit STOR.pri start
+
+        for (end = start + (args - 12); end > start; end -= 4)
+        {
+            #emit LREF.pri end
+            #emit PUSH.pri
+        }
+        #emit PUSH.S str
+        #emit PUSH.C 144
+        #emit PUSH.C string
+        #emit PUSH.C args
+        #emit SYSREQ.C format
+
+        SendClientMessage(playerid, color, string);
+
+        #emit LCTRL 5
+        #emit SCTRL 4
+        #emit RETN
+    }
+    return SendClientMessage(playerid, color, str);
+}
+
 public OnPlayerSpawn(playerid) {
-new str[20];
-  format str, 20, "Hello, %s", getPlayerName(playerid);
-  SendClientMessage playerid, -1, str;
+  sendClientMessage playerid, -1, "Hello, %s[%d]", getPlayerName(playerid), playerid;
   return 1;
 }
+
