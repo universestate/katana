@@ -21,8 +21,8 @@ echo Starting %date% %time%
 echo.
 
 :: set variable.
-set "SystemExDir=%~dp0"
-set "SystemFile=%SystemExDir%system.ini"
+set "katanaDir=%~dp0"
+set "SystemFile=%katanaDir%system.ini"
 
 :next
 if not exist "%SystemFile%" (
@@ -67,7 +67,7 @@ if not defined katana_path_gm (
 
 echo -- drive: !katana_path_gm!
 
-set "katana_path_gm=%SystemExDir%!katana_path_gm!"
+set "katana_path_gm=%katanaDir%!katana_path_gm!"
 
 if not exist "!katana_path_gm!" (
     echo :: Gamemodes folder not found: !katana_path_gm!.
@@ -76,7 +76,7 @@ if not exist "!katana_path_gm!" (
 )
 
 set "katana_pawncc_path="
-for /r "%SystemExDir%" %%p in (pawncc.exe) do (
+for /r "%katanaDir%" %%p in (pawncc.exe) do (
     if exist "%%p" (
         set "katana_pawncc_path=%%p"
         goto found_pawncc
