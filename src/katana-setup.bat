@@ -122,8 +122,7 @@ if exist "!input!\!input2!.pwn" (
 ) else if exist "!input!\!input2!.p" (
     echo :: found !input2!.p
 ) else (
-    echo :: No .pwn, .p file found for gamemode !input2!..
-    echo :: The required .pwn, .p file for gamemode was not found.
+    echo :: [ERROR]: No '.pwn' or '.p' for !input2! in drive "!input!"..
     echo.
     echo :: Press any key to return . . .
     pause >nul
@@ -140,8 +139,8 @@ echo :: Creating system.ini...
     echo ; end
     echo.
     echo [Settings]
-    echo drive=!input!
-    echo    target=!input2!
+    echo drive=!input! ; drive - allowed editing in here..
+    echo    target=!input2! ; files - allowed editing in here..
     echo ; end
 ) > "%SystemFile%"
 
