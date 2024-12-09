@@ -57,11 +57,11 @@ set /p command="** input cmd: > $ "
 :: response for command.
 if "%command%"=="-katana" (
 
-echo msgbox "Katana SA-MP is a compilation tool with multiple functions for the Pawn Compiler in SA-MP." > "%tmp%\tmp.vbs"
+echo msgbox "Katana is a compilation tool with multiple functions for the Pawn Compiler in SA-MP." > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
         del "%tmp%\tmp.vbs"
 
-echo msgbox "You do not need to use symbols like ';' and '( )' and other in your program code if using this software. For example, you can use 'example' and immediately check the guidelines\helloworld.pwn file for more information." > "%tmp%\tmp.vbs"
+echo msgbox "You do not need to use symbols like ';' and '( )' and other in your program code if using this software. For example, you can use '-example' and immediately check the guidelines\helloworld.pwn file for more information." > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
         del "%tmp%\tmp.vbs"
 
@@ -69,7 +69,7 @@ echo msgbox "-[WARNING]-: If you use the code structure from Katana, you are exp
     cscript /nologo "%tmp%\tmp.vbs"
         del "%tmp%\tmp.vbs"
 
-echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
+echo msgbox "Thank you for using this software :^)" > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
         del "%tmp%\tmp.vbs"
 
