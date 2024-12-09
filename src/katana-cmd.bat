@@ -34,7 +34,7 @@ echo.
 echo **************************
 echo $ command:
 echo ** [General]
-echo * Katana     :       katana        : What is Katana?
+echo * Katana     :       katana        : What's Katana?
 echo * Katana     :       build         : build Katana compiler.
 echo * Katana     :       start         : Start Katana compiler.
 echo * Katana     :       runn          : running server's.
