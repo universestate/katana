@@ -146,7 +146,7 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     start "" "katana-start.bat"
 ) else if "%command%"=="version" (
     echo.
-    echo %version%
+    echo Your Katana Version =^> %version%
     echo.
 
     echo msgbox "Your Katana Version: 2024.latest.Now - build (0.0.3)" > "%tmp%\tmp.vbs"
