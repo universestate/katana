@@ -247,41 +247,38 @@ echo msgbox "Thank you for using this software <:" > "%tmp%\tmp.vbs"
     
     goto end
 )  else if "%command%"=="pawncc" (
-echo pawncc <filename> [filename...] [options]
-
-echo Options:
-    echo         -A<num>  alignment in bytes of the data segment and the stack
+    echo         -A^<num^>  alignment in bytes of the data segment and the stack
     echo         -a       output assembler code
     echo         -C[+/-]  compact encoding for output file (default=+)
-    echo         -c<name> codepage name or number; e.g. 1252 for Windows Latin-1
+    echo         -c^<name^> codepage name or number; e.g. 1252 for Windows Latin-1
     echo         -Dpath   active directory path
-    echo         -d<num>  debugging level (default=-d1)
+    echo         -d^<num^>  debugging level (default=-d1)
         echo             0    no symbolic information, no run-time checks
         echo             1    run-time checks, no symbolic information
         echo             2    full debug information and dynamic checking
         echo             3    same as -d2, but implies -O0
-    echo         -e<name> set name of error file (quiet compile)
-    echo         -H<hwnd> window handle to send a notification message on finish
-    echo         -i<name> path for include files
+    echo         -e^<name^> set name of error file (quiet compile)
+    echo         -H^<hwnd^> window handle to send a notification message on finish
+    echo         -i^<name^> path for include files
     echo         -l       create list file (preprocess only)
-    echo         -o<name> set base name of (P-code) output file
-    echo         -O<num>  optimization level (default=-O1)
+    echo         -o^<name^> set base name of (P-code) output file
+    echo         -O^<num^>  optimization level (default=-O1)
         echo             0    no optimization
         echo             1    JIT-compatible optimizations only
         echo             2    full optimizations
-    echo         -p<name> set name of "prefix" file
+    echo         -p^<name^> set name of "prefix" file
     echo         -r[name] write cross reference report to console or to specified file
-    echo         -S<num>  stack/heap size in cells (default=4096)
-    echo         -s<num>  skip lines from the input file
-    echo         -t<num>  TAB indent size (in character positions, default=8)
-    echo         -v<num>  verbosity level; 0=quiet, 1=normal, 2=verbose (default=1)
-    echo         -w<num>  disable a specific warning by its number
-    echo         -X<num>  abstract machine size limit in bytes
-    echo         -XD<num> abstract machine data/stack size limit in bytes
+    echo         -S^<num^>  stack/heap size in cells (default=4096)
+    echo         -s^<num^>  skip lines from the input file
+    echo         -t^<num^>  TAB indent size (in character positions, default=8)
+    echo         -v^<num^>  verbosity level; 0=quiet, 1=normal, 2=verbose (default=1)
+    echo         -w^<num^>  disable a specific warning by its number
+    echo         -X^<num^>  abstract machine size limit in bytes
+    echo         -XD^<num^> abstract machine data/stack size limit in bytes
     echo         -\       use '\' for escape characters
     echo         -^       use '^' for escape characters
     echo         -;[+/-]  require a semicolon to end each statement (default=-)
-    echo         -([+/-]  require parentheses for function invocation (default=-)
+    echo         -([+/-]  require parentheses for function invocation (default=-))
     echo         sym=val  define constant "sym" with value "val"
     echo         sym=     define constant "sym" with value 0
 
