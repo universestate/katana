@@ -12,7 +12,7 @@ setlocal enabledelayedexpansion
 
 :: set variable.
 set "katanaDir=%~dp0" :: current dir
-set "version=2024.latest.Now ^(0.0.3^)" :: current version.
+set "version=2024.latest.Now ^(0.0.4^)" :: current version.
 
 :ascii
 echo oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       .o.       
@@ -147,7 +147,7 @@ echo :: Compiling..
         echo Current Katana Version =^> %version%
     echo.
 
-    echo msgbox "Your Katana Version: 2024.latest.Now - build (0.0.3)" > "%tmp%\tmp.vbs"
+    echo msgbox "Your Katana Version: 2024.latest.Now - build (0.0.4)" > "%tmp%\tmp.vbs"
         cscript /nologo "%tmp%\tmp.vbs"
             del "%tmp%\tmp.vbs"
 
