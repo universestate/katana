@@ -71,21 +71,21 @@ echo msgbox "Thank you for using this software :^)" > "%tmp%\tmp.vbs"
 ) else if "%command%"=="-build" (
 
 echo :: Building compiler...
-    start "" "katana-setup.bat"
+    start "" "@pawn-setup.cmd"
     goto cmd
 
 ) else if "%command%"=="-start" (
 
 echo :: Compiling...
-    start "" "katana-start.bat"
+    start "" "@pawn-start.cmd"
 
 )  else if "%command%"=="-bstart" (
 
-    start "" "katana-setup.bat"
+    start "" "@pawn-setup.cmd"
 
     echo Press any key to open Compiler . . .
         pause >nul
-            start "" "katana-start.bat"
+            start "" "@pawn-start.cmd"
 
 ) else if "%command%"=="-runn" (
 
@@ -111,7 +111,7 @@ echo :: Compiling...
 ) else if "%command%"=="-srunn" (
 
 echo :: Compiling..
-    start "" "katana-start.bat"
+    start "" "@pawn-start.cmd"
     
     echo Press any key to Start Your Server's . . .
         pause >nul
@@ -175,7 +175,7 @@ echo :: Compiling..
         echo       "type": "shell",>> ".vscode\tasks.json"
         echo       "command": "start",>> ".vscode\tasks.json"
         echo       "args": [>> ".vscode\tasks.json"
-        echo           "${workspaceRoot}/katana-start.bat">> ".vscode\tasks.json"
+        echo           "${workspaceRoot}/@pawn-start.cmd">> ".vscode\tasks.json"
         echo       ],>> ".vscode\tasks.json"
         echo       "group": {>> ".vscode\tasks.json"
         echo           "kind": "build",>> ".vscode\tasks.json"
