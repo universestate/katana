@@ -6,7 +6,6 @@
 
 #pragma tabsize 4
 #pragma dynamic 1000000
-#pragma warning disable 217
 
 main() {
   print "Hello, World"
