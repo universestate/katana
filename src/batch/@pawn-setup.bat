@@ -126,8 +126,8 @@ echo :: Creating system.ini...
                         echo ; end
                     echo.
                 echo [Settings]
-            echo drive=!input! ; drive - allowed editing in here..
-        echo    target=!input2! ; files - allowed editing in here..
+            echo drive=!input!
+        echo    target=!input2!
     echo ; end
 ) > "%katanaFile%"
 
