@@ -6,9 +6,9 @@
       "type": "shell",
       "command": "start",
       "args": [
-          "${workspaceRoot}/katana-start.bat"
-          // "${workspaceRoot}/katana-cmd.bat"
-          // "${workspaceRoot}/katana-setup.bat"
+          "${workspaceRoot}/@pawn-start.cmd"
+          // "${workspaceRoot}/@pawn-cmd.cmd"
+          // "${workspaceRoot}/@pawn-setup.cmd"
       ],
       "group": {
           "kind": "build",
