@@ -10,6 +10,5 @@ main() {
 
 public OnPlayerSpawn(playerid) {
   SendClientMessage playerid, -1, "Hello!";
-
   return 1;
 }
