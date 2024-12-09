@@ -96,8 +96,7 @@ if exist "!katana_path_gm!\!katana_path_file!.pwn" (
 ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
     set "file_extension=.p"
 ) else (
-echo :: No .pwn, .p file found for gamemode !katana_path_file!..
-echo :: The required .pwn, .p file for gamemode was not found.
+echo :: [ERROR]: No '.pwn' or '.p' =^> !katana_path_file! in drive "!katana_path_gm!"
     pause
     exit /b
 )
