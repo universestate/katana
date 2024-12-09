@@ -1,5 +1,5 @@
 /**
-* Example
+* Example Test.
 */
 #include "a_samp"
 #include "string"
