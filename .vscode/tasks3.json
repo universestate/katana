@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "run katana",
+      "type": "shell",
+      "command": "start",
+      "args": [
+          "${workspaceRoot}/pawn-setup.cmd"
+      ],
+      "group": {
+          "kind": "build",
+          "isDefault": true
+      },
+      "problemMatcher": [],
+      "presentation": {
+          "reveal": "silent"
+      }
+    }
+  ]
+}
