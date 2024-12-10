@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "start",
       "args": [
-          "${workspaceRoot}/@pawn-cmd.cmd"
+          "${workspaceRoot}/pawn-cmd.cmd"
       ],
       "group": {
           "kind": "build",
