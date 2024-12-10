@@ -7,8 +7,6 @@
       "command": "start",
       "args": [
           "${workspaceRoot}/@pawn-start.cmd"
-          // "${workspaceRoot}/@pawn-cmd.cmd"
-          // "${workspaceRoot}/@pawn-setup.cmd"
       ],
       "group": {
           "kind": "build",
