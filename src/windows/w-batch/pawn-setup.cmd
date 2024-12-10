@@ -12,7 +12,7 @@ setlocal enabledelayedexpansion
 
 :: set variable.
 set "katanaDir=%~dp0"
-set "katanaFile=%katanaDir%system.ini"
+set "katanaFile=%katanaDir%settings.ini"
 
 :start
 echo.
@@ -116,7 +116,7 @@ if exist "!input!\!input2!.pwn" ( echo :: found !input2!.pwn ) else if exist "!i
     goto back
 )
 
-echo :: Creating system.ini...
+echo :: Creating settings.ini...
 (
     echo [General]
         echo ; no effect
