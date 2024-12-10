@@ -244,6 +244,7 @@ echo :: Compiling..
 
     goto ascii
     goto cmd
+
 ) else if "%command%"=="help" (
 
     goto cmd
