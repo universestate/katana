@@ -110,7 +110,7 @@ if not errorlevel 1 (
     goto back
 )
 
-if exist "!input!\!input2!.pwn" ( echo :: found !input2!.pwn ) else if exist "!input!\!input2!.p" ( echo :: found !input2!.p ) else (
+if exist "!input!\!input2!.pwn" ( echo :: found !input2!.pwn ) else if exist "!input!\!input2!.kn" ( echo :: found !input2!.kn ) else if exist "!input!\!input2!.p" ( echo :: found !input2!.p ) else (
     echo :: [ERROR]: No '.pwn' or '.p' =^> !input2! in drive "!input!"..
         echo.
     goto back
