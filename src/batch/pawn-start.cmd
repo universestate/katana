@@ -84,7 +84,7 @@ if not defined katana_pawncc_path (
     exit /b
 )
 
-if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" ) else if exist "!katana_path_gm!\!katana_path_file.kn" ( set "file_extension=.kn" ) else if exist "!katana_path_gm!\!katana_path_file!.p" ( set "file_extension=.p" ) else (
+if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" ) else if exist "!katana_path_gm!\!katana_path_file!.kn" ( set "file_extension=.kn" ) else if exist "!katana_path_gm!\!katana_path_file!.p" ( set "file_extension=.p" ) else (
     echo :: [ERROR]: No '.pwn' or '.p' =^> !katana_path_file! in drive "!katana_path_gm!"
         pause
     exit /b
