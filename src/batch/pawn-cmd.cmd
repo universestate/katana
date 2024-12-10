@@ -1,5 +1,5 @@
 :: commands
-echo off
+@echo off
 
 :: CMYK color.
 color c
