@@ -84,7 +84,7 @@ if not defined katana_pawncc_path (
     exit /b
 )
 
-if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" ) else if exist "!katana_path_gm!\!katana_path_file!.p" ( set "file_extension=.p" ) else (
+if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" ) else if exist "!katana_path_gm!\!katana_path_file.kn" ( set "file_extension=.kn" ) else if exist "!katana_path_gm!\!katana_path_file!.p" ( set "file_extension=.p" ) else (
     echo :: [ERROR]: No '.pwn' or '.p' =^> !katana_path_file! in drive "!katana_path_gm!"
         pause
     exit /b
@@ -98,7 +98,6 @@ echo Found file: !katana_path_file!!file_extension!
 if exist "!katana_path_gm!\!katana_path_file!.amx" (
 echo Compilation successful: !katana_path_file!.amx created in the folder.
 echo.
-    for %%A in ("!katana_path_gm!\!katana_path_file!.pwn") do ( echo :: Size of !katana_path_file!.pwn: %%~zA bytes )
     for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do ( echo :: Size of !katana_path_file!.amx: %%~zA bytes )
 ) else ( echo :: ^(failed^): Compilation failed for !katana_path_file!.. )
 echo.
