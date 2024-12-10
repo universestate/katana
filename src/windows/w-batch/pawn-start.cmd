@@ -15,11 +15,11 @@ echo.
 
 :: set variable.
 set "katanaDir=%~dp0"
-set "katanaFile=%katanaDir%system.ini"
+set "katanaFile=%katanaDir%settings.ini"
 
 :next
 if not exist "%katanaFile%" (
-    echo :: system.ini is required to determine the gamemode..
+    echo :: settings.ini is required to determine the gamemode..
     start "" "pawn-setup.cmd"
     echo.
     echo ; Go out...
@@ -27,7 +27,7 @@ if not exist "%katanaFile%" (
     exit
 )
 
-echo :: system.ini found..
+echo :: settings.ini found..
 echo.
 
 set "katana_path_file="
@@ -38,7 +38,7 @@ for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%katanaFile%"') do (
 )
 
 if not defined katana_path_file (
-    echo :: system.ini is missing gamemode information.
+    echo :: settings.ini is missing gamemode information.
     timeout /t 5
     exit
 )
@@ -53,7 +53,7 @@ for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%katanaFile%"') do (
 )
 
 if not defined katana_path_gm (
-    echo :: drive not found in system.ini.
+    echo :: drive not found in settings.ini.
     timeout /t 5
     exit
 )
