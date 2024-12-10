@@ -21,7 +21,7 @@ set "katanaFile=%katanaDir%system.ini"
 :next
 if not exist "%katanaFile%" (
 echo :: system.ini is required to determine the gamemode..
-    start "" "katana-setup.bat"
+    start "" "pawn-setup.cmd"
         echo.
             echo ; Go out...
         timeout /t 5
