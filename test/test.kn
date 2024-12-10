@@ -4,7 +4,7 @@
 #include "a_samp"
 #include "string"
 
-#pragma tabsize 4
+#define _katana_
 
 main() {
   print "Hello, World"
