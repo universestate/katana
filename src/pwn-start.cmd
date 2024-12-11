@@ -101,7 +101,7 @@ if exist "!katana_path_gm!\!katana_path_file!.pwn" (
 ) else if exist "!katana_path_gm!\!katana_path_file!.kn" (
      set "file_extension=.kn"
     ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
-set "file_extension=.p" 
+        set "file_extension=.p" 
 ) else (
     echo [ERROR]/"!katana_path_gm!" =^> "!katana_path_file!.pwn - !katana_path_file!.p - !katana_path_file!.kn" not found..
     timeout /t 1 >nul
