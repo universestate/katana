@@ -267,7 +267,7 @@ echo :: Compiling..
 )
 
 :end
-echo :: Press any key to return . . .
+echo Press any key to return . . .
 pause >nul
 
 goto cmd
