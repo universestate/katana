@@ -96,7 +96,13 @@ if not defined katana_pawncc_path (
     exit
 )
 
-if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" ) else if exist "!katana_path_gm!\!katana_path_file!.kn" ( set "file_extension=.kn" ) else if exist "!katana_path_gm!\!katana_path_file!.p" ( set "file_extension=.p" ) else (
+if exist "!katana_path_gm!\!katana_path_file!.pwn" (
+    set "file_extension=.pwn"
+) else if exist "!katana_path_gm!\!katana_path_file!.kn" (
+     set "file_extension=.kn"
+    ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
+set "file_extension=.p" 
+) else (
     echo [ERROR]/"!katana_path_gm!" =^> "!katana_path_file!.pwn - !katana_path_file!.p - !katana_path_file!.kn" not found..
     timeout /t 1 >nul
     start "" "pwn-build.cmd"
