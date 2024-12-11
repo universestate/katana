@@ -15,7 +15,7 @@ set "SystemKN=%DirectoryKN%settings.ini"
 :next
 if not exist "%SystemKN%" (
     echo [System]/settings.ini is required to determine the gamemode..
-    start "" "pwn-setup.cmd"
+    start "" "pwn-build.cmd"
     echo.
     echo ; Go out...
     timeout /t 5
@@ -34,7 +34,7 @@ for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%SystemKN%"') do (
 
 if not defined katana_path_file (
     echo [System]/settings.ini is missing gamemode information.
-    start "" "pwn-setup.cmd"
+    start "" "pwn-build.cmd"
     echo.
     echo ; Go out...
     timeout /t 5
@@ -52,7 +52,7 @@ for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SystemKN%"') do (
 
 if not defined katana_path_gm (
     echo [System]/drive not found in settings.ini.
-    start "" "pwn-setup.cmd"
+    start "" "pwn-build.cmd"
     echo.
     echo ; Go out...
     timeout /t 5
@@ -93,7 +93,7 @@ if not defined katana_pawncc_path (
 
 if exist "!katana_path_gm!\!katana_path_file!.pwn" ( set "file_extension=.pwn" ) else if exist "!katana_path_gm!\!katana_path_file!.kn" ( set "file_extension=.kn" ) else if exist "!katana_path_gm!\!katana_path_file!.p" ( set "file_extension=.p" ) else (
     echo [ERROR]/"!katana_path_gm!" =^> "!katana_path_file!.pwn - !katana_path_file!.p - !katana_path_file!.kn" not found..
-    start "" "pwn-setup.cmd"
+    start "" "pwn-build.cmd"
     echo.
     echo ; Go out...
     timeout /t 5
