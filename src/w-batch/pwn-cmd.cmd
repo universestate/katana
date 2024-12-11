@@ -1,11 +1,11 @@
-:: GNU 2.0
+[System]/GNU 2.0
 @echo off
 
 color c
 title %date%
 setlocal enabledelayedexpansion
 
-set "version=2024.latest.Now ^(0.0.4^)" :: current version.
+set "version=2024.latest.Now ^(0.0.4^)" [System]/current version.
 
 :ascii
 echo oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       .o.       
@@ -17,7 +17,7 @@ echo  888  `88b.   .8'     `888.       888       .8'     `888.   8       `888   
 echo o888o  o888o o88o     o8888o     o888o     o88o     o8888o o8o        `8  o88o     o8888o 
 echo.
 
-:: command line
+[System]/command line
 :cmd
 echo **************************
     echo $ command:
@@ -62,13 +62,13 @@ echo msgbox "Thank you for using this software :^)" > "%tmp%\tmp.vbs"
 
 ) else if "%command%"=="-build" (
 
-echo :: Building compiler...
+echo [System]/Building compiler...
     start "" "pwn-build.cmd"
     goto cmd
 
 ) else if "%command%"=="-start" (
 
-echo :: Compiling...
+echo [System]/Compiling...
     start "" "pwn-start.cmd"
 
 )  else if "%command%"=="-bstart" (
@@ -83,26 +83,26 @@ echo :: Compiling...
 
     start "" "samp-server.exe"
 
-    timeout /t 1 >nul
+    timeout /t 2 >nul
 
     tasklist | find /i "samp-server.exe" >nul
 
     if errorlevel 1 (
-        echo :: The program failed to run. Checking logs...Program failed to run. Checking logs...
+        echo [System]/The program failed to run. Checking logs...Program failed to run. Checking logs...
         
         if exist "server_log.txt" (
-            echo :: Opening server_log.txt...
+            echo [System]/Opening server_log.txt...
             start "" "notepad" "server_log.txt"
         ) else (
-            echo :: server_log.txt not found.
+            echo [System]/server_log.txt not found.
         )
     ) else (
-        echo :: The program was executed successfully.
+        echo [System]/The program was executed successfully.
     )
 
 ) else if "%command%"=="-srunn" (
 
-echo :: Compiling..
+echo [System]/Compiling..
     start "" "pwn-start.cmd"
     
     echo Press any key to Start Your Server's . . .
@@ -110,21 +110,21 @@ echo :: Compiling..
 
     start "" "samp-server.exe"
 
-    timeout /t 1 >nul
+    timeout /t 2 >nul
 
     tasklist | find /i "samp-server.exe" >nul
 
     if errorlevel 1 (
-        echo :: The program failed to run. Checking logs...Program failed to run. Checking logs...
+        echo [System]/The program failed to run. Checking logs...Program failed to run. Checking logs...
         
         if exist "server_log.txt" (
-            echo :: Opening server_log.txt...
+            echo [System]/Opening server_log.txt...
             start "" "notepad" "server_log.txt"
         ) else (
-            echo :: server_log.txt not found.
+            echo [System]/server_log.txt not found.
         )
     ) else (
-        echo :: The program was executed successfully.
+        echo [System]/The program was executed successfully.
     )
 
 ) else if "%command%"=="-username" (
@@ -149,13 +149,13 @@ echo :: Compiling..
         mkdir ".vscode"
     ) else ( 
         echo.
-            echo :: the task already exists!..
+            echo [System]/the task already exists!..
                 echo.
         goto end
     )
 
     echo.
-        echo :: Creating .vscode\tasks.json...
+        echo [System]/Creating .vscode\tasks.json...
 
     timeout /t 1
 
@@ -182,7 +182,7 @@ echo :: Compiling..
     echo }>> ".vscode\tasks.json"
 
     echo.
-        echo :: Task configuration created successfully in .vscode\tasks.json.
+        echo [System]/Task configuration created successfully in .vscode\tasks.json.
             echo.
 
     goto end
@@ -193,13 +193,13 @@ echo :: Compiling..
         mkdir "guidelines"
     ) else (
         echo.
-            echo :: the example already exists!
+            echo [System]/the example already exists!
                 echo.
         goto end
     )
 
     echo.
-        echo :: Creating guidelines\helloworld.pwn...
+        echo [System]/Creating guidelines\helloworld.pwn...
 
     timeout /t 1
     
@@ -215,7 +215,6 @@ echo :: Compiling..
         echo printthis:>> "guidelines\helloworld.pwn"
         echo    print "Hello, World!">> "guidelines\helloworld.pwn"
         echo        goto printthis;>> "guidelines\helloworld.pwn"
-        echo    return 1;>> "guidelines\helloworld.pwn"
         echo }>> "guidelines\helloworld.pwn"
 
         echo.>> "guidelines\helloworld.pwn"
@@ -226,7 +225,7 @@ echo :: Compiling..
         echo }>> "guidelines\helloworld.pwn"
 
     echo.
-        echo :: Example tool created in guidelines\helloworld.pwn.
+        echo [System]/Example tool created in guidelines\helloworld.pwn.
             echo.
     
     goto end
@@ -259,7 +258,7 @@ echo :: Compiling..
 ) else (
 
     echo.
-        echo $ : %command% - This command does not exist. Please try again..
+        echo $ %command% - This command does not exist. Please try again..
 
     timeout /t 2
         goto cmd
@@ -267,7 +266,7 @@ echo :: Compiling..
 )
 
 :end
-echo Press any key to return . . .
+echo [System]/Press any key to return . . .
 pause >nul
 
 goto cmd
