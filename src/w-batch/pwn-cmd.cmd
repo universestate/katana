@@ -63,7 +63,7 @@ echo msgbox "Thank you for using this software :^)" > "%tmp%\tmp.vbs"
 ) else if "%command%"=="-build" (
 
 echo :: Building compiler...
-    start "" "pwn-setup.cmd"
+    start "" "pwn-build.cmd"
     goto cmd
 
 ) else if "%command%"=="-start" (
@@ -73,7 +73,7 @@ echo :: Compiling...
 
 )  else if "%command%"=="-bstart" (
 
-    start "" "pwn-setup.cmd"
+    start "" "pwn-build.cmd"
 
     echo Press any key to open Compiler . . .
         pause >nul
