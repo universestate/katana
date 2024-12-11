@@ -70,7 +70,7 @@ set "katana_path_gm=%DirectoryKN%!katana_path_gm!"
 if not exist "!katana_path_gm!" (
     echo [System]/Gamemodes folder not found: !katana_path_gm!.
     timeout /t 1 >nul
-    start "" "https://sa-mp.co.id/"
+    start "" "https://www.sa-mp.mp/downloads/"
     echo [Out]/Exiting . .
     timeout /t 5
     exit
