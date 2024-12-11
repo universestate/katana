@@ -1,4 +1,4 @@
-[System]/GNU 2.0
+:: GNU 2.0
 @echo off
 
 color c
@@ -17,7 +17,6 @@ echo  888  `88b.   .8'     `888.       888       .8'     `888.   8       `888   
 echo o888o  o888o o88o     o8888o     o888o     o88o     o8888o o8o        `8  o88o     o8888o 
 echo.
 
-[System]/command line
 :cmd
 echo **************************
     echo $ command:
