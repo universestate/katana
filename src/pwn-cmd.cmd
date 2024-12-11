@@ -56,6 +56,7 @@ echo msgbox "-[WARNING]-: If you use the code structure from Katana, you are exp
 echo msgbox "Thank you for using this software :)" > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
         del "%tmp%\tmp.vbs"
+
 ) else if "%command%"=="1" (
 
 echo [System]/Building compiler...
