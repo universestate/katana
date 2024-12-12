@@ -41,7 +41,7 @@ echo **************************
 echo **************************
 echo.
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
-set /p command="[%mytime% ]/Enter Command: $ "
+set /p command="[%mytime%]/Enter Command:~$ "
 
 if "%command%"=="0" (
 
