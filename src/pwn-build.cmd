@@ -20,7 +20,7 @@ echo.
 echo.
 @echo off
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
-set /p input="[%mytime% ][System]/Enter drive > "
+set /p input="[%mytime%][System]/Enter drive: > "
 
 
 if "%input%"=="" (
@@ -50,7 +50,7 @@ dir /b "!input!"
 echo.
 echo [System]/Input "back" for back to main menu . .
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
-set /p inputs="[%mytime% ][System]/Enter target: > "
+set /p inputs="[%mytime%][System]/Enter target:> "
 
 if "%inputs%"=="" (
     echo msgbox "[ERROR]/File name cannot be empty." > "%tmp%\tmp.vbs"
