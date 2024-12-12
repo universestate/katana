@@ -12,7 +12,7 @@ set "SystemKN=%DirectoryKN%settings.ini"
 
 :right
 echo.
-echo            W E L C O M E   
+echo           *** W E L C O M E ***
 echo.
 echo [System]/Input "help" . . 
 :cmd
