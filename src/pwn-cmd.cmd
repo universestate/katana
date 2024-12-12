@@ -381,6 +381,8 @@ echo.
 
 goto cmd
 
+) else if "%command%"=="kill" (
+    goto clears
 ) else if "%command%"=="samp" (
     
     start "" "https://www.sa-mp.mp/"
