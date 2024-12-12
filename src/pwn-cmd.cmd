@@ -303,13 +303,13 @@ goto clears
 ) else if "%command%"=="katana" (
 
 echo.
-echo    oooo    oooo           
-echo    `888   .8P'            Version: %version%
-echo     888  d8'              Katana Release: [2024/December]
-echo     88888`                Username: %username%
-echo     888`88b.              Current Date-Time: %date% - %time%
-echo     888  `88b.            Computer Name: %computername%
-echo    o888o  o888o           
+echo        oooo    oooo           
+echo        `888   .8P'            Version: %version%
+echo         888  d8'              Katana Release: [2024/December]
+echo         88888`                Username: %username%
+echo         888`88b.              Current Date-Time: %date% - %time%
+echo         888  `88b.            Computer Name: %computername%
+echo        o888o  o888o           
 echo.
 
 ) else if "%command%"=="" (
