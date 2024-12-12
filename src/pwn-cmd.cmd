@@ -5,7 +5,7 @@ color c
 title %date%
 setlocal enabledelayedexpansion
 
-set "version=2024.latest.Now ^(0.0.4^)" [System]/current version.
+set "version=2024.latest.Now - Build ^(0.0.4^)" [System]/current version.
 
 :ascii
 echo oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       .o.       
@@ -300,12 +300,24 @@ goto clears
         cscript /nologo "%tmp%\tmp.vbs"
             del "%tmp%\tmp.vbs"
 
+) else if "%command%"=="katana" (
+
+echo.
+echo    oooo    oooo           
+echo    `888   .8P'            Version: %version%
+echo     888  d8'              Katana Release: [2024/December]
+echo     88888`                Username: %username%
+echo     888`88b.              Current Date-Time: %date% - %time%
+echo     888  `88b.            Computer Name: %computername%
+echo    o888o  o888o           
+echo.
+
 ) else if "%command%"=="" (
 
     goto cmd
 
-) else if "%command%"=="katana" (
-    
+) else if "%command%"=="-" (
+
     goto cmd
 
 ) else (
@@ -321,6 +333,5 @@ goto clears
 :end
 echo [System]/Press any key to return . . .
 pause >nul
-echo.
 goto cmd
 goto :eof
