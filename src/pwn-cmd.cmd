@@ -40,7 +40,7 @@ goto end
 :builds
     :text
     echo.
-    echo            S E T U P
+    echo           *** S E T U P ***
 
     :menu        
     echo. 
@@ -108,7 +108,7 @@ goto end
         goto back
     )
     echo.
-    echo            D O N E
+    echo           *** S U C C ES ***
     echo.
     echo [System]/Succes Creating =^> settings.ini ...
     (
@@ -126,7 +126,7 @@ goto end
     ) > "%SystemKN%"
 
     echo.
-    echo            E N D
+    echo           *** E N D ***
     echo.
 
     echo [System]/Press any key to return . . .

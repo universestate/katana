@@ -20,7 +20,7 @@ if not exist "%SystemKN%" (
 :builds
     :text
     echo.
-    echo            S E T U P
+    echo           *** S E T U P ***
 
     :menu        
     echo. 
@@ -88,7 +88,7 @@ if not exist "%SystemKN%" (
         goto back
     )
     echo.
-    echo            D O N E
+    echo           *** S U C C E S ***
     echo.
     echo [System]/Succes Creating =^> settings.ini ...
     (
@@ -106,7 +106,7 @@ if not exist "%SystemKN%" (
     ) > "%SystemKN%"
 
     echo.
-    echo            E N D
+    echo           *** E N D ***
     echo.
 
     echo [System]/Press any key to back . . .
@@ -132,7 +132,7 @@ if not defined katana_path_file (
     
 )
 
-echo              T A R G E T -^> !katana_path_file!
+echo           *** T A R G E T *** -^> !katana_path_file!
 
 set "katana_path_gm="
 for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SystemKN%"') do (
@@ -147,7 +147,7 @@ if not defined katana_path_gm (
     goto builds
 )
 
-echo              D R I V E -^> !katana_path_gm!
+echo           *** D R I V E *** -^> !katana_path_gm!
 echo.
 
 set "katana_path_gm=%DirectoryKN%!katana_path_gm!"
