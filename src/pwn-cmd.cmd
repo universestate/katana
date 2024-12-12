@@ -359,25 +359,26 @@ goto clears
 ) else if "%command%"=="help" (
 
 echo.
-echo /*         K A T A N A - %username%@%computername%         */
-    echo $ command:
-    echo **                 G E N E R A L
-    echo * [0]     :       -katana        : What's Katana?
-    echo * [1]     :       -build         : build Katana compiler.
-    echo * [2]     :       -start         : Start Katana compiler.
-    echo * [3]     :       -bstart        : build - compile..
-    echo * [4]     :       -runn          : running server's.
-    echo * [5]     :       -srunn         : compile - run server..
-    echo.
-    echo **                 R A N D O M
-    echo * [6]     :       -version       : Your Katana Version.
-    echo * [7]     :       -username      : Your Windows Username.
-    echo.
-    echo **                 S Y S T E M
-    echo * [8]     :       -tasks         : Create VSCode Task Katana Compiler.
-    echo * [9]     :       -example       : Create Example Katana Funcc SA-MP.
-    echo * [10]    :       -clear         : Clear Terminal Screen, Back to main menu.
-    echo.
+echo %username%@%computername%
+echo.
+echo *** G E N E R A L ***
+echo [0] -katana    : What's Katana?
+echo [1] -build     : Build Katana compiler.
+echo [2] -start     : Start Katana compiler.
+echo [3] -bstart    : Build and compile.
+echo [4] -runn      : Run server.
+echo [5] -srunn     : Compile and run server.
+echo.
+echo *** R A N D O M ***
+echo [6] -version   : Katana version.
+echo [7] -username  : Your Windows username.
+echo.
+echo *** S Y S T E M ***
+echo [8] -tasks     : Create VSCode Task.
+echo [9] -example   : Create Katana SA-MP example.
+echo [10] -clear    : Clear terminal screen.
+echo.
+
 goto cmd
 
 ) else if "%command%"=="samp" (
