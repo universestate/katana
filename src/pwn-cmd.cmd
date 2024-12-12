@@ -359,7 +359,7 @@ goto clears
 ) else if "%command%"=="help" (
 
 echo.
-echo /*         K A T A N A - %username%         */
+echo /*         K A T A N A - %username%@%computername%         */
     echo $ command:
     echo **                 G E N E R A L
     echo * [0]     :       -katana        : What's Katana?
@@ -459,14 +459,14 @@ goto cmd
     dir /s
 
 ) else if "%command%"=="katana" (
-
+for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
     echo.
     echo        oooo    oooo           
     echo        `888   .8P'            Version: %version%
     echo         888  d8'              Release: [2024/December]
-    echo         88888`                Username: %username%
-    echo         888`88b.              Date-Time: %date% - %time%
-    echo         888  `88b.            Computer: %computername%
+    echo         88888`                Desktop: %username%@%computername%
+    echo         888  `88b.            Uptime: %myTime%
+    echo         888`88b.              DD/MM/YYYY HH:MM:SS.ms: %date% - %time%
     echo        o888o  o888o           
     echo.
 
