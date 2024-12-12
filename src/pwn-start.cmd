@@ -202,7 +202,7 @@ echo.
 if exist "!katana_path_gm!\!katana_path_file!.amx" (
     echo [Katana]/Compilation successful: !katana_path_file!.amx created in the folder.
     echo.
-    for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
+for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
         echo [Result]/Size-of !katana_path_file!.amx: %%~zA bytes
     )
 ) else (
