@@ -17,7 +17,7 @@ echo.
 echo [System]/Input "help" . . 
 :cmd
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
-set /p command="[%mytime%]/Enter Command:~$ "
+set /p command="[%mytime%][%username%@%computername%]/Enter Command:~$ "
 
 if "%command%"=="0" (
 
@@ -49,7 +49,7 @@ goto end
     :next
     echo.
     for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
-    set /p input="[%mytime%][System]/Enter drive: > "
+    set /p input="[%mytime%][[System]/Enter drive: > "
 
 
     if "%input%"=="" (
@@ -461,15 +461,14 @@ goto cmd
 ) else if "%command%"=="katana" (
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
     echo.
-    echo        oooo    oooo           
-    echo        `888   .8P'            Version: %version%
-    echo         888  d8'              Release: [2024/December]
-    echo         88888`                Desktop: %username%@%computername%
-    echo         888  `88b.            Uptime: %myTime%
-    echo         888`88b.              DD/MM/YYYY HH:MM:SS.ms: %date% - %time%
-    echo        o888o  o888o           
+    echo        oooo    oooo             
+    echo        `888   .8P'       Version: %version%
+    echo         888  d8'         Release: [2024/December]
+    echo         88888[           Desktop: %username%@%computername%
+    echo         888`88b.         Uptime: %myTime%
+    echo        +888   .8b.       DD/MM/YYYY HH:MM:SS.ms: %date% - %time%
+    echo        o888o    o888,          
     echo.
-
 ) else if "%command%"=="" (
 
     goto cmd
