@@ -1,12 +1,9 @@
 :: GNU 2.0
 @echo off
-
 color c
 title %date%
 setlocal enabledelayedexpansion
-
-set "version=2024.latest ^(0.0.4^)" [System]/current version.
-
+set "version=2024.latest ^(0.0.4^)"
 set "DirectoryKN=%~dp0"
 set "SystemKN=%DirectoryKN%settings.ini"
 
@@ -15,12 +12,12 @@ echo.
 echo           *** W E L C O M E ***
 echo.
 echo [System]/Input "help" . . 
+
 :cmd
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
 set /p command="[%mytime%][%username%@%computername%]/Enter Command:~$ "
 
 if "%command%"=="0" (
-
 :katanas
 echo msgbox "Katana is a compilation tool with multiple functions for the Pawn Compiler in SA-MP." > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
@@ -34,9 +31,7 @@ echo msgbox "Thank you for using this software :)" > "%tmp%\tmp.vbs"
     cscript /nologo "%tmp%\tmp.vbs"
         del "%tmp%\tmp.vbs"
 goto end
-
 ) else if "%command%"=="1" (
-
 :builds
     :text
     echo.
@@ -49,7 +44,7 @@ goto end
     :next
     echo.
     for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
-    set /p input="[%mytime%][[System]/Enter drive: > "
+    set /p input="[%mytime%][System]/Enter drive: > "
 
 
     if "%input%"=="" (
@@ -135,16 +130,12 @@ goto end
     goto text
     goto next
     goto :eof
-
 ) else if "%command%"=="2" (
-
 :starts
 echo [System]/Compiling...
     start "" "pwn-start.cmd"
     goto cmd
-
 ) else if "%command%"=="3" (
-
 :bstarts
     start "" "goto builds"
 
@@ -152,9 +143,8 @@ echo [System]/Compiling...
         pause >nul
             start "" "pwn-start.cmd"
         goto cmd
-
+goto end
 ) else if "%command%"=="4" (
-
 :runns
     start "" "samp-server.exe"
 
@@ -174,9 +164,8 @@ echo [System]/Compiling...
     ) else (
         echo [System]/The program was executed successfully.
     )
-
+goto end
 ) else if "%command%"=="5" (
-
 :sruuns
 echo [System]/Compiling..
     start "" "pwn-start.cmd"
@@ -202,9 +191,8 @@ echo [System]/Compiling..
     ) else (
         echo [System]/The program was executed successfully.
     )
-
+goto end
 ) else if "%command%"=="6" (
-
 :versions
     echo.
         echo Current Katana Version =^> %version%
@@ -213,16 +201,14 @@ echo [System]/Compiling..
     echo msgbox "Your Katana Version: 2024.latest.Now - build (0.0.4)" > "%tmp%\tmp.vbs"
         cscript /nologo "%tmp%\tmp.vbs"
             del "%tmp%\tmp.vbs"
-
+goto end
 ) else if "%command%"=="7" (
-
 :usernames
     echo.
         echo Current Username =^> %username%
             echo.
-
+goto end
 ) else if "%command%"=="8" (
-
 :taskss
     if not exist ".vscode" (
         mkdir ".vscode"
@@ -265,9 +251,7 @@ echo [System]/Compiling..
             echo.
 
     goto end
-
 ) else if "%command%"=="9" (
-
 :guides
     if not exist "examples" (
         mkdir "examples"
@@ -304,60 +288,34 @@ echo [System]/Compiling..
     start explorer "examples\"
 
     goto end
-
 ) else if "%command%"=="10" (
-
 :clears
     cls
     goto right
     goto cmd
-
 ) else if "%command%"=="-katana" (
-
 goto katanas
-
 ) else if "%command%"=="-build" (
-
 goto builds
-
 ) else if "%command%"=="-start" (
-
 goto starts
-
 ) else if "%command%"=="-bstart" (
-
 goto bstarts
-
 ) else if "%command%"=="-runn" (
-
 goto ruuns
-
 ) else if "%command%"=="-srunn" (
-
 goto sruuns
-
 ) else if "%command%"=="-version" (
-
 goto versions
-
 ) else if "%command%"=="-username" (
-
 goto usernames
-
 ) else if "%command%"=="-tasks" (
-
 goto taskss
-
 ) else if "%command%"=="-example" (
-
 goto guides
-
 ) else if "%command%"=="-clear" (
-
 goto clears
-
 ) else if "%command%"=="help" (
-
 echo.
 echo %username%@%computername%
 echo.
@@ -378,89 +336,58 @@ echo [8] -tasks     : Create VSCode Task.
 echo [9] -example   : Create Katana SA-MP example.
 echo [10] -clear    : Clear terminal screen.
 echo.
-
 goto cmd
-
 ) else if "%command%"=="kill" (
     goto clears
 ) else if "%command%"=="samp" (
-    
     start "" "https://www.sa-mp.mp/"
     goto end
-
 ) else if "%command%"=="cmd" (
-
     start "" cmd.exe
     goto end
-
 ) else if "%command%"=="powershell" (
-
     start "" powershell.exe
     goto end
-
 ) else if "%command%"=="hello" (
-
     echo msgbox "Hello, Man :)" > "%tmp%\tmp.vbs"
         cscript /nologo "%tmp%\tmp.vbs"
             del "%tmp%\tmp.vbs"
-
 ) else if "%command%"=="time" (
-    
     echo.
     echo %time%
     echo.
     goto end
-
 ) else if "%command%"=="date" (
-    
     echo.
     echo %date%
     echo.
     goto end
-
 ) else if "%command%"=="google" (
-    
     echo.
     start "" "https://google.com/"
     echo Start "https://google.com/"
     echo.
     goto end
-
 ) else if "%command%"=="youtube" (
-    
     echo.
     start "" "https://youtube.com/"
     echo Start "https://youtube.com/"
     echo.
     goto end
-
-) else if "%command%"=="sqlmap" (
-    
-    start "" "https://sqlmap.org/"
-    goto end
-
 ) else if "%command%"=="evercool" (
-    
     echo.
     start "" "https://dsc.gg/everscools/"
     echo Start "https://dsc.gg/everscools/"
     echo.
     goto end
-
 ) else if "%command%"=="warning" (
-
     start "" "https://sampwiki.blast.hk/wiki/Errors_List#Errors:~:text=6%20External%20Links-,General%20Pawn%20Error%20List,-This%20pages%20contains"
     goto end
-
 ) else if "%command%"=="error" (
-
     start "" "https://sampwiki.blast.hk/wiki/Errors_List#Errors:~:text=through%20the%20editor.-,Common%20Warnings,-202%3A%20number%20of"
     goto end
-
 ) else if "%command%"=="dir" (
-    
     dir /s
-
 ) else if "%command%"=="katana" (
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
     echo.
@@ -473,21 +400,14 @@ for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
     echo        o888o    o888,          
     echo.
 ) else if "%command%"=="" (
-
     goto cmd
-
 ) else if "%command%"=="-" (
-
     goto cmd
-
 ) else (
-
     echo.
         echo $ %command% - This command does not exist. Please try again..
-
     timeout /t 2
         goto cmd
-
 )
 
 :end
