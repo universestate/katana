@@ -8,19 +8,19 @@ Link: https://tinyurl.com/katana-installer
 ; Demonstrates copying 3 files and creating an icon.
 
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING .ISS SCRIPT FILES!
-
 [Setup]
-AppName=Katana
-AppVersion=0.4
+AppName=Katana Compiler.
+AppVersion=0.0.4
 PrivilegesRequired=none
 DefaultDirName={userdesktop}\
-AllowNoIcons=yes
+AllowNoIcons=no
 DirExistsWarning=no
 DisableDirPage=no
 OutputDir=path\to\output
 OutputBaseFilename=Installer
 Compression=lzma
 SolidCompression=yes
+SetupIconFile=path\to\default.ico
 
 [Files]
 Source: "path\to\pwn-cmd.cmd"; DestDir: "{app}"; Flags: ignoreversion
