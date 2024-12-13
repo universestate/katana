@@ -7,8 +7,8 @@ DefaultDirName={userdesktop}\
 AllowNoIcons=yes
 DirExistsWarning=no
 DisableDirPage=no
-OutputDir=C:\Users\pc\Downloads\New folder
-OutputBaseFilename=InstallerKatana
+OutputDir=path\to\output
+OutputBaseFilename=Katana-Installer
 Compression=lzma
 SolidCompression=yes
 
