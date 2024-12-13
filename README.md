@@ -7,3 +7,6 @@ oooo    oooo       .o.       ooooooooooooo       .o.       ooooo      ooo       
  888  `88b.   .8'     `888.       888       .8'     `888.   8       `888   .8'     `888.
 o888o  o888o o88o     o8888o     o888o     o88o     o8888o o8o        `8  o88o     o8888o
 ```
+```
+git clone https://github.com/universestate/katana
+```
