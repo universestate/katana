@@ -1,4 +1,4 @@
-You can Clone this.
+You can Clone this:
 ```
 $ git clone https://github.com/universestate/katana
 ```
