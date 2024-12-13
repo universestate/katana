@@ -1,4 +1,4 @@
-```ini
+```iss
 ; -- https://jrsoftware.org/ --
 ; Demonstrates copying 3 files and creating an icon.
 
