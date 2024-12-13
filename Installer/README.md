@@ -13,8 +13,8 @@ Compression=lzma
 SolidCompression=yes
 
 [Files]
-Source: "InstallerFiles\pwn-cmd.cmd"; DestDir: "{app}"; Flags: ignoreversion
-Source: "InstallerFiles\pwn-start.cmd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "path\to\pwn-cmd.cmd"; DestDir: "{app}"; Flags: ignoreversion
+Source: "path\to\pwn-start.cmd"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\Run Katana-CMD"; Filename: "{app}\pwn-cmd.cmd"
