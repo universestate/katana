@@ -1,7 +1,9 @@
 ```
-https://pixeldrain.com/u/mFeMPp6v
+Link: https://tinyurl.com/katana-installer
 ```
 ```iss
+// Source:
+
 ; -- https://jrsoftware.org/ --
 ; Demonstrates copying 3 files and creating an icon.
 
