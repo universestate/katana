@@ -1,6 +1,3 @@
-```
-Link: https://tinyurl.com/katana-installer
-```
 ```iss
 ; Source:
 
