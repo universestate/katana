@@ -59,6 +59,7 @@ if not exist "%SystemKN%" (
     echo.
     echo [System]/Input "back" for back to main build . .
     echo [System]/Input "end" for back to main menu . .
+
     for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
     set /p inputs="[%mytime%][System]/Enter target: > "
 
@@ -154,9 +155,9 @@ set "katana_path_gm=%DirectoryKN%!katana_path_gm!"
 
 if not exist "!katana_path_gm!" (
     echo [System]/Gamemodes folder not found: !katana_path_gm!.
-    timeout /t 1 >nul
-    start "" "https://www.sa-mp.mp/downloads/"
-    echo [Out]/Exiting . .
+        timeout /t 1 >nul
+            start "" "https://www.sa-mp.mp/downloads/"
+        echo [Out]/Exiting . .
     timeout /t 5
     exit
 )
@@ -165,28 +166,29 @@ set "katana_pawncc_path="
 for /r "%DirectoryKN%" %%p in (pawncc.exe) do (
     if exist "%%p" (
         set "katana_pawncc_path=%%p"
-        goto found_pawncc
+        goto f_pawncc
     )
 )
 
-:found_pawncc
+:f_pawncc
 if not defined katana_pawncc_path (
     echo.
-    echo [System]/pawncc.exe not found in any subdirectories.
+        echo [System]/pawncc.exe not found in any subdirectories.
     echo.
+
     timeout /t 1 >nul
-    start "" "https://github.com/pawn-lang/compiler/releases"
+        start "" "https://github.com/pawn-lang/compiler/releases"
     echo [Out]/Exiting . .
-    timeout /t 5
+        timeout /t 5
     exit
 )
 
 if exist "!katana_path_gm!\!katana_path_file!.pwn" (
     set "file_extension=.pwn"
-) else if exist "!katana_path_gm!\!katana_path_file!.kn" (
-     set "file_extension=.kn"
-    ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
-        set "file_extension=.p" 
+) else if exist "!katana_path_gm!\!katana_path_file!.p" (
+     set "file_extension=.p"
+    ) else if exist "!katana_path_gm!\!katana_path_file!.kn" (
+        set "file_extension=.kn" 
 ) else (
     echo [ERROR]/"!katana_path_gm!" =^> "!katana_path_file!.pwn - !katana_path_file!.p - !katana_path_file!.kn" not found..
     timeout /t 1 >nul
@@ -203,7 +205,7 @@ if exist "!katana_path_gm!\!katana_path_file!.amx" (
     echo [Katana]/Compilation successful: !katana_path_file!.amx created in the folder.
     echo.
 for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
-        echo [Result]/Size-of !katana_path_file!.amx: %%~zA bytes
+        echo [Result]/Result-of !katana_path_file!.amx: %%~zA bytes
     )
 ) else (
     echo [Fail]/Compilation failed for !katana_path_file!!file_extension!..
