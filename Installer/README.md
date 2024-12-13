@@ -13,7 +13,7 @@ AllowNoIcons=yes
 DirExistsWarning=no
 DisableDirPage=no
 OutputDir=path\to\output
-OutputBaseFilename=Katana-Installer
+OutputBaseFilename=Installer
 Compression=lzma
 SolidCompression=yes
 
