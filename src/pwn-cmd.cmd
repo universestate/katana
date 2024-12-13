@@ -135,6 +135,7 @@ goto end
 echo [System]/Compiling...
     start "" "pwn-start.cmd"
     goto cmd
+goto end
 ) else if "%command%"=="3" (
 :bstarts
     start "" "goto builds"
@@ -145,34 +146,17 @@ echo [System]/Compiling...
         goto cmd
 goto end
 ) else if "%command%"=="4" (
-:runns
-    start "" "samp-server.exe"
-
-    timeout /t 1 >nul
-
-    tasklist | find /i "samp-server.exe" >nul
-
-    if errorlevel 1 (
-        echo [System]/The program failed to run. Checking logs...Program failed to run. Checking logs...
-        
-        if exist "server_log.txt" (
-            echo [System]/Opening server_log.txt...
-            start "" "notepad" "server_log.txt"
-        ) else (
-            echo [System]/server_log.txt not found.
-        )
-    ) else (
-        echo [System]/The program was executed successfully.
-    )
+:_runns
+goto _part
 goto end
 ) else if "%command%"=="5" (
-:sruuns
+:_sruuns
 echo [System]/Compiling..
     start "" "pwn-start.cmd"
     
     echo Press any key to Start Your Server's . . .
         pause >nul
-
+:_part
     start "" "samp-server.exe"
 
     timeout /t 1 >nul
@@ -302,9 +286,9 @@ goto starts
 ) else if "%command%"=="-bstart" (
 goto bstarts
 ) else if "%command%"=="-runn" (
-goto ruuns
+goto _runns
 ) else if "%command%"=="-srunn" (
-goto sruuns
+goto _srunns
 ) else if "%command%"=="-version" (
 goto versions
 ) else if "%command%"=="-username" (
