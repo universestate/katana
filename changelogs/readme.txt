@@ -28,7 +28,7 @@
 - Changed 'system.ini' to 'settings.ini'  
 - Added Source Pawn to the repo
 
-(*) 0.0.5 (0.0.4 Now); Nightly Build
+(*) 0.0.5 (0.0.4 Rebranded); Nightly Build
 - Fixed Compiler and CMDs bugs  
 - Fixed Compiler and CMDs delay  
 - Added Multi Setup to Compiler/CMDs  
