@@ -433,14 +433,15 @@ goto clears
 :dirc
     set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: > "
 
-    if exist "dirs" (
+    if exist "!dirs!" (
         echo [System]/Dir "!dirs!" Allready!
         goto dirc
-    )
+    ) else (
 
     mkdir !dirs!
     echo [System]/Dir !dirs! Created..
     goto end
+)
 
 ) else if "%command%"=="katana" (
 
