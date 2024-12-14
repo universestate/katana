@@ -11,7 +11,6 @@
 - Changed Compiler Name
 
 (*) 0.0.3; Alpha Release
-- Added Katana Compiler  
 - Added Katana Setup  
 - Added Katana CMDs
 - Changed Compiler Name
