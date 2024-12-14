@@ -429,6 +429,16 @@ goto clears
 
     dir /s
 
+) else if "%command%"=="makedir" (
+
+    set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: > "
+
+    if exist "dirs" (
+        echo [System]/Dir "!dir!" Allready!
+    )
+
+    makedir !dirs!
+
 ) else if "%command%"=="katana" (
 
     echo.
