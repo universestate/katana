@@ -7,12 +7,14 @@
 
 (*) 0.0.2; Old Release
 - Fixed Compiler bug
-- Update Features.
+- Update Features
+- Changed Compiler Name
 
 (*) 0.0.3; Alpha Release
 - Added Katana Compiler  
 - Added Katana Setup  
 - Added Katana CMDs
+- Changed Compiler Name
 
 (*) 0.0.4; Beta Release
 - Opened Source Repo  
