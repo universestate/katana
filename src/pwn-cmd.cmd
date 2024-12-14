@@ -429,7 +429,7 @@ goto clears
 
     dir /s
 
-) else if "%command%"=="makedir" (
+) else if "%command%"=="mkdir" (
 
     set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: > "
 
@@ -437,7 +437,7 @@ goto clears
         echo [System]/Dir "!dir!" Allready!
     )
 
-    makedir !dirs!
+    mkdir !dirs!
 
 ) else if "%command%"=="katana" (
 
