@@ -1,33 +1,36 @@
-0.0.0; Old Release
-  Add Katana Compiler
+**0.0.0; Old Release**  
+- Added Katana Compiler
 
-0.0.1; Old Release
-  Fixed bug Compiler
+**0.0.1; Old Release**  
+- Fixed Compiler bug
+- Update Features.
 
-0.0.2; Old Release
-  Fixed bug Compiler
+**0.0.2; Old Release**  
+- Fixed Compiler bug
+- Update Features.
 
-0.0.3; Alpha Release
-  Add Katana Compiler
-  Add Katana Setup
-  Add Katana CMDs
+**0.0.3; Alpha Release**  
+- Added Katana Compiler  
+- Added Katana Setup  
+- Added Katana CMDs
 
-0.0.4; BETA Release
-  Remove single Katana Setup
-  Fixed bug Compiler
-  Fixed bug CMDs
-  Change UI model CMDs/Compiler
-  Fix Delay Compiler
-  Add/Remove CMDs list
-  Move single Katana Setup -> (to) multi Setup.
-  Change 'system.ini' to 'settings.ini'
-  Add Source Pawn to Repo..
+**0.0.4; Beta Release**  
+- Opened Source Repo  
+- Added support for Struct Pawn  
+- Removed single Katana Setup  
+- Fixed Compiler and CMDs bugs  
+- Changed UI model for CMDs/Compiler  
+- Fixed Compiler delay  
+- Added/Removed CMDs list  
+- Moved single Katana Setup to Multi Setup  
+- Changed 'system.ini' to 'settings.ini'  
+- Added Source Pawn to the repo
 
-0.0.5 (0.0.4 Now); Nightly Builds
-  Fixed bug Compiler/CMDs
-  Fixed delay Compiler/CMDs
-  Add multi Setup to Compiler/CMDs
-  Change UI model Terminal.
+**0.0.5 (0.0.4 Now); Nightly Build**  
+- Fixed Compiler and CMDs bugs  
+- Fixed Compiler and CMDs delay  
+- Added Multi Setup to Compiler/CMDs  
+- Changed UI model in Terminal
 
-1.0.2 (RC); Release Candidate (RC)
-  Cooming soon....
+**1.0.2 (RC); Release Candidate (RC)**  
+- Coming soon...
