@@ -12,6 +12,6 @@ main() {
     arrays[4] = 500;
 
     for (new i = 0; i < sizeof(arrays); i++) {
-        printf("arrays[%d] = %d", i, arrays[i]);
+        printf "arrays[%d] = %d", i, arrays[i];
     }
 }
