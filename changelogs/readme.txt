@@ -20,6 +20,7 @@
   Fix Delay Compiler
   Add/Remove CMDs list
   Move single Katana Setup -> (to) multi Setup.
+  Change 'system.ini' to 'settings.ini'
   Add Source Pawn to Repo..
 
 0.0.5 (0.0.4 Now); Nightly Builds
