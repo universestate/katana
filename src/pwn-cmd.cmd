@@ -434,10 +434,11 @@ goto clears
     set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: > "
 
     if exist "dirs" (
-        echo [System]/Dir "!dir!" Allready!
+        echo [System]/Dir "!dirs!" Allready!
     )
 
     mkdir !dirs!
+    echo [System]/Dir !dirs! Created..
     goto end
 
 ) else if "%command%"=="katana" (
