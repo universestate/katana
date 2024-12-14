@@ -26,6 +26,7 @@
 - Moved single Katana Setup to Multi Setup  
 - Changed 'system.ini' to 'settings.ini'  
 - Added Source Pawn to the repo
+- Added Installer Option
 
 (*) 0.0.5 (0.0.4 Rebranded); Nightly Build
 - Fixed Compiler and CMDs bugs  
