@@ -430,11 +430,12 @@ goto clears
     dir /s
 
 ) else if "%command%"=="mkdir" (
-
+:dirc
     set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: > "
 
     if exist "dirs" (
         echo [System]/Dir "!dirs!" Allready!
+        goto dirc
     )
 
     mkdir !dirs!
