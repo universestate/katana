@@ -1,6 +1,4 @@
-```iss
 ; -- https://jrsoftware.org/ --
-
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING .ISS SCRIPT FILES!
 [Setup]
 AppName=Katana Compiler.
@@ -34,4 +32,3 @@ begin
   begin
   end;
 end;
-```
