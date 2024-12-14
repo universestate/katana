@@ -14,7 +14,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
     new File:saves = fopen("savepos.txt", io_append);
     if (saves == File:0) { return 0; }
     fwrite(saves, string), fclose(saves);
-
+    SendClientMessage playerid, -1, string;
     return 1;
   }
   return 0;
