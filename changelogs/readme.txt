@@ -15,7 +15,7 @@
 0.0.4; BETA Release
   Remove single Katana Setup
   Fixed bug Compiler
-  Fixed bug CMDS
+  Fixed bug CMDs
   Change UI model CMDs/Compiler
   Fix Delay Compiler
   Add/Remove CMDs list
