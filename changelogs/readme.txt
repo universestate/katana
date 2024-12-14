@@ -16,10 +16,17 @@
   Remove single Katana Setup
   Fixed bug Compiler
   Fixed bug CMDS
-  Change UI CMDs/Compiler
+  Change UI model CMDs/Compiler
   Fix Delay Compiler
   Add/Remove CMDs list
   Move single Katana Setup -> (to) multi Setup.
+  Add Source Pawn to Repo..
 
-1.0.2; Release Candidate (RC)
+0.0.5 (0.0.4 Now); Nightly Builds
+  Fixed bug Compiler/CMDs
+  Fixed delay Compiler/CMDs
+  Add multi Setup to Compiler/CMDs
+  Change UI model Terminal.
+
+1.0.2 (RC); Release Candidate (RC)
   Cooming soon....
