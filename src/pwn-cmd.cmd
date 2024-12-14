@@ -137,7 +137,7 @@ echo [System]/Compiling...
 goto end
 ) else if "%command%"=="3" (
 :bstarts
-    start "" "goto builds"
+    start "" "pwn-start.cmd"
 
     echo Press any key to open Compiler . . .
         pause >nul
