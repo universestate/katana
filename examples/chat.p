@@ -17,10 +17,8 @@ public OnPlayerText(playerid, text[])
   SetPlayerChatBubble playerid, text, -1, dist, 1400);
   
   for (new i=0;i<MAX_PLAYERS; i++) if (IsPlayerConnected(i) && (i != playerid) && IsPlayerStreamedIn(playerid,i)) {
-		        fPlayerToPlayerDist = GetPlayerDistanceFromPoint(i, fPlayerX, fPlayerY, fPlayerZ);
-				if (fPlayerToPlayerDist < dist) { // receiving player is within the specified distance
-					SendClientMessage i, -1, str;
-     }
+	fPlayerToPlayerDist = GetPlayerDistanceFromPoint(i, fPlayerX, fPlayerY, fPlayerZ);
+		if (fPlayerToPlayerDist < dist) { SendClientMessage i, -1, str; }
   }
   return 0;
 }
