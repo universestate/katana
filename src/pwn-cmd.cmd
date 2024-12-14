@@ -438,6 +438,7 @@ goto clears
     )
 
     mkdir !dirs!
+    goto end
 
 ) else if "%command%"=="katana" (
 
