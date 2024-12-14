@@ -1,5 +1,5 @@
 (*) 0.0.0; Old Release
-- Added Katana Compiler
+- Added Compiler
 
 (*) 0.0.1; Old Release
 - Fixed Compiler bug
