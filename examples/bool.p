@@ -2,7 +2,7 @@
 
 main(){}
 
-new bool:status;
+new bool:status=false;
 
 public OnGameModeInit() {
   status = true;
