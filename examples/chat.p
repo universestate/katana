@@ -13,6 +13,10 @@ public OnPlayerText(playerid, text[])
   format(str,sizeof(str), "%s[%d]: %s",name, playerid, text);
   SendClientMessage playerid, -1, str;
 
+  new Float:fPlayerX, Float:fPlayerY, Float:fPlayerZ;
+	new Float:fPlayerToPlayerDist;
+ 		GetPlayerPos(playerid, fPlayerX, fPlayerY, fPlayerZ);
+ 
   new Float:dist=3.2;
   SetPlayerChatBubble playerid, text, -1, dist, 1400);
   
