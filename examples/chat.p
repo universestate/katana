@@ -18,7 +18,7 @@ public OnPlayerText(playerid, text[])
  		GetPlayerPos(playerid, fPlayerX, fPlayerY, fPlayerZ);
  
   new Float:dist=3.2;
-  SetPlayerChatBubble playerid, text, -1, dist, 1400);
+  SetPlayerChatBubble playerid, text, -1, dist, 1400;
   
   for (new i=0;i<MAX_PLAYERS; i++) if (IsPlayerConnected(i) && (i != playerid) && IsPlayerStreamedIn(playerid,i)) {
 	fPlayerToPlayerDist = GetPlayerDistanceFromPoint(i, fPlayerX, fPlayerY, fPlayerZ);
