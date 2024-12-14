@@ -4,7 +4,7 @@
 0.0.1; Old Release
   Fixed bug Compiler
 
-0.0.2;
+0.0.2; Old Release
   Fixed bug Compiler
 
 0.0.3; Alpha Release
