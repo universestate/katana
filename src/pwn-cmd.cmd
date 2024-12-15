@@ -2,9 +2,10 @@
 color c
 title %date%
 setlocal enabledelayedexpansion
-set "version=2024.latest ^(0.0.4^)"
-set "DirectoryKN=%~dp0"
-set "SystemKN=%DirectoryKN%settings.ini"
+
+set "version=2024.latest ^(1.0.2^)"
+set "SysSearchDir=%~dp0"
+set "SysSettings=%SysSearchDir%settings.ini"
 
 :right
 echo.
@@ -118,7 +119,7 @@ goto end
                 echo drive=!input!
             echo    target=!inputs!
         echo ; end
-    ) > "%SystemKN%"
+    ) > "%SysSettings%"
 
     echo.
     echo           *** E N D ***
@@ -192,7 +193,7 @@ goto end
         echo Current Katana Version =^> %version%
     echo.
 
-    echo msgbox "Your Katana Version: 2024.latest.Now - build (0.0.4)" > "%tmp%\tmp.vbs"
+    echo msgbox "Your Katana Version: 2024.latest.Now - build (1.0.2)" > "%tmp%\tmp.vbs"
         cscript /nologo "%tmp%\tmp.vbs"
             del "%tmp%\tmp.vbs"
 goto end
