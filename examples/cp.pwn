@@ -6,7 +6,7 @@ new bool:checkpoint[MAX_PLAYERS];
 
 public OnPlayerCommandText(playerid, cmdtext[])
 {
-  if (s!trcmp(cmdtext, "/cp", true)) {
+  if (!strcmp(cmdtext, "/cp", true)) {
     SetPlayerCheckpoint(playerid, 123.0, 123.1, 123.2, 2.3);
     checkpoint[playerid] = true;
     return 1;
