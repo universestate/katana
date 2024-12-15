@@ -210,11 +210,11 @@ if not defined katana_pawncc_path (
 if exist "!katana_path_gm!\!katana_path_file!.pwn" (
     set "file_extension=.pwn"
 ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
-     set "file_extension=.p"
-    ) else if exist "!katana_path_gm!\!katana_path_file!.kn" (
-        set "file_extension=.kn" 
+    set "file_extension=.p"
+) else if exist "!katana_path_gm!\!katana_path_file!.kn" (
+    set "file_extension=.kn"
 ) else (
-    echo [ERROR]/"!katana_path_gm!" =^> "!katana_path_file!.pwn - !katana_path_file!.p - !katana_path_file!.kn" not found..
+    echo [ERROR] The file "!katana_path_file!" with extensions .pwn, .p, or .kn not found in: "!katana_path_gm!"
     timeout /t 1 >nul
     goto builds
 )
@@ -226,14 +226,16 @@ echo.
 "!katana_pawncc_path!" "!katana_path_gm!\!katana_path_file!!file_extension!" -o"!katana_path_gm!\!katana_path_file!.amx"
 
 if exist "!katana_path_gm!\!katana_path_file!.amx" (
-    echo Compilation done: 	!katana_path_file!.amx created in the folder.
+    echo Compilation done: !katana_path_file!.amx created in the folder.
     echo.
-for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
-        echo Total Size: 		!katana_path_file!.amx / %%~zA bytes
+
+    for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
+        echo Total Size: !katana_path_file!.amx / %%~zA bytes
     )
 ) else (
-    echo [Fail]/Compilation failed for !katana_path_file!!file_extension!..
+    echo Compilation failed for !katana_path_file!!file_extension!..
 )
+
 echo.
 
 echo [System]/Press any key to return . . .
