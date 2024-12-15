@@ -62,7 +62,6 @@ if not exist "%SysSettings%" (
 
     :next
     echo.
-    echo [System]/Input "end" for back to main menu . .
     set /p input="[%mytime%][System]/Enter drive: > "
 
     if "%input%"=="" (
@@ -70,8 +69,6 @@ if not exist "%SysSettings%" (
                 cscript /nologo "%tmp%\tmp.vbs"
                     del "%tmp%\tmp.vbs"
         goto next
-    ) else if "%inputs%"=="end" (
-        goto clears
     )
 
     if not "!input:~-1!"=="\" set "input=!input!\"
@@ -95,7 +92,6 @@ if not exist "%SysSettings%" (
     echo [System]/Input "back" for back to main build . .
     echo [System]/Input "end" for back to main menu . .
 
-    for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
     set /p inputs="[%mytime%][System]/Enter target: > "
 
     if "%inputs%"=="" (
