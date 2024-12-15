@@ -46,14 +46,16 @@ goto end
 
     :next
     echo.
+    echo [System]/Input "end" for back to main menu . .
     set /p input="[%mytime%][System]/Enter drive: > "
-
 
     if "%input%"=="" (
             echo msgbox "[ERROR]/Directory path cannot be empty." > "%tmp%\tmp.vbs"
                 cscript /nologo "%tmp%\tmp.vbs"
                     del "%tmp%\tmp.vbs"
         goto next
+    ) else if "%inputs%"=="end" (
+        goto clears
     )
 
     if not "!input:~-1!"=="\" set "input=!input!\"
