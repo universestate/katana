@@ -2,7 +2,7 @@
 
 root = true
 
-[{*.{awk,c,dts,dtsi,dtso,h,mk,s,S},Kconfig,Makefile,Makefile.*}]
+[{*.{awk,c,dts,dtsi,dtso,h,mk,s,S,pwn,amx},Kconfig,Makefile,Makefile.*}]
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
@@ -27,3 +27,10 @@ end_of_line = lf
 insert_final_newline = true
 indent_style = space
 indent_size = 2
+
+[*.{pwn,amx}]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = tab
+indent_size = 4
