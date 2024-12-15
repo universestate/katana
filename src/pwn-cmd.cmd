@@ -230,6 +230,8 @@ goto end
         echo [System]/Task configuration created successfully in .vscode\tasks.json.
             echo.
 
+    start explorer ".vscode\"
+
     goto end
 
 ) else if "%command%"=="9" (
