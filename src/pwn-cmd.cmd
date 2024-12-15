@@ -422,6 +422,7 @@ endlocal
 )
 
 :end
+endlocal
 echo [System]/Press any key to return . . .
 pause >nul
 goto cmd
