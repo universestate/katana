@@ -381,34 +381,6 @@ goto clears
     echo.
     goto end
 
-) else if "%command%"=="google" (
-
-    echo.
-    start "" "https://google.com/"
-    echo Start "https://google.com/"
-    echo.
-
-    goto end
-
-) else if "%command%"=="youtube" (
-
-    echo.
-    start "" "https://youtube.com/"
-    echo Start "https://youtube.com/"
-    echo.
-
-    goto end
-
-)  else if "%command%"=="warning" (
-
-    start "" "https://sampwiki.blast.hk/wiki/Errors_List#Errors:~:text=6%20External%20Links-,General%20Pawn%20Error%20List,-This%20pages%20contains"
-    goto end
-
-) else if "%command%"=="error" (
-
-    start "" "https://sampwiki.blast.hk/wiki/Errors_List#Errors:~:text=through%20the%20editor.-,Common%20Warnings,-202%3A%20number%20of"
-    goto end
-
 ) else if "%command%"=="dir" (
 
     dir /s
