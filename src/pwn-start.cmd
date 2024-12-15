@@ -62,7 +62,6 @@ if not exist "%SysSettings%" (
 
     :next
     echo.
-    echo [System]/Input "end" for back to main menu . .
     set /p input="[%mytime%][System]/Enter drive: >"
 
     if "%input%"=="end" (
