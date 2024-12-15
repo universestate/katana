@@ -71,12 +71,7 @@ goto end
     echo [System]/Input "end" for back to main menu . .
     set /p inputs="[%mytime%][System]/Enter target: >"
 
-    if "%inputs%"=="" (
-        echo msgbox "[ERROR]/File name cannot be empty." > "%tmp%\tmp.vbs"
-                cscript /nologo "%tmp%\tmp.vbs"
-            del "%tmp%\tmp.vbs"
-        goto back
-    ) else if "%inputs%"=="back" (
+    if "%inputs%"=="back" (
         cls
         goto text
         goto menu
