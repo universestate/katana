@@ -43,11 +43,11 @@ echo.
 echo Starting %date% %time%
 echo.
 
-set "DirectoryKN=%~dp0"
-set "SystemKN=%DirectoryKN%settings.ini"
+set "SysSearchDir=%~dp0"
+set "SysSettings=%SysSearchDir%settings.ini"
 
 :mains
-if not exist "%SystemKN%" (
+if not exist "%SysSettings%" (
     echo [System]/settings.ini is required to determine the gamemode..
     timeout /t 1 >nul
     
@@ -138,7 +138,7 @@ if not exist "%SystemKN%" (
                 echo drive=!input!
             echo    target=!inputs!
         echo ; end
-    ) > "%SystemKN%"
+    ) > "%SysSettings%"
 
     echo.
     echo           *** E N D ***
@@ -155,7 +155,7 @@ echo [System]/settings.ini found..
 echo.
 
 set "katana_path_file="
-for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%SystemKN%"') do (
+for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%SysSettings%"') do (
     if not "%%b"=="" (
         set "katana_path_file=%%b"
     )
@@ -170,7 +170,7 @@ if not defined katana_path_file (
 echo           *** T A R G E T *** -^> !katana_path_file!
 
 set "katana_path_gm="
-for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SystemKN%"') do (
+for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SysSettings%"') do (
     if not "%%b"=="" (
         set "katana_path_gm=%%b"
     )
@@ -185,7 +185,7 @@ if not defined katana_path_gm (
 echo           *** D R I V E *** -^> !katana_path_gm!
 echo.
 
-set "katana_path_gm=%DirectoryKN%!katana_path_gm!"
+set "katana_path_gm=%SysSearchDir%!katana_path_gm!"
 
 if not exist "!katana_path_gm!" (
     echo [System]/Gamemodes folder not found: !katana_path_gm!.
@@ -197,7 +197,7 @@ if not exist "!katana_path_gm!" (
 )
 
 set "katana_pawncc_path="
-for /r "%DirectoryKN%" %%p in (pawncc.exe) do (
+for /r "%SysSearchDir%" %%p in (pawncc.exe) do (
     if exist "%%p" (
         set "katana_pawncc_path=%%p"
         goto f_pawncc
