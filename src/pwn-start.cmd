@@ -226,10 +226,10 @@ echo.
 "!katana_pawncc_path!" "!katana_path_gm!\!katana_path_file!!file_extension!" -o"!katana_path_gm!\!katana_path_file!.amx"
 
 if exist "!katana_path_gm!\!katana_path_file!.amx" (
-    echo [Katana]/Compilation successful: !katana_path_file!.amx created in the folder.
+    echo Compilation done: 	!katana_path_file!.amx created in the folder.
     echo.
 for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
-        echo [Result]/Result-of !katana_path_file!.amx: %%~zA bytes
+        echo Total Size: 		!katana_path_file!.amx / %%~zA bytes
     )
 ) else (
     echo [Fail]/Compilation failed for !katana_path_file!!file_extension!..
