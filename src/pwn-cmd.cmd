@@ -430,6 +430,7 @@ goto clears
     dir /s
 
 ) else if "%command%"=="mkdir" (
+
 :dirc
     set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: > "
 
