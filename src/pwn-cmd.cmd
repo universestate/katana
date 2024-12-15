@@ -19,18 +19,16 @@ set /p command="[%mytime%][%username%@%computername%]/Enter Command:~$ "
 
 if "%command%"=="0" (
 
-:katanas
-echo msgbox "Katana is a compilation tool with multiple functions for the Pawn Compiler in SA-MP." > "%tmp%\tmp.vbs"
-    cscript /nologo "%tmp%\tmp.vbs"
-        del "%tmp%\tmp.vbs"
-
-echo msgbox "-[WARNING]-: If you use the code structure from Katana, you are expected to compile it using the software provided by katana. Using the default Pawn Editor software will cause errors." > "%tmp%\tmp.vbs"
-    cscript /nologo "%tmp%\tmp.vbs"
-        del "%tmp%\tmp.vbs"
-
-echo msgbox "Thank you for using this software :)" > "%tmp%\tmp.vbs"
-    cscript /nologo "%tmp%\tmp.vbs"
-        del "%tmp%\tmp.vbs"
+:_katanas
+    echo.
+    echo        oooo    oooo             
+    echo        `888   .8P'       Version: %version%
+    echo         888  d8'         Release: [2024/December]
+    echo         88888[           Desktop: %username%@%computername%
+    echo         888`88b.         Uptime: %myTime%
+    echo        +888   .8b.       DD/MM/YYYY HH:MM:SS.ms: %date% - %time%
+    echo        o888o    o888,          
+    echo.
 goto end
 
 ) else if "%command%"=="1" (
@@ -282,7 +280,7 @@ goto end
 
 ) else if "%command%"=="-katana" (
 
-goto katanas
+goto _katanas
 
 ) else if "%command%"=="-build" (
 
@@ -327,10 +325,12 @@ goto clears
 ) else if "%command%"=="help" (
 
     echo.
-    echo %username%@%computername%
+setlocal DisableDelayedExpansion
+	echo Hello, %username%@%computername%!
+endlocal
     echo.
     echo *** G E N E R A L ***
-    echo [0] -katana    : What's Katana?
+    echo [0] -katana    : Katana Stats.
     echo [1] -build     : Build Katana compiler.
     echo [2] -start     : Start Katana compiler.
     echo [3] -bstart    : Build and compile.
@@ -402,15 +402,7 @@ goto clears
 
 ) else if "%command%"=="katana" (
 
-    echo.
-    echo        oooo    oooo             
-    echo        `888   .8P'       Version: %version%
-    echo         888  d8'         Release: [2024/December]
-    echo         88888[           Desktop: %username%@%computername%
-    echo         888`88b.         Uptime: %myTime%
-    echo        +888   .8b.       DD/MM/YYYY HH:MM:SS.ms: %date% - %time%
-    echo        o888o    o888,          
-    echo.
+    goto _katanas
 
 ) else if "%command%"=="" (
 
