@@ -4,7 +4,7 @@ main(){}
 
 public OnPlayerText(playerid, text[])
 {
-  if (strlen(text)<0) return 0;
+  if (strlen(text) < 0) return 0;
 
   new name[MAX_PLAYER_NAME+1];
   GetPlayerName(playerid, name, sizeof(name));
