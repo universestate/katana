@@ -46,7 +46,6 @@ goto end
 
     :next
     echo.
-    echo [System]/Input "end" for back to main menu . .
     set /p input="[%mytime%][System]/Enter drive: > "
 
     if "%input%"=="" (
@@ -54,8 +53,6 @@ goto end
                 cscript /nologo "%tmp%\tmp.vbs"
                     del "%tmp%\tmp.vbs"
         goto next
-    ) else if "%inputs%"=="end" (
-        goto clears
     )
 
     if not "!input:~-1!"=="\" set "input=!input!\"
@@ -131,7 +128,7 @@ goto end
     pause >nul
 
     goto text
-    goto next
+    goto cmd
     goto :eof
 
 ) else if "%command%"=="2" (
