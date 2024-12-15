@@ -394,11 +394,10 @@ endlocal
         echo [System]/Dir "!dirs!" Allready!
         goto dirc
     ) else (
-
-    mkdir !dirs!
-    echo [System]/Dir !dirs! Created..
-    goto end
-)
+        mkdir !dirs!
+        echo [System]/Dir !dirs! Created..
+        goto end
+    )
 
 ) else if "%command%"=="katana" (
 
