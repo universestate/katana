@@ -46,14 +46,8 @@ goto end
 
     :next
     echo.
-    set /p input="[%mytime%][System]/Enter drive: > "
-
-    if "%input%"=="" (
-            echo msgbox "[ERROR]/Directory path cannot be empty." > "%tmp%\tmp.vbs"
-                cscript /nologo "%tmp%\tmp.vbs"
-                    del "%tmp%\tmp.vbs"
-        goto next
-    )
+    
+    set /p input="[%mytime%][System]/Enter drive: >"
 
     if not "!input:~-1!"=="\" set "input=!input!\"
 
@@ -71,11 +65,11 @@ goto end
     echo.
     dir /b "!input!"
 
-    :back
+:back
     echo.
     echo [System]/Input "back" for back to main build . .
     echo [System]/Input "end" for back to main menu . .
-    set /p inputs="[%mytime%][System]/Enter target: > "
+    set /p inputs="[%mytime%][System]/Enter target: >"
 
     if "%inputs%"=="" (
         echo msgbox "[ERROR]/File name cannot be empty." > "%tmp%\tmp.vbs"
@@ -89,7 +83,6 @@ goto end
     ) else if "%inputs%"=="end" (
         goto clears
     )
-
     echo "!inputs!" | findstr /r "\." >nul
     if not errorlevel 1 (
         echo msgbox "[ERROR]/The file name should not contain a period (.)" > "%tmp%\tmp.vbs"
@@ -126,11 +119,7 @@ goto end
 
     echo [System]/Press any key to return . . .
     pause >nul
-
-    goto text
-    goto cmd
-    goto :eof
-
+	goto clears
 ) else if "%command%"=="2" (
 
 :starts
@@ -432,7 +421,7 @@ goto clears
 ) else if "%command%"=="mkdir" (
 
 :dirc
-    set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: > "
+    set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: >"
 
     if exist "!dirs!" (
         echo [System]/Dir "!dirs!" Allready!

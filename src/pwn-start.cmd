@@ -62,13 +62,11 @@ if not exist "%SysSettings%" (
 
     :next
     echo.
-    set /p input="[%mytime%][System]/Enter drive: > "
+    echo [System]/Input "end" for back to main menu . .
+    set /p input="[%mytime%][System]/Enter drive: >"
 
-    if "%input%"=="" (
-            echo msgbox "[ERROR]/Directory path cannot be empty." > "%tmp%\tmp.vbs"
-                cscript /nologo "%tmp%\tmp.vbs"
-                    del "%tmp%\tmp.vbs"
-        goto next
+    if "%input%"=="end" (
+        cls
     )
 
     if not "!input:~-1!"=="\" set "input=!input!\"
@@ -92,7 +90,7 @@ if not exist "%SysSettings%" (
     echo [System]/Input "back" for back to main build . .
     echo [System]/Input "end" for back to main menu . .
 
-    set /p inputs="[%mytime%][System]/Enter target: > "
+    set /p inputs="[%mytime%][System]/Enter target: >"
 
     if "%inputs%"=="" (
         echo msgbox "[ERROR]/File name cannot be empty." > "%tmp%\tmp.vbs"
