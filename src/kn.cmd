@@ -81,7 +81,6 @@ goto end
         echo [System]/settings.ini is required to determine the gamemode..
         timeout /t 1 >nul
         
-    :builds
         :text
         echo.
         echo           *** S E T U P ***
@@ -271,7 +270,7 @@ goto end
 
 ) else if "%command%"=="1" (
 
-:builds
+:_builds_
     :text
     echo.
     echo           *** S E T U P ***
@@ -350,7 +349,7 @@ goto end
 
     echo [System]/Press any key to return . . .
     pause >nul
-	goto clears
+    goto clears
 ) else if "%command%"=="2" (
 
 :starts
@@ -578,12 +577,15 @@ echo [System]/Compiling..
 
     echo.
     
+taskkill /f /im samp-server.exe
+
     echo Press any key to Start Your Server's . . .
         pause >nul
 :_part
+timeout /t 1 /nobreak
     start "" "samp-server.exe"
 
-    timeout /t 1 >nul
+    timeout /t 2 >nul
 
     tasklist | find /i "samp-server.exe" >nul
 
