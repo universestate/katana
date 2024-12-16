@@ -4,6 +4,11 @@ main(){}
 
 new example[MAX_PLAYERS char];
 
+public OnPlayerSpawn(playerid) {
+	example[playerid] = 'B';
+	return 1;
+}
+
 public OnPlayerConnect(playerid)
 {
   if (example[playerid] == 'B') {
