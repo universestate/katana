@@ -208,7 +208,7 @@ goto end
     if not exist "!katana_path_gm!" (
         echo [System]/Gamemodes folder not found: !katana_path_gm!.
             timeout /t 1 >nul
-                start "" "https://www.sa-mp.mp/downloads/"
+                start "" "https://sa-mp.app/"
             echo [Out]/Exiting . .
         timeout /t 5
         exit
@@ -519,7 +519,7 @@ echo [System]/Compiling..
     if not exist "!katana_path_gm!" (
         echo [System]/Gamemodes folder not found: !katana_path_gm!.
             timeout /t 1 >nul
-                start "" "https://www.sa-mp.mp/downloads/"
+                start "" "https://sa-mp.app/"
             echo [Out]/Exiting . .
         timeout /t 5
         exit
