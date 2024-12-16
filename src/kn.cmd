@@ -39,7 +39,7 @@ color c
 title %date%
 setlocal enabledelayedexpansion
 
-set "version=2024.latest ^(12^)"
+set "version=2024.Dec.17 ^(12^)"
 set "SysSearchDir=%~dp0"
 set "SysSettings=%SysSearchDir%settings.ini"
 
@@ -50,26 +50,32 @@ echo.
 echo [System]/Input "help" . . 
 
 :cmd
+for /f "tokens=2 delims=:" %%a in ('systeminfo ^| find "System Boot Time"') do set boot_time=%%a
+
+set time=%time%
+set time=%time: =0%
+
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
+
 set /p command="[%mytime%][%username%@%computername%]/Enter Command:~$ "
 
 if "%command%"=="0" (
 
     :_katanas
         echo.
-        echo        oooo    oooo             
-        echo        `888   .8P'       Version: %version%
-        echo         888  d8'         Release: [2024/December]
-        echo         88888[           Desktop: %username%@%computername%
-        echo         888`88b.         Uptime: %myTime%
-        echo        +888   .8b.       DD/MM/YYYY HH:MM:SS.ms: %date% - %time%
-        echo        o888o    o888,          
+        echo        oooo    oooo 
+        echo        `888   .8P'
+        echo         888  d8'
+        echo         88888[     %version%
+        echo         888`88b.
+        echo        +888   .8b.
+        echo        o888o    o888,
         echo.
     goto end
 
 ) else if "%command%"=="null" (
 
-call :_compilers__
+call :ssssssss
 
 ) else if "%command%"=="1" (
 
@@ -83,7 +89,7 @@ goto clears
 
 :starts
 echo [System]/Compiling...
-    call :_compilers__
+    call :ssssssss
     goto cmd
     goto end
 
@@ -94,7 +100,7 @@ echo [System]/Compiling...
 
     echo Press any key to open Compiler . . .
         pause >nul
-            call :_compilers__
+            call :ssssssss
 
 ) else if "%command%"=="4" (
 
@@ -104,7 +110,7 @@ echo [System]/Compiling...
 
 ) else if "%command%"=="5" (
 
-call :_compilers__
+call :ssssssss
 taskkill /f /im samp-server.exe
 
     echo Press any key to Start Your Server's . . .
@@ -349,6 +355,10 @@ endlocal
 
     goto _katanas
 
+) else if "%command%"=="version" (
+
+    goto versions
+
 ) else if "%command%"=="" (
 
     goto cmd
@@ -368,9 +378,22 @@ pause >nul
 goto cmd
 goto :eof
 
-:_compilers__
+:ssssssss
     echo [System]/settings.ini found..
     echo.
+
+    set "katana_path_gm="
+    for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SysSettings%"') do (
+        if not "%%b"=="" (
+            set "katana_path_gm=%%b"
+        )
+    )
+    
+    if not defined katana_path_gm (
+        echo [System]/drive not found in settings.ini.
+        timeout /t 1 >nul
+        goto _builds_
+    )
 
     set "katana_path_file="
     for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%SysSettings%"') do (
@@ -384,24 +407,6 @@ goto :eof
         timeout /t 1 >nul
         
     )
-
-    echo           *** T A R G E T *** -^> !katana_path_file!
-
-    set "katana_path_gm="
-    for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SysSettings%"') do (
-        if not "%%b"=="" (
-            set "katana_path_gm=%%b"
-        )
-    )
-
-    if not defined katana_path_gm (
-        echo [System]/drive not found in settings.ini.
-        timeout /t 1 >nul
-        goto _builds_
-    )
-
-    echo           *** D R I V E *** -^> !katana_path_gm!
-    echo.
 
     set "katana_path_gm=%SysSearchDir%!katana_path_gm!"
 
@@ -434,7 +439,7 @@ goto :eof
             timeout /t 5
         exit
     )
-
+    
     if exist "!katana_path_gm!\!katana_path_file!.pwn" (
         set "file_extension=.pwn"
     ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
@@ -446,6 +451,9 @@ goto :eof
         timeout /t 1 >nul
         goto _builds_
     )
+
+    echo    [ !katana_path_file!!file_extension! ] [ !katana_pawncc_path! ] [ !katana_path_gm! ]
+    echo.
 
     echo Found file: !katana_path_file!!!
     echo Starting compilation..
