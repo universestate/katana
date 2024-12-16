@@ -1,1 +1,1 @@
-- Setup.exe for easy setup.
+- Setup.exe for easy install.
