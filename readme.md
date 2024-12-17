@@ -2,7 +2,7 @@
 $ git clone https://github.com/universestate/katana.git
 ```
 ```c++
-// You can use this struct if you use katana.
+// You can use this struct if your use katana.
 
 main() {
   printf "Hello, World";
