@@ -172,13 +172,14 @@ echo.
 
     if "%dirs%"=="end" (
         call :clears
-    )
-    if exist "!dirs!" (
-        echo    Creating '!dirs!' ... No
-        echo        folder allready!
     ) else (
-        mkdir !dirs!
-        echo    Creating '!dirs!' ... Yes
+        if exist "!dirs!" (
+            echo    Creating '!dirs!' ... No
+            echo        folder allready!
+        ) else (
+            mkdir !dirs!
+            echo    Creating '!dirs!' ... Yes
+        )
     )
 goto ___backs
 
