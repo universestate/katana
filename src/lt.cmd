@@ -64,14 +64,14 @@ echo [System]*Compiling...
 
 ) else if "%command%"=="lt -sr" (
 
-    call :_compiler_
+    call :_compiler_ > rus.txt
     
-    for /f "delims=" %%a in ('error') do set output=%%a
-    if "%output%"=="error" (
-    setlocal disabledelayedexpansion
-        echo Error Detected!!
-        goto end
-    endlocal
+    findstr /i "Error" rus.txt > nul
+    if %errorlevel% equ 0 (
+        setlocal disabledelayedexpansion
+            echo     Error Detected!
+        endlocal
+	    goto end
     ) else (
             taskkill /f /im samp-server.exe
     
