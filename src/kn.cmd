@@ -49,7 +49,6 @@ echo           *** W E L C O M E ***
 echo.
 echo [System]/Input "help" . . 
 
-:cmd
 for /f "tokens=2 delims=:" %%a in ('systeminfo ^| find "System Boot Time"') do set boot_time=%%a
 
 set time=%time%
@@ -57,6 +56,7 @@ set time=%time: =0%
 
 for /f "tokens=1-3 delims=:" %%a in ("%time%") do set mytime=%%a%%b%%c
 
+:cmd
 set /p command="[%mytime%][%username%@%computername%]/Enter Command:~$ "
 
 if "%command%"=="0" (
@@ -201,93 +201,54 @@ goto end
 
 ) else if "%command%"=="9" (
 
-:guides
-    if not exist "examples" (
-        mkdir "examples"
-    ) else (
-        echo.
-        echo [System]/the example already exists!
-        echo.
-        goto end
-    )
-
-    echo.
-    echo [System]/Creating examples\helloworld.pwn...
-
-    timeout /t 1
-    
-    echo /* example */>> "examples\helloworld.pwn"
-    echo #include "a_samp">> "examples\helloworld.pwn"
-    echo.>> "examples\helloworld.pwn"
-    echo ^main(^) {>> "examples\helloworld.pwn"
-    echo tests:>> "examples\helloworld.pwn"
-    echo    print "Hello, World!">> "examples\helloworld.pwn"
-    echo        goto tests;>> "examples\helloworld.pwn"
-    echo }>> "examples\helloworld.pwn"
-    echo.>> "examples\helloworld.pwn"
-    echo ^public OnPlayerConnect(playerid^) {>> "examples\helloworld.pwn"
-    echo    SendClientMessage playerid, -1, "Hello">> "examples\helloworld.pwn"
-    echo    return 1;>> "examples\helloworld.pwn"
-    echo }>> "examples\helloworld.pwn"
-
-    echo.
-    echo [System]/Example tool created in examples\helloworld.pwn.
-    echo.
-
-    start explorer "examples\"
-
-    goto end
-
-) else if "%command%"=="10" (
-
-:clears
+:cleaars
     cls
     goto right
     goto cmd
 
+) else if "%command%"=="N" (
+
+    goto dirc
+
 ) else if "%command%"=="-katana" (
 
-goto _katanas
+    goto _katanas
 
 ) else if "%command%"=="-build" (
 
-goto builds
+    goto builds
 
 ) else if "%command%"=="-start" (
 
-goto starts
+    goto starts
 
 ) else if "%command%"=="-bstart" (
 
-goto bstarts
+    goto bstarts
 
 ) else if "%command%"=="-runn" (
 
-goto _runns
+    goto _runns
 
 ) else if "%command%"=="-srunn" (
 
-goto _srunns
+    goto _srunns
 
 ) else if "%command%"=="-version" (
 
-goto versions
+    goto versions
 
 ) else if "%command%"=="-username" (
 
-goto usernames
+    goto usernames
 
 ) else if "%command%"=="-tasks" (
 
-goto taskss
-
-) else if "%command%"=="-example" (
-
-goto guides
+    goto taskss
 
 ) else if "%command%"=="-clear" (
 
-goto clears
+    goto clears
 
 ) else if "%command%"=="help" (
 
@@ -310,8 +271,8 @@ endlocal
     echo.
     echo *** S Y S T E M ***
     echo [8] -tasks     : Create VSCode Task.
-    echo [9] -example   : Create Katana SA-MP example.
-    echo [10] -clear    : Clear terminal screen.
+    echo [9] -clear     : Cleat terminal screen.
+    echo [N] -mkdir     : makedir.
     echo.
     goto cmd
 
@@ -337,7 +298,7 @@ endlocal
 
     dir /s
 
-) else if "%command%"=="mkdir" (
+) else if "%command%"=="-mkdir" (
 
 :dirc
     set /p dirs="[%mytime%][%username%@%computername%]/Enter Dir Name: >"
