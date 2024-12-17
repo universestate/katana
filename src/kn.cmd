@@ -216,7 +216,7 @@ goto end
 
 ) else if "%command%"=="-build" (
 
-    goto builds
+    call :_builds_
 
 ) else if "%command%"=="-start" (
 
