@@ -413,7 +413,7 @@ goto :eof
         goto _builds_
     )
 
-    echo    [ !katana_path_file!!file_extension! ] [ !katana_pawncc_path! ] [ !katana_path_gm! ]
+    echo    [ !katana_path_file!!file_extension! ] [ !katana_path_gm! ] [ !katana_pawncc_path! ]
     echo.
 
     echo Found file: !katana_path_file!!!
