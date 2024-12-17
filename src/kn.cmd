@@ -201,7 +201,7 @@ goto end
 
 ) else if "%command%"=="9" (
 
-:cleaars
+:clears
     cls
     goto right
     goto cmd
