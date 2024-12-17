@@ -8,7 +8,6 @@
 ```
 $ git clone https://github.com/universestate/laterium.git
 ```
-## Structure Laterium.
 ```pwn
 // Simplified laterium-Style Code Example
 
