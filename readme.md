@@ -1,9 +1,9 @@
-```
+### `[*] #here\lt.cmd - compilers package.`
+### `[*] #here\lt.exe - for easy installation (optional).`
+### `[*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.`
+ ```
 $ git clone https://github.com/universestate/laterium.git
 ```
-- `[*] #here\lt.cmd - compilers package.`
-- `[*] #here\lt.exe - for easy installation (optional).`
-- `[*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.`
 ```pwn
 // Simplified laterium-Style Code Example
 
@@ -54,7 +54,7 @@ main() {
     */
 }
 ```
-Code struct
+## Code struct
 ```c
 -A<num> alignment in bytes of the data segment and the stack
 -a output assembler code
