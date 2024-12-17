@@ -21,7 +21,8 @@ public OnGameModeInit() {
 
 // Now, ';' is an optional symbol for end.
 main() {
-    new a, b, c, d; // Variables declaration
+    new a, b,
+            c, d // Variables declaration
 
     if (a == b || c == d || c == a) {
         // Logic here..
