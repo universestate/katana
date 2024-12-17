@@ -20,5 +20,5 @@ public OnPlayerCommandText(playerid, cmdtext[])
     {
         SetPlayerSpecialAction(playerid, SPECIAL_ACTION_CARRY);
     }
-	return 0;
+    return 0;
 }
