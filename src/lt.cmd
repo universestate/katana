@@ -65,38 +65,47 @@ echo [System]*Compiling...
 ) else if "%command%"=="lt -sr" (
 
     call :_compiler_
-        taskkill /f /im samp-server.exe
-
-        echo Press any key to Start Your Server's . . .
-            pause >nul
-    :_part
-    timeout /t 1 /nobreak
-        start "" "samp-server.exe"
-
-        timeout /t 2 >nul
-
-        tasklist | find /i "samp-server.exe" >nul
-
-        if not exist samp-server.exe (
-            echo [Error]*samp-server.exe not found..
-            timeout /t 1 >nul
-                    start "" "https://sa-mp.app/"
-                    echo [Out]*Exiting . .
-            timeout /t 5
-            exit
-        )
-        if errorlevel 1 (
-            echo [System]*The program failed to run. Checking logs...Program failed to run. Checking logs...
-            
-            if exist "server_log.txt" (
-                echo [System]*Opening server_log.txt...
-                start "" "notepad" "server_log.txt"
-            ) else (
-                echo [System]*server_log.txt not found.
+    
+    for /f "delims=" %%a in ('error') do set output=%%a
+    if "%output%"=="error" (
+    setlocal disabledelayedexpansion
+        echo Error Detected!!
+        goto end
+    endlocal
+    ) else (
+            taskkill /f /im samp-server.exe
+    
+            echo Press any key to Start Your Server's . . .
+                pause >nul
+        :_part
+        timeout /t 1 /nobreak
+            start "" "samp-server.exe"
+    
+            timeout /t 2 >nul
+    
+            tasklist | find /i "samp-server.exe" >nul
+    
+            if not exist samp-server.exe (
+                echo [Error]*samp-server.exe not found..
+                timeout /t 1 >nul
+                        start "" "https://sa-mp.app/"
+                        echo [Out]*Exiting . .
+                timeout /t 5
+                exit
             )
-        ) else (
-            echo [System]*The program was executed successfully.
-        )
+            if errorlevel 1 (
+                echo [System]*The program failed to run. Checking logs...Program failed to run. Checking logs...
+                
+                if exist "server_log.txt" (
+                    echo [System]*Opening server_log.txt...
+                    start "" "notepad" "server_log.txt"
+                ) else (
+                    echo [System]*server_log.txt not found.
+                )
+            ) else (
+                echo [System]*The program was executed successfully.
+            )
+    )
     goto end
 
 ) else if "%command%"=="lt -cc" (
