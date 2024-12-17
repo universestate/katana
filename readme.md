@@ -7,7 +7,7 @@ $ git clone https://github.com/universestate/katana.git
 
 main() {
   printf "Hello, World";
-// please don't use 'return 0' in here.
+// Please don't use 'return 0' in here.
 }
 
 public OnGameModeInit() {
@@ -20,6 +20,19 @@ inhere:
   return 1;
 }
 
-// you can not using ';' for end.. so,example:
+// now, ';' is an optional symbol for end.
 new a, b, c, d /* for variables */
+
+// and now '(' ')' is an optional symbol for end.
+main() {
+  new string[200]
+
+  format string, sizeof(string), "your message..";
+
+  // Please don't use it in a way that relies heavily on the symbol ()
+  /*
+    new a, b
+    if a == b () // example
+  */
+}
 ```
