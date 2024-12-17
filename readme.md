@@ -7,7 +7,7 @@ $ git clone https://github.com/universestate/katana.git
 
 // You can use this struct if your use katana.
 main() {
-    printf "Hello, World";
+    print "Hello, World";
     // Please don't use 'return 0' in here.
 }
 
