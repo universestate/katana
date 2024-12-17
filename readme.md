@@ -1,11 +1,11 @@
 ```
-$ git clone https://github.com/universestate/katana.git
+$ git clone https://github.com/universestate/laterium.git
 ```
 `[*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.`
 ```pwn
-// Simplified Katana-Style Code Example
+// Simplified laterium-Style Code Example
 
-// You can use this struct if your use katana.
+// You can use this struct if your use laterium.
 main() {
     print "Hello, World";
     // Please don't use 'return 0' in here.
