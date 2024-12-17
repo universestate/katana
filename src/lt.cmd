@@ -61,7 +61,7 @@ set /p command="[%mytime%][%username%@%computername%]/Enter Command:~$ "
 
 if "%command%"=="0" (
 
-    :_katanas
+    :_lateriums
         echo.
         echo        oooo    oooo 
         echo        `888   .8P'
@@ -141,10 +141,10 @@ goto end
 
 :versions
     echo.
-        echo Current Katana Version =^> %version%
+        echo Current laterium Version =^> %version%
     echo.
 
-    echo msgbox "Your Katana Version: 2024.latest.Now - build (12)" > "%tmp%\tmp.vbs"
+    echo msgbox "Your laterium Version: 2024.latest.Now - build (12)" > "%tmp%\tmp.vbs"
         cscript /nologo "%tmp%\tmp.vbs"
             del "%tmp%\tmp.vbs"
 goto end
@@ -210,9 +210,9 @@ goto end
 
     goto dirc
 
-) else if "%command%"=="-katana" (
+) else if "%command%"=="-laterium" (
 
-    goto _katanas
+    goto _lateriums
 
 ) else if "%command%"=="-build" (
 
@@ -258,15 +258,15 @@ setlocal DisableDelayedExpansion
 endlocal
     echo.
     echo *** G E N E R A L ***
-    echo [0] -katana    : Katana Stats.
-    echo [1] -build     : Build Katana compiler.
-    echo [2] -start     : Start Katana compiler.
+    echo [0] -laterium    : laterium Stats.
+    echo [1] -build     : Build laterium compiler.
+    echo [2] -start     : Start laterium compiler.
     echo [3] -bstart    : Build and compile.
     echo [4] -runn      : Run server.
     echo [5] -srunn     : Compile and run server.
     echo.
     echo *** R A N D O M ***
-    echo [6] -version   : Katana version.
+    echo [6] -version   : laterium version.
     echo [7] -username  : Your Windows username.
     echo.
     echo *** S Y S T E M ***
@@ -312,9 +312,9 @@ endlocal
         goto end
     )
 
-) else if "%command%"=="katana" (
+) else if "%command%"=="laterium" (
 
-    goto _katanas
+    goto _lateriums
 
 ) else if "%command%"=="version" (
 
@@ -343,36 +343,36 @@ goto :eof
     echo [System]/settings.ini found..
     echo.
 
-    set "katana_path_gm="
+    set "laterium_path_gm="
     for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SysSettings%"') do (
         if not "%%b"=="" (
-            set "katana_path_gm=%%b"
+            set "laterium_path_gm=%%b"
         )
     )
     
-    if not defined katana_path_gm (
+    if not defined laterium_path_gm (
         echo [System]/drive not found in settings.ini.
         timeout /t 1 >nul
         goto _builds_
     )
 
-    set "katana_path_file="
+    set "laterium_path_file="
     for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%SysSettings%"') do (
         if not "%%b"=="" (
-            set "katana_path_file=%%b"
+            set "laterium_path_file=%%b"
         )
     )
 
-    if not defined katana_path_file (
+    if not defined laterium_path_file (
         echo [System]/settings.ini is missing gamemode information.
         timeout /t 1 >nul
         
     )
 
-    set "katana_path_gm=%SysSearchDir%!katana_path_gm!"
+    set "laterium_path_gm=%SysSearchDir%!laterium_path_gm!"
 
-    if not exist "!katana_path_gm!" (
-        echo [System]/Gamemodes folder not found: !katana_path_gm!.
+    if not exist "!laterium_path_gm!" (
+        echo [System]/Gamemodes folder not found: !laterium_path_gm!.
             timeout /t 1 >nul
                 start "" "https://sa-mp.app/"
             echo [Out]/Exiting . .
@@ -380,16 +380,16 @@ goto :eof
         exit
     )
 
-    set "katana_pawncc_path="
+    set "laterium_pawncc_path="
     for /r "%SysSearchDir%" %%p in (pawncc.exe) do (
         if exist "%%p" (
-            set "katana_pawncc_path=%%p"
+            set "laterium_pawncc_path=%%p"
             goto f_pawncc
         )
     )
 
     :f_pawncc
-    if not defined katana_pawncc_path (
+    if not defined laterium_pawncc_path (
         echo.
             echo [System]/pawncc.exe not found in any subdirectories.
         echo.
@@ -401,36 +401,36 @@ goto :eof
         exit
     )
     
-    if exist "!katana_path_gm!\!katana_path_file!.pwn" (
+    if exist "!laterium_path_gm!\!laterium_path_file!.pwn" (
         set "file_extension=.pwn"
-    ) else if exist "!katana_path_gm!\!katana_path_file!.p" (
+    ) else if exist "!laterium_path_gm!\!laterium_path_file!.p" (
         set "file_extension=.p"
-    ) else if exist "!katana_path_gm!\!katana_path_file!.kn" (
+    ) else if exist "!laterium_path_gm!\!laterium_path_file!.kn" (
         set "file_extension=.kn"
     ) else (
-        echo [ERROR] The file "!katana_path_file!" with extensions .pwn, .p, or .kn not found in: "!katana_path_gm!"
+        echo [ERROR] The file "!laterium_path_file!" with extensions .pwn, .p, or .kn not found in: "!laterium_path_gm!"
         timeout /t 1 >nul
         goto _builds_
     )
 
-    echo    [ !katana_path_file!!file_extension! ] [ !katana_path_gm! ] [ !katana_pawncc_path! ]
+    echo    [ !laterium_path_file!!file_extension! ] [ !laterium_path_gm! ] [ !laterium_pawncc_path! ]
     echo.
 
-    echo Found file: !katana_path_file!!!
+    echo Found file: !laterium_path_file!!!
     echo Starting compilation..
     echo.
 
-    "!katana_pawncc_path!" "!katana_path_gm!\!katana_path_file!!file_extension!" -o"!katana_path_gm!\!katana_path_file!.amx"
+    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx"
 
-    if exist "!katana_path_gm!\!katana_path_file!.amx" (
-        echo Compilation done: !katana_path_file!.amx created in the folder.
+    if exist "!laterium_path_gm!\!laterium_path_file!.amx" (
+        echo Compilation done: !laterium_path_file!.amx created in the folder.
         echo.
 
-        for %%A in ("!katana_path_gm!\!katana_path_file!.amx") do (
-            echo Total Size: !katana_path_file!.amx / %%~zA bytes
+        for %%A in ("!laterium_path_gm!\!laterium_path_file!.amx") do (
+            echo Total Size: !laterium_path_file!.amx / %%~zA bytes
         )
     ) else (
-        echo Compilation failed for !katana_path_file!!file_extension!..
+        echo Compilation failed for !laterium_path_file!!file_extension!..
     )
 
     echo.
