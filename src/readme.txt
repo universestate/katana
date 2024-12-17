@@ -1,1 +1,0 @@
-- kn.exe for easy install.
