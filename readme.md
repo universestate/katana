@@ -2,9 +2,9 @@
 ```
 [*] #here\lt.cmd - compilers package.
 [*] #here\lt.exe - for easy installation (optional).
-[*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.
+[*] Paste kn.cmd to path\your\gamemodes. or use kn.exe for easy installation.
 ```
-## Code of pawncc struct.
+## 🚸 Code of pawncc struct 🚸
 ```c
 -A<num> alignment in bytes of the data segment and the stack
 -a output assembler code
