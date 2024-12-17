@@ -1,9 +1,9 @@
 ```
 $ git clone https://github.com/universestate/laterium.git
 ```
-`[*] #here\lt.cmd - compilers package.`
-`[*] #here\lt.exe - for easy installation (optional).`
-`[*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.`
+- `[*] #here\lt.cmd - compilers package.`
+- `[*] #here\lt.exe - for easy installation (optional).`
+- `[*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.`
 ```pwn
 // Simplified laterium-Style Code Example
 
