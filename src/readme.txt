@@ -1,1 +1,1 @@
-- Setup.exe for easy install.
+- kn.exe for easy install.
