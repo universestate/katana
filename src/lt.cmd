@@ -70,6 +70,7 @@ echo [System]*Compiling...
     if %errorlevel% equ 0 (
         setlocal disabledelayedexpansion
             echo     Error Detected!
+		echo.
         endlocal
 	    goto end
     ) else (
