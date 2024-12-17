@@ -21,9 +21,15 @@ inhere:
 }
 
 // now, ';' is an optional symbol for end.
-new a, b, c, d /* for variables */
+main() {
+  new a, b, c, d /* for variables */
 
-// and now '(' ')' is an optional symbol for end.
+  if (a == b || c == d || c == a) {
+    // there..
+  }
+}
+
+// and now '(' ')' is an optional symbol.
 main() {
   new string[200]
 
