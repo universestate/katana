@@ -66,14 +66,6 @@ echo [System]*Compiling...
 
     call :_compiler_ > rus.txt
     
-    findstr /i "Error" rus.txt > nul
-    if %errorlevel% equ 0 (
-        setlocal disabledelayedexpansion
-            echo     Error Detected!
-		echo.
-        endlocal
-	    goto end
-    ) else (
             taskkill /f /im samp-server.exe
     
             echo Press any key to Start Your Server's . . .
@@ -106,7 +98,7 @@ echo [System]*Compiling...
             ) else (
                 echo [System]*The program was executed successfully.
             )
-    )
+    
     goto end
 
 ) else if "%command%"=="lt -cc" (
