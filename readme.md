@@ -1,10 +1,12 @@
-## Read this:
+## Read-This:
 ```
 [*] #here\lt.cmd - compilers package.
 [*] #here\lt.exe - for easy installation (optional).
 [*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.
 ```
-## Cloning.
+```
+Clone:
+```
 ```
 $ git clone https://github.com/universestate/laterium.git
 ```
