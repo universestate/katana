@@ -38,7 +38,7 @@ main() {
   // Please don't use it in a way that relies heavily on the symbol ()
   /*
     new a, b
-    if a == b () // example
+    if a == b {} // example
   */
 }
 ```
