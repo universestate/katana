@@ -40,5 +40,12 @@ main() {
     new a, b
     if a == b {} // example
   */
+  // and you can use:
+  /*
+    new a, b
+    if (a == b) {
+      // there..
+    }
+  */
 }
 ```
