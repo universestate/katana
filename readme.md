@@ -2,7 +2,7 @@
 $ git clone https://github.com/universestate/katana.git
 ```
 `[*] Paste kn.cmd to\path\your\gamemode. or use kn.exe for easy installation.`
-```c++
+```pwn
 // You can use this struct if your use katana.
 
 main() {
