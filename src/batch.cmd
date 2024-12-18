@@ -1,14 +1,14 @@
-rem How to Install?
-rem Paste "batch.cmd" to path\your\gamemode.
-rem Docs Command list : https://github.com/universestate/laterium/tree/main/doc
+:: How to Install?
+:: Paste "batch.cmd" to path\your\gamemode.
+:: Docs Command list : https://github.com/universestate/laterium/tree/main/doc
 
 @echo off
 
-setlocal enabledelayedexpansion rem for '!' support
+setlocal enabledelayedexpansion
 
-set "_version_=12/19/2024 ^(B-14^)" rem version
-set "_SearchDir_=%~dp0" rem dir
-set "_Settings_=%_SearchDir_%settings.ini" rem settings.ini
+set "_version_=12/19/2024 ^(B-14^)"
+set "_SearchDir_=%~dp0"
+set "_Settings_=%_SearchDir_%settings.ini
 
 :_laterium_
  echo.
@@ -314,7 +314,7 @@ goto :eof
     echo Starting compilation..
     echo.
 
-    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" > rus.txt rem please see: https://github.com/universestate/laterium#:~:text=%2DA%3Cnum%3E%20alignment,with%20value%200
+    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" > rus.txt :: please see: https://github.com/universestate/laterium#:~:text=%2DA%3Cnum%3E%20alignment,with%20value%200
 
     if exist "!laterium_path_gm!\!laterium_path_file!.amx" (
         echo    Compilation !laterium_path_file!.amx .. Yes
