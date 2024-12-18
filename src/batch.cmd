@@ -314,7 +314,7 @@ goto :eof
     echo Starting compilation..
     echo.
 
-    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" > rus.txt
+    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" > rus.txt :: https://github.com/universestate/laterium#:~:text=%2DA%3Cnum%3E%20alignment,with%20value%200
 
     if exist "!laterium_path_gm!\!laterium_path_file!.amx" (
         echo    Compilation !laterium_path_file!.amx .. Yes
