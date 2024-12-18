@@ -5,20 +5,9 @@
 @echo off
 
 setlocal enabledelayedexpansion
-
 color 9
-for /L %%i in (1,1,2) do (
-    set "bar="
-    set "bar=##"  :: Set bar to two # symbols
-
-    cls
-
-    title [!bar! %%i%%] ^| Loading 2x Uptime Boot
-
-    systeminfo | find "System Boot Time"
-
-    timeout /nobreak /t 1 >nul
-)
+title Loading.. ^| Uptime Boot.
+systeminfo | find "System Boot Time"
 cls
 
 set "_version_=12/19/2024 ^(B-14^)"
