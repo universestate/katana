@@ -235,7 +235,13 @@ goto cmd
 goto :eof
 
 :_compiler_
-    echo [System]*settings.ini found..
+    if not exist "%SysSettings%" (
+            echo [System]/settings.ini is required to determine the gamemode..
+            timeout /t 1 >nul
+            call _builds_
+    )
+
+    echo [System]/settings.ini found..
 
     set "laterium_path_gm="
     for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%SysSettings%"') do (
