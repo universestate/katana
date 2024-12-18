@@ -8,6 +8,7 @@ setlocal enabledelayedexpansion
 color 9
 title Loading.. ^| Uptime Boot.
 systeminfo | find "System Boot Time"
+timeout /t 1 >nul
 cls
 
 set "_version_=12/19/2024 ^(B-14^)"
