@@ -190,6 +190,9 @@ echo.
     
 goto ___backs
 
+) else if "%command%"=="git clone" (
+    git clone https://github.com/universestate/laterium.git
+    cd laterium
 ) else if "%command%"=="-dir" (
 
     dir
