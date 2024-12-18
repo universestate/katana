@@ -1,4 +1,4 @@
-```js
+```pwn
 -A<num> alignment in bytes of the data segment and the stack
 -a output assembler code
 -C[+/-] compact encoding for output file (default=+)
