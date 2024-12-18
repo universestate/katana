@@ -1,5 +1,6 @@
 :: How to Install?
 :: Paste "batch.cmd" to path\your\gamemode.
+:: Docs Command list : https://github.com/universestate/laterium/tree/main/doc
 
 @echo off
 
