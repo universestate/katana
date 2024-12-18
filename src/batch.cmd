@@ -37,9 +37,7 @@ for /f "tokens=1-3 delims=:." %%a in ("%time%") do set mytime=%%a%%b.%%c
 :cmd
 set /p command="[%mytime%][%username%@%computername%] ~$ "
 
-if "%command%"=="-u" (
-    start "" "https://github.com/universestate/laterium"
-) else if "%command%"=="-b" (
+if "%command%"=="-b" (
 
     call :_builds_
         echo [System]*Press any key to return . . .
@@ -200,7 +198,6 @@ goto ___backs
     :help
 title %date%
     echo.
-    echo [+] -u [update]
     echo [+] -b [build]
     echo [+] -c [compile]
     echo [+] -bc [build-compile]
