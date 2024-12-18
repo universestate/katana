@@ -123,7 +123,7 @@ echo [System]*Compiling...
     echo.
 goto end
 
-) else if "%command%"=="-vs" (
+) else if "%command%"=="-vsc" (
 
     mkdir .vscode
         
@@ -199,7 +199,7 @@ title %date%
     echo [+] -cr [compile-running]
     echo [+] -ct [clear terminal]
     echo [+] -v [laterium version]
-    echo [+] -vs [vscode tasks]
+    echo [+] -vsc [vscode tasks]
     echo [+] -st [sublime text tools build]
     echo [+] -dir [directory list]
     echo [+] -mk [makedir]
