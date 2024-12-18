@@ -1,20 +1,29 @@
-1. "-u" (update)
-  (*) this command is to get the latest updates from this GitHub reposit
-2. "-b" (build)
-  (*) this command is to create a settings file ('settings.ini') to be the information or identity that will be compiled..
-3. "-c" (compile)
-  (*) this command compiles based on the contents of the 'settings.ini' file from the previous command (build).
-4. "-bc" (build-compile)
-  (*) this command is to build settings.ini and compile it..
-5. "-r" (running)
-  (*) this command is to run server-samp. through the laterium.
-6. "-cr" (compile-running)
-  (*) this command is to run compile and run server-samp.
-7. "-ct" (clear-terminal)
-  (*) this command is to clean the entire batch terminal.
-8. "-v" (version)
-  (*) this command for check your laterium version.
-9. "-vsc" (Visual Studio Code)
-  (*) this command is to create VSCode Tasks.
-10. "-st" (Sublime Text)
-  (*) this command is to create Sublime Build.
+"-u" (update)
+(*) This command fetches the latest updates from the GitHub repository.
+
+"-b" (build)
+(*) This command creates a settings file ('settings.ini'), which contains the information or identity that will be compiled.
+
+"-c" (compile)
+(*) This command compiles the project based on the contents of the 'settings.ini' file created in the previous step (build).
+
+"-bc" (build-compile)
+(*) This command combines the build and compile processes, creating 'settings.ini' and compiling it.
+
+"-r" (run)
+(*) This command runs the SA-MP server through Laterium.
+
+"-cr" (compile-run)
+(*) This command compiles the project and runs the SA-MP server.
+
+"-ct" (clear-terminal)
+(*) This command clears the entire batch terminal screen.
+
+"-v" (version)
+(*) This command checks the current version of Laterium.
+
+"-vsc" (Visual Studio Code)
+(*) This command generates Visual Studio Code tasks for the project.
+
+"-st" (Sublime Text)
+(*) This command generates a Sublime Text build configuration.
