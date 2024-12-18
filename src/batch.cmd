@@ -2,13 +2,13 @@ rem How to Install?
 rem Paste "batch.cmd" to path\your\gamemode.
 rem Docs Command list : https://github.com/universestate/laterium/tree/main/doc
 
-@echo off :: disable the display of command lines
+@echo off
 
 setlocal enabledelayedexpansion rem for '!' support
 
-set "_version_=12/19/2024 ^(B-14^)"
-set "_SearchDir_=%~dp0"
-set "_Settings_=%_SearchDir_%settings.ini"
+set "_version_=12/19/2024 ^(B-14^)" rem version
+set "_SearchDir_=%~dp0" rem dir
+set "_Settings_=%_SearchDir_%settings.ini" rem settings.ini
 
 :_laterium_
  echo.
