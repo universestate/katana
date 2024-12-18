@@ -4,7 +4,7 @@ rem Docs Command list : https://github.com/universestate/laterium/tree/main/doc
 
 @echo off
 
-setlocal enabledelayedexpansion
+setlocal enabledelayedexpansion rem for '!' support
 
 set "_version_=12/19/2024 ^(B-14^)"
 set "_SearchDir_=%~dp0"
