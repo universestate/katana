@@ -1,6 +1,3 @@
-"-u" (update)
-(*) command fetches the latest updates from the GitHub repository.
-
 "-b" (build)
 (*) command creates a settings file ('settings.ini'), which contains the information or identity that will be compiled.
 
