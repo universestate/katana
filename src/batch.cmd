@@ -1,3 +1,6 @@
+:: How to Install?
+:: Paste "batch.cmd" to path\your\gamemode.
+
 @echo off
 
 setlocal enabledelayedexpansion
@@ -133,7 +136,7 @@ goto end
         echo     { > ".vscode\tasks.json"
         echo       "label": "Run Batch File", > ".vscode\tasks.json"
         echo       "type": "shell", > ".vscode\tasks.json"
-        echo       "command": "${workspaceFolder}/lt.cmd", > ".vscode\tasks.json"
+        echo       "command": "${workspaceFolder}/batch.cmd", > ".vscode\tasks.json"
         echo       "group": { > ".vscode\tasks.json"
         echo           "kind": "build", > ".vscode\tasks.json"
         echo           "isDefault": true > ".vscode\tasks.json"
@@ -157,7 +160,7 @@ goto end
     set /p path_st="[%mytime%][%username%@%computername%]*Enter Batch Path > "
 
     echo { > "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
-    echo    "cmd": ["lt.cmd", "-i includes", "$file", "-;+"], >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
+    echo    "cmd": ["batch.cmd", "-i includes", "$file", "-;+"], >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
     echo    "path": "!path_st!" >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
     echo } >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
 
