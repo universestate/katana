@@ -2,7 +2,7 @@ rem How to Install?
 rem Paste "batch.cmd" to path\your\gamemode.
 rem Docs Command list : https://github.com/universestate/laterium/tree/main/doc
 
-@echo off rem disable the display of command lines
+@echo off :: disable the display of command lines
 
 setlocal enabledelayedexpansion rem for '!' support
 
