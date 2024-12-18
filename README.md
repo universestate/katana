@@ -1,5 +1,6 @@
 ![Screenshot](https://github.com/universestate/laterium/blob/e9145c94f7660a06f13ba8c5767c2d5d0ceb5cbe/see.png)
 
+```
 -A<num> alignment in bytes of the data segment and the stack
 -a output assembler code
 -C[+/-] compact encoding for output file (default=+)
@@ -34,3 +35,4 @@
 -([+/-] require parentheses for function invocation (default=-)
 sym=val define constant "sym" with value "val"
 sym= define constant "sym" with value 0
+```
