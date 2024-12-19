@@ -23,10 +23,10 @@ set time=%time: =0%
 title Type "help"
 color 2
 
-for /f "tokens=1-3 delims=:." %%a in ("%time%") do set mytime=%%a%%b.%%c
+for /f "tokens=1-3 delims=:." %%a in ("%time%") do set newtime=%%a%%b.%%c
 
 :cmd
-set /p typeof="[%mytime%][%username%@%computername%] ~$ "
+set /p typeof="[%newtime%][%username%@%computername%] ~$ "
 
 if "%typeof%"=="-b" (
 
@@ -152,7 +152,7 @@ goto end
 
     echo.
     echo [Warning]*Please use a Symbol "/" you can't use "\"
-    set /p path_st="[%mytime%][%username%@%computername%]*Enter Batch Path > "
+    set /p path_st="[%newtime%][%username%@%computername%]*Enter Batch Path > "
 
     echo { > "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
     echo    "cmd": ["batch.cmd", "-i includes", "$file", "-;+"], >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
@@ -170,7 +170,7 @@ goto end
 echo.
 :___backs
     echo [System]*Input "end" for back to menu . .
-    set /p dirs="[%mytime%][%username%@%computername%]*Enter Dir Name > "
+    set /p dirs="[%newtime%][%username%@%computername%]*Enter Dir Name > "
 
 
     if "%dirs%"=="end" (
@@ -334,7 +334,7 @@ goto :eof
     echo           *** S E T U P ***
     
     :_menus_
-    set /p input="[%mytime%][System]*Enter drive > "
+    set /p input="[%newtime%][System]*Enter drive > "
 
 set input=%input%
 set input=%input: =0%
@@ -357,7 +357,7 @@ set input=%input: =0%
     echo.
     echo [System]*Input "back" back to build . .
     echo [System]*Input "end" back to menu . .
-    set /p inputs="[%mytime%][System]*Enter target > "
+    set /p inputs="[%newtime%][System]*Enter target > "
 
 set inputs=%inputs%
 set inputs=%inputs: =0%
