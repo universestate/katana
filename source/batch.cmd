@@ -190,10 +190,10 @@ goto ___backs
 
 call :_hash_
 
-usage: command [-b build] [-c compile] [-bc build-compile]
-       [-r running server] [-cr compile-running] [-cls clear screen]
-       [-v laterium version] [-vsc vscode tasks] [-st sublime text tools build]
-       [-dir directory list] [-mk makedir]
+echo usage: command [-b build] [-c compile] [-bc build-compile]
+echo       [-r running server] [-cr compile-running] [-cls clear screen]
+echo       [-v laterium version] [-vsc vscode tasks] [-st sublime text tools build]
+echo       [-dir directory list] [-mk makedir]
 goto cmd
 
 ) else if "%typeof%"=="" (
