@@ -149,6 +149,7 @@ goto end
 
     echo.
     echo Please use a Symbol "/" you can't use "\"
+	echo Example dir: C:/Users/pc/Downloads
     set /p path_st="[%newtime%][%username%@%computername%] Enter Path > "
 
     echo { > "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
