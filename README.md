@@ -10,6 +10,12 @@
 ```
 $ git clone https://github.com/universestate/laterium.git
 ```
+```bat
+$ batch.bat
+```
+```sh
+$ ./bash.sh
+```
 ```
 $ cat/help
 $ cat -c
