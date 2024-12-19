@@ -1,4 +1,5 @@
-## Clone repository ini:
+# Bahasa-Indonesia.
+### Clone repository ini:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
