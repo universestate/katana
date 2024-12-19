@@ -1,5 +1,3 @@
----
-
 ### Cloning the Repository
 Clone the Laterium repository using the following command:
 ```bash
