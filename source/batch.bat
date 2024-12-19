@@ -26,18 +26,18 @@ for /f "tokens=1-3 delims=:." %%a in ("%time%") do set newtime=%%a%%b.%%c
 :cmd
 set /p typeof="%username%@%computername%~$ "
 
-if "%typeof%"=="-c" (
+if "%typeof%"=="cat -c" (
 
 echo.
 echo Compiling...
     call :_compiler_
 
-) else if "%typeof%"=="-r" (
+) else if "%typeof%"=="cat -r" (
 
     call :_part
     goto end
 
-) else if "%typeof%"=="-ci" (
+) else if "%typeof%"=="cat -ci" (
  
     call :_compiler_
 
@@ -89,21 +89,21 @@ echo Compiling...
     )
     goto end
 
-) else if "%typeof%"=="-cls" (
+) else if "%typeof%"=="cat -cls" (
 
 :clears
     cls
     goto _laterium_
     goto cmd
 
-) else if "%typeof%"=="-v" (
+) else if "%typeof%"=="cat -v" (
 
     echo.
         echo    Laterium Version : %_version_%
     echo.
 goto end
 
-) else if "%typeof%"=="-vsc" (
+) else if "%typeof%"=="cat -vsc" (
 
     mkdir .vscode
         
@@ -134,7 +134,7 @@ goto end
 
 call :_hash_
 
-echo usage: command [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]
+echo usage: cat [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]
 echo       [-v laterium version] [-vsc vscode tasks]
 goto cmd
 
