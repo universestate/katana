@@ -4,7 +4,7 @@ $ git clone https://github.com/universestate/laterium.git
 ```
 
 ### Setelahnya:
-Copy `.bat` atau linuc/mac `.sh` ke bagian direktori gamemode utama.
+Copy `.bat` atau linux/mac `.sh` ke bagian direktori gamemode utama.
 ```
 path\your\gamemodes
 ```
