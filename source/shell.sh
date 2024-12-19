@@ -57,7 +57,7 @@ function cmd {
     {
       "label": "Run Batch File",
       "type": "shell",
-      "file": "${workspaceFolder}/bash.sh",
+      "file": "${workspaceFolder}/shell.sh",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -101,7 +101,7 @@ function clears {
 }
 
 function _compiler_ {
-    echo "Searching for .lt files..."
+    echo "Searching for .lat files..."
 
     laterium_pawncc_path=""
     for p in $(find "$_SearchDir_" -name "pawncc" -type f); do
@@ -121,7 +121,7 @@ function _compiler_ {
     fi
 
     found_file=""
-    for f in $(find "$_SearchDir_" -name "*.lt" -type f); do
+    for f in $(find "$_SearchDir_" -name "*.lat" -type f); do
         if [ -f "$f" ]; then
             found_file="$f"
             break
@@ -129,7 +129,7 @@ function _compiler_ {
     done
 
     if [ -z "$found_file" ]; then
-        echo "No .lt files found in: $_SearchDir_"
+        echo "No .lat files found in: $_SearchDir_"
         sleep 1
         cmd
     fi
