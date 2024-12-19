@@ -162,7 +162,7 @@ goto cmd
 goto :eof
 
 :_compiler_
-    echo Searching for .lt files...
+    echo Searching for .lat files...
 
     set "laterium_pawncc_path="
     for /r "%_SearchDir_%" %%p in (pawncc.exe) do (
@@ -184,7 +184,7 @@ goto :eof
     )
 
     set "found_file="
-    for /r "%_SearchDir_%" %%f in (*.lt) do (
+    for /r "%_SearchDir_%" %%f in (*.lat) do (
         if exist "%%f" (
             set "found_file=%%f"
             goto compile_file
@@ -192,7 +192,7 @@ goto :eof
     )
 
     if not defined found_file (
-        echo No .lt files found in: "%_SearchDir_%"
+        echo No .lat files found in: "%_SearchDir_%"
         timeout /t 1 >nul
         goto cmd
     )
