@@ -1,22 +1,22 @@
 ## Usage Instructions
 
 ### Cloning the Repository
-Clone the Laterium repository using the following command:
+`Clone the Laterium repository using the following command:`
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
 
 ### Preparing the Environment
-Copy `.bat` or `.sh` files into the appropriate directory:
+`Copy `.bat` or `.sh` files into the appropriate directory:`
 ```
 path\your\gamemodes
 ```
 
 ### Replacing Main Files
-Replace your existing gamemode main files (e.g., `.pwn`, `.p`, etc.) with `.lat` files to switch to the Laterium system.
+`Rename the file (for example: .pwn, .p, etc.) that serves as the main gamemode file to .lat, according to the Laterium system file format.`
 
 ### Running Programs
-Run the script appropriate for your operating system:
+`Run the script appropriate for your operating system:`
 
 - **Windows**  
   ```bat
@@ -33,7 +33,7 @@ Run the script appropriate for your operating system:
   ![linux](linux.png)
   
 ### Running Scripts
-Use these `cat` commands to access specific functions and information:  
+`Use these `cat` commands to access specific functions and information:  `
 ```bash
 $ cat/help      # Display help information.
 $ cat -c        # Compile with Laterium compilers.
