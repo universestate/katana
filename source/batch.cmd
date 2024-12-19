@@ -4,7 +4,6 @@ setlocal enabledelayedexpansion
 
 set "_version_=2024.x21 ^(B-14^)"
 set "_SearchDir_=%~dp0"
-set "_Settings_=%_SearchDir_%settings.ini
 
 :_laterium_
  echo.
@@ -20,32 +19,18 @@ set "_Settings_=%_SearchDir_%settings.ini
 set time=%time%
 set time=%time: =0%
 
-title type `help` to get started
+title type help to get started
 
 for /f "tokens=1-3 delims=:." %%a in ("%time%") do set newtime=%%a%%b.%%c
 
 :cmd
 set /p typeof="%username%@%computername%~$ "
 
-if "%typeof%"=="-b" (
-
-    call :_builds_
-        echo Press any key to return . . .
-        pause >nul
-    call :clears
-
-) else if "%typeof%"=="-c" (
+if "%typeof%"=="-c" (
 
 echo.
 echo Compiling...
     call :_compiler_
-
-) else if "%typeof%"=="-bc" (
-
-    call :_builds_
-    echo Press any key to open Compiler . . .
-        pause >nul
-            call :_compiler_
 
 ) else if "%typeof%"=="-r" (
 
@@ -53,55 +38,55 @@ echo Compiling...
     goto end
 
 ) else if "%typeof%"=="-ci" (
-
+ 
     call :_compiler_
 
-    findstr /i "Error" rus.txt > nul
+    findstr /i "error" rus.txt > nul
+    echo Errorlevel is: %errorlevel%
     if %errorlevel% equ 0 (
-        echo Error Status...:  [no]
-        goto _start_this
-    ) else (
         echo Error Status...: [yes]
         goto end
+    ) else (
+        echo Error Status...: [no]
+        goto _start_this
     )
 
 :_start_this
     taskkill /f /im "samp-server.exe" >nul 2>&1
 
-        echo.
-        echo Press any key to Start Your Server's . . .
-            pause >nul
-        :_part
-        timeout /t 1 /nobreak
-            start "" "samp-server.exe"
-    
-            timeout /t 2 >nul
-    
-            tasklist | find /i "samp-server.exe" >nul
-    
-            if not exist samp-server.exe (
-                echo samp-server.exe not found..
-                timeout /t 1 >nul
-                        start "" "https://sa-mp.app/"
-		goto cmd
-            )
-            if errorlevel 1 (
-                echo.
-                echo Status Starting...: [no]
-                echo Server failed to run..
-                echo.
+    echo.
+    echo Press any key to Start Your Server's . . .
+    pause >nul
+:_part
+    timeout /t 1 /nobreak
+    start "" "samp-server.exe"
 
-                if exist "server_log.txt" (=
-                    start "" "notepad" "server_log.txt"
-                ) else (
-                    echo server_log.txt not found.
-                )
-            ) else (
-                echo.
-                echo Status Starting... [yes]
-                echo.
-            )
-    
+    timeout /t 2 >nul
+
+    tasklist | find /i "samp-server.exe" >nul
+
+    if not exist samp-server.exe (
+        echo samp-server.exe not found..
+        timeout /t 1 >nul
+        start "" "https://sa-mp.app/"
+        goto cmd
+    )
+    if errorlevel 1 (
+        echo.
+        echo Status Starting...: [no]
+        echo Server failed to run..
+        echo.
+
+        if exist "server_log.txt" (
+            start "" "notepad" "server_log.txt"
+        ) else (
+            echo server_log.txt not found.
+        )
+    ) else (
+        echo.
+        echo Status Starting... [yes]
+        echo.
+    )
     goto end
 
 ) else if "%typeof%"=="-cls" (
@@ -128,7 +113,7 @@ goto end
         echo     { > ".vscode\tasks.json"
         echo       "label": "Run Batch File", > ".vscode\tasks.json"
         echo       "type": "shell", > ".vscode\tasks.json"
-        echo       "typeof": "${workspaceFolder}/batch.cmd", > ".vscode\tasks.json"
+        echo       "file": "${workspaceFolder}/batch.cmd", > ".vscode\tasks.json"
         echo       "group": { > ".vscode\tasks.json"
         echo           "kind": "build", > ".vscode\tasks.json"
         echo           "isDefault": true > ".vscode\tasks.json"
@@ -149,8 +134,7 @@ goto end
 
 call :_hash_
 
-echo usage: command [-b build] [-c compile] [-bc build-compile]
-echo       [-r running server] [-ci compile-running] [-cls clear screen]
+echo usage: command [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]
 echo       [-v laterium version] [-vsc vscode tasks]
 goto cmd
 
@@ -174,46 +158,7 @@ goto cmd
 goto :eof
 
 :_compiler_
-    if not exist "%_Settings_%" (
-            echo settings.ini is required to determine the gamemode..
-            timeout /t 1 >nul
-            goto _builds_
-    )
-
-    echo settings.ini found..
-
-    set "laterium_path_gm="
-    for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%_Settings_%"') do (
-        if not "%%b"=="" (
-            set "laterium_path_gm=%%b"
-        )
-    )
-    
-    if not defined laterium_path_gm (
-        echo drive not found in settings.ini..
-        timeout /t 1 >nul
-        goto _builds_
-    )
-
-    set "laterium_path_file="
-    for /f "tokens=1,2 delims==" %%a in ('findstr /c:"target=" "%_Settings_%"') do (
-        if not "%%b"=="" (
-            set "laterium_path_file=%%b"
-        )
-    )
-
-    if not defined laterium_path_file (
-        echo settings.ini is missing gamemode information..
-        timeout /t 1 >nul
-        goto _builds_
-    )
-
-    set "laterium_path_gm=%_SearchDir_%!laterium_path_gm!"
-
-    if not exist "!laterium_path_gm!" (
-        echo folder not found: !laterium_path_gm!.
-            goto cmd
-    )
+    echo Searching for .lt files...
 
     set "laterium_pawncc_path="
     for /r "%_SearchDir_%" %%p in (pawncc.exe) do (
@@ -226,126 +171,53 @@ goto :eof
     :f_pawncc
     if not defined laterium_pawncc_path (
         echo.
-            echo pawncc.exe not found in any subdirectories.
+        echo pawncc.exe not found in any subdirectories.
         echo.
 
         timeout /t 1 >nul
-            start "" "https://github.com/pawn-lang/compiler/releases"
+        start "" "https://github.com/pawn-lang/compiler/releases"
         goto cmd
     )
-    
-    if exist "!laterium_path_gm!\!laterium_path_file!.pwn" (
-        set "file_extension=.pwn"
-    ) else if exist "!laterium_path_gm!\!laterium_path_file!.p" (
-        set "file_extension=.p"
-    ) else if exist "!laterium_path_gm!\!laterium_path_file!.lt" (
-        set "file_extension=.lt"
-    ) else (
-        echo file "!laterium_path_file!" with extensions .pwn, .p, or .lt not found in: "!laterium_path_gm!"
-        timeout /t 1 >nul
-        goto _builds_
+
+    set "found_file="
+    for /r "%_SearchDir_%" %%f in (*.lt) do (
+        if exist "%%f" (
+            set "found_file=%%f"
+            goto compile_file
+        )
     )
 
-    echo    [ !laterium_path_file!!file_extension! ] [ !laterium_pawncc_path! ] [ !laterium_path_gm! ]
-    echo.
+    if not defined found_file (
+        echo No .lt files found in: "%_SearchDir_%"
+        timeout /t 1 >nul
+        goto cmd
+    )
 
-    echo Found file: !laterium_path_file!!!
+:compile_file
+    echo Found file: !found_file!
     echo Starting compilation..
     echo.
-	rem don't use any symbols around here
-    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" -d0 > rus.txt
 
-    if exist "!laterium_path_gm!\!laterium_path_file!.amx" (
-        echo Compilation !laterium_path_file!!file_extension!...: [yes]
+    "!laterium_pawncc_path!" "!found_file!" -o"!found_file!.amx" -d0 > rus.txt 2>&1
+
+    type rus.txt
+
+    if exist "!found_file!.amx" (
+        echo Compilation !found_file!...: [yes]
         echo.
 
-        for %%A in ("!laterium_path_gm!\!laterium_path_file!.amx") do (
-            echo Total Size !laterium_path_file!.amx / %%~zA bytes
+        for %%A in ("!found_file!.amx") do (
+            echo Total Size !found_file!.amx / %%~zA bytes
         )
     ) else (
-        echo Compilation !laterium_path_file!!file_extension!...: [no]
+        echo Compilation !found_file!...: [no]
     )
 
-    echo.
-
-goto :eof
-:_builds_
-    :text
-    echo.
-    echo           *** S E T U P ***
-    
-    :_menus_
-    set /p input="[%newtime%][System] Enter drive > "
-
-set input=%input%
-set input=%input: =0%
-
-    if not "!input:~-1!"=="\" set "input=!input!\"
-
-    if not exist "!input!" (
-        echo specified directory '!input!' does not exist.
-        goto _menus_
-    )
-
-    echo Found =^> !input!
-
-    echo.
-    dir /b "!input!"
-
-:_build_
-    echo.
-    echo **Input "back" back to build . .
-    echo **Input "end" back to menu . .
-    set /p inputs="[%newtime%][System] Enter target > "
-
-set inputs=%inputs%
-set inputs=%inputs: =0%
-
-    if "%inputs%"=="back" (
-        cls
-        echo.
-        echo           *** B A C K ***
-        echo. 
-        goto _menus_
-    ) else if "%inputs%"=="end" (
-        call :clears
-    )
-
-    echo "!inputs!" | findstr /r "\." >nul
-    if not errorlevel 1 (
-        echo.
-        echo you don't need any symbols
-        goto _build_
-    )
-
-    if exist "!input!\!inputs!.pwn" ( echo Found =^> !inputs!.pwn ) else if exist "!input!\!inputs!.p" ( echo Found =^> !inputs!.p ) else if exist "!input!\!inputs!.lt" ( echo Found =^> !inputs!.lt ) else (
-            echo "!input!" =^> "!inputs!.pwn - !inputs!.p - !inputs!.lt" not found..
-        goto _build_
-    )
-
-    echo.
-    echo Creating Status '!_Settings_!'...: [yes]
-    echo.
-    (
-        echo [General]
-            echo ; no effect
-                echo win= 
-                    echo    x86,
-                        echo        x64:
-                            echo ; end
-                        echo.
-                    echo [Setup]
-                echo drive=!input!
-            echo    target=!inputs!
-        echo ; end
-    ) > "%_Settings_%"
-
-    echo End Status...: [yes]
     echo.
 
 goto :eof
 
 :_hash_
-	set "compn=%username%@%computername%"
-	for /f "delims=" %%H in ('powershell -command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%compn%'))).Replace('-','').ToLower()"') do set "hash=%%H"
-	title %compn% ^| %hash%
+    set "compn=%username%@%computername%"
+    for /f "delims=" %%H in ('powershell -command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%compn%'))).Replace('-','').ToLower()"') do set "hash=%%H"
+    title %compn% ^| %hash%
