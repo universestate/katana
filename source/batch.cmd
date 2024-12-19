@@ -381,7 +381,6 @@ set inputs=%inputs: =0%
         echo ; end
     ) > "%_Settings_%"
 
-    echo.
     echo End Status...: [yes]
     echo.
 
