@@ -8,6 +8,9 @@
 
 ## Usage
 ```
+$ git clone https://github.com/universestate/laterium.git
+```
+```
 $ cat/help
 ```
 ```
