@@ -1,4 +1,4 @@
-## Usage Instructions
+!{image](samp-logo.gif)
 
 ### Cloning the Repository
 *Clone the Laterium repository using the following command:*
