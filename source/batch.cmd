@@ -149,7 +149,7 @@ goto end
     goto end
 
 ) else if "%typeof%"=="-st" (
-:___build
+
     echo.
     echo [Warning]*Please use a Symbol "/" you can't use "\"
     set /p path_st="[%mytime%][%username%@%computername%]*Enter Batch Path > "
@@ -189,6 +189,7 @@ goto ___backs
     dir
 
 ) else if "%typeof%"=="help" (
+
     :help
 title %date%
     echo.
@@ -205,6 +206,7 @@ title %date%
     echo [+] -mk [makedir]
     echo.
 goto cmd
+
 ) else if "%typeof%"=="" (
 
     goto cmd
