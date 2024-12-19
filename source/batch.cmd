@@ -31,14 +31,14 @@ set /p typeof="[%newtime%][%username%@%computername%] ~$ "
 if "%typeof%"=="-b" (
 
     call :_builds_
-        echo [System]*Press any key to return . . .
+        echo Press any key to return . . .
         pause >nul
     call :clears
 
 ) else if "%typeof%"=="-c" (
 
 echo.
-echo [System]*Compiling...
+echo Compiling...
     call :_compiler_
 
 ) else if "%typeof%"=="-bc" (
@@ -59,10 +59,10 @@ echo [System]*Compiling...
 
     findstr /i "Error" rus.txt > nul
     if %errorlevel% equ 0 (
-        echo    Error Status  ...  No
+        echo Error Status...:  [no]
         goto _start_this
     ) else (
-        echo    Error Status  ...  Yes
+        echo Error Status...: [yes]
         goto end
     )
 
@@ -81,27 +81,25 @@ echo [System]*Compiling...
             tasklist | find /i "samp-server.exe" >nul
     
             if not exist samp-server.exe (
-                echo [Error]*samp-server.exe not found..
+                echo samp-server.exe not found..
                 timeout /t 1 >nul
                         start "" "https://sa-mp.app/"
-                        echo [Out]*Exiting . .
-                timeout /t 5
-                exit
+		goto cmd
             )
             if errorlevel 1 (
                 echo.
-                echo    Status Starting .. No
-                echo        Server failed to run..
+                echo Status Starting...: [no]
+                echo Server failed to run..
                 echo.
 
                 if exist "server_log.txt" (=
                     start "" "notepad" "server_log.txt"
                 ) else (
-                    echo [System]*server_log.txt not found.
+                    echo server_log.txt not found.
                 )
             ) else (
                 echo.
-                echo    Status Starting .. Yes
+                echo Status Starting... [yes]
                 echo.
             )
     
@@ -142,7 +140,7 @@ goto end
         echo   ] > ".vscode\tasks.json"
     echo } > ".vscode\tasks.json"
 
-    echo    Creating '.vscode\tasks.json' .. Yes
+    echo Creating '.vscode\tasks.json'...: [yes]
 
     start explorer ".vscode\"
 
@@ -151,8 +149,8 @@ goto end
 ) else if "%typeof%"=="-st" (
 
     echo.
-    echo [Warning]*Please use a Symbol "/" you can't use "\"
-    set /p path_st="[%newtime%][%username%@%computername%]*Enter Batch Path > "
+    echo Please use a Symbol "/" you can't use "\"
+    set /p path_st="[%newtime%][%username%@%computername%] Enter Path > "
 
     echo { > "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
     echo    "cmd": ["batch.cmd", "-i includes", "$file", "-;+"], >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
@@ -170,7 +168,7 @@ goto end
 echo.
 :___backs
     echo [System]*Input "end" for back to menu . .
-    set /p dirs="[%newtime%][%username%@%computername%]*Enter Dir Name > "
+    set /p dirs="[%newtime%][%username%@%computername%] Enter Name > "
 
 
     if "%dirs%"=="end" (
@@ -192,19 +190,10 @@ goto ___backs
 
 call :_hash_
 
-    echo.
-    echo [+] -b [build]
-    echo [+] -c [compile]
-    echo [+] -bc [build-compile]
-    echo [+] -r [running server]
-    echo [+] -cr [compile-running]
-    echo [+] -cls [clear screen]
-    echo [+] -v [laterium version]
-    echo [+] -vsc [vscode tasks]
-    echo [+] -st [sublime text tools build]
-    echo [+] -dir [directory list]
-    echo [+] -mk [makedir]
-    echo.
+usage: command [-b build] [-c compile] [-bc build-compile]
+       [-r running server] [-cr compile-running] [-cls clear screen]
+       [-v laterium version] [-vsc vscode tasks] [-st sublime text tools build]
+       [-dir directory list] [-mk makedir]
 goto cmd
 
 ) else if "%typeof%"=="" (
@@ -243,7 +232,7 @@ goto :eof
     )
     
     if not defined laterium_path_gm (
-        echo [System]*drive not found in settings.ini.
+        echo drive not found in settings.ini..
         timeout /t 1 >nul
         goto _builds_
     )
@@ -256,20 +245,16 @@ goto :eof
     )
 
     if not defined laterium_path_file (
-        echo [System]*settings.ini is missing gamemode information.
+        echo settings.ini is missing gamemode information..
         timeout /t 1 >nul
-        
+        call :_builds_
     )
 
     set "laterium_path_gm=%_SearchDir_%!laterium_path_gm!"
 
     if not exist "!laterium_path_gm!" (
         echo [System]*Gamemodes folder not found: !laterium_path_gm!.
-            timeout /t 1 >nul
-                start "" "https://sa-mp.app/"
-            echo [Out]*Exiting . .
-        timeout /t 5
-        exit
+            goto cmd
     )
 
     set "laterium_pawncc_path="
@@ -283,14 +268,12 @@ goto :eof
     :f_pawncc
     if not defined laterium_pawncc_path (
         echo.
-            echo [System]*pawncc.exe not found in any subdirectories.
+            echo pawncc.exe not found in any subdirectories.
         echo.
 
         timeout /t 1 >nul
             start "" "https://github.com/pawn-lang/compiler/releases"
-        echo [Out]*Exiting . .
-            timeout /t 5
-        exit
+        goto cmd
     )
     
     if exist "!laterium_path_gm!\!laterium_path_file!.pwn" (
@@ -300,7 +283,7 @@ goto :eof
     ) else if exist "!laterium_path_gm!\!laterium_path_file!.lt" (
         set "file_extension=.lt"
     ) else (
-        echo [ERROR]*The file "!laterium_path_file!" with extensions .pwn, .p, or .lt not found in: "!laterium_path_gm!"
+        echo file "!laterium_path_file!" with extensions .pwn, .p, or .lt not found in: "!laterium_path_gm!"
         timeout /t 1 >nul
         goto _builds_
     )
@@ -315,14 +298,14 @@ goto :eof
     "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" -d0 > rus.txt ::
 
     if exist "!laterium_path_gm!\!laterium_path_file!.amx" (
-        echo    Compilation !laterium_path_file!.amx .. Yes
+        echo Compilation !laterium_path_file!!file_extension!...: [yes]
         echo.
 
         for %%A in ("!laterium_path_gm!\!laterium_path_file!.amx") do (
-            echo    Total Size !laterium_path_file!.amx / %%~zA bytes
+            echo Total Size !laterium_path_file!.amx / %%~zA bytes
         )
     ) else (
-        echo    Compilation !laterium_path_file!!file_extension! .. No
+        echo Compilation !laterium_path_file!!file_extension!...: [no]
     )
 
     echo.
@@ -334,7 +317,7 @@ goto :eof
     echo           *** S E T U P ***
     
     :_menus_
-    set /p input="[%newtime%][System]*Enter drive > "
+    set /p input="[%newtime%][System] Enter drive > "
 
 set input=%input%
 set input=%input: =0%
@@ -342,14 +325,12 @@ set input=%input: =0%
     if not "!input:~-1!"=="\" set "input=!input!\"
 
     if not exist "!input!" (
-        echo [ERROR]*The specified directory '!input!' does not exist." > "%tmp%\tmp.vbs
+        echo specified directory '!input!' does not exist.
         goto _menus_
     )
 
     echo [System]*Found =^> !input!
 
-    echo.
-    echo [Dir]*Listing files in the directory:
     echo.
     dir /b "!input!"
 
@@ -357,7 +338,7 @@ set input=%input: =0%
     echo.
     echo [System]*Input "back" back to build . .
     echo [System]*Input "end" back to menu . .
-    set /p inputs="[%newtime%][System]*Enter target > "
+    set /p inputs="[%newtime%][System] Enter target > "
 
 set inputs=%inputs%
 set inputs=%inputs: =0%
@@ -375,19 +356,18 @@ set inputs=%inputs: =0%
     echo "!inputs!" | findstr /r "\." >nul
     if not errorlevel 1 (
         echo.
-        echo [ERROR]*The file name should not contain a period '.'
+        echo you don't need any symbols
         goto _build_
     )
 
     if exist "!input!\!inputs!.pwn" ( echo [System]*Found =^> !inputs!.pwn ) else if exist "!input!\!inputs!.p" ( echo [System]*Found =^> !inputs!.p ) else if exist "!input!\!inputs!.lt" ( echo [System]*Found =^> !inputs!.lt ) else (
-            echo :: [ERROR]*"!input!" =^> "!inputs!.pwn - !inputs!.p - !inputs!.lt" not found..
+            echo "!input!" =^> "!inputs!.pwn - !inputs!.p - !inputs!.lt" not found..
         goto _build_
     )
 
     echo.
-    echo    Creating '!_Settings_!' .. Yes
+    echo Creating Status '!_Settings_!'...: [yes]
     echo.
-    echo [System]*Succes Creating =^> settings.ini ...
     (
         echo [General]
             echo ; no effect
@@ -403,15 +383,12 @@ set inputs=%inputs: =0%
     ) > "%_Settings_%"
 
     echo.
-    echo    End Status .. Yes
+    echo End Status...: [yes]
     echo.
 
 goto :eof
 
 :_hash_
-
-	set "before=%username%@%computername%"
-
-	for /f "delims=" %%H in ('powershell -command "[System.BitConverter]::ToString((New-Object 	System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%before%'))).Replace('-','').ToLower()"') do set "hash=%%H"
-
-	title %before% ^| %hash%
+	set "compn=%username%@%computername%"
+	for /f "delims=" %%H in ('powershell -command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%compn%'))).Replace('-','').ToLower()"') do set "hash=%%H"
+	title %compn% ^| %hash%
