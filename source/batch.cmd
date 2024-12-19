@@ -2,7 +2,7 @@
 
 setlocal enabledelayedexpansion
 
-set "_version_=12/19/2024 ^(B-14^)"
+set "_version_=2024.x21 ^(B-14^)"
 set "_SearchDir_=%~dp0"
 set "_Settings_=%_SearchDir_%settings.ini
 
@@ -25,7 +25,7 @@ title type `help` to get started
 for /f "tokens=1-3 delims=:." %%a in ("%time%") do set newtime=%%a%%b.%%c
 
 :cmd
-set /p typeof="[%newtime%][%username%@%computername%] ~$ "
+set /p typeof="%username%@%computername%~$ "
 
 if "%typeof%"=="-b" (
 
@@ -52,7 +52,7 @@ echo Compiling...
     call :_part
     goto end
 
-) else if "%typeof%"=="-cr" (
+) else if "%typeof%"=="-ci" (
 
     call :_compiler_
 
@@ -145,37 +145,13 @@ goto end
 
     goto end
 
-) else if "%typeof%"=="-mk" (
-
-echo.
-:___backs
-    echo **Input "end" for back to menu . .
-    set /p dirs="[%newtime%][%username%@%computername%] Enter Name > "
-
-
-    if "%dirs%"=="end" (
-        call :clears
-    ) else (
-            mkdir !dirs!
-        )
-    
-goto ___backs
-
-) else if "%typeof%"=="git clone" (
-    git clone https://github.com/universestate/laterium.git
-    cd laterium
-) else if "%typeof%"=="-dir" (
-
-    dir
-
 ) else if "%typeof%"=="help" (
 
 call :_hash_
 
 echo usage: command [-b build] [-c compile] [-bc build-compile]
-echo       [-r running server] [-cr compile-running] [-cls clear screen]
+echo       [-r running server] [-ci compile-running] [-cls clear screen]
 echo       [-v laterium version] [-vsc vscode tasks]
-echo       [-dir directory list] [-mk makedir]
 goto cmd
 
 ) else if "%typeof%"=="" (
