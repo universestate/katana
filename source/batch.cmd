@@ -151,12 +151,12 @@ goto end
     echo Please use a Symbol "/" you can't use "\"
     set /p path_st="[%newtime%][%username%@%computername%] Enter Path > "
 
-    echo { > "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
-    echo    "cmd": ["batch.cmd", "-i includes", "$file", "-;+"], >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
-    echo    "path": "!path_st!" >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
-    echo } >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
+    echo { > "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
+    echo    "cmd": ["batch.cmd", "-i includes", "$file", "-;+"], >> "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
+    echo    "path": "!path_st!" >> "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
+    echo } >> "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
 
-    echo Creating '%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build'...: [yes]
+    echo Creating '%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build'...: [yes]
 
     start explorer "%APPDATA%\Sublime Text\Packages\User\"
 
