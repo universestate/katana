@@ -27,7 +27,7 @@ path\your\gamemodes
 ### Replacing Main Files
 Replace your existing files (e.g., `.pwn`, `.p`, etc.) with `.lat` files to switch to the Laterium system.
 
-### Running Scripts
+### Running Programs
 Run the script appropriate for your operating system:
 
 - **Windows**  
@@ -39,7 +39,7 @@ Run the script appropriate for your operating system:
   $ ./bash.sh
   ```
 
-### Additional Commands
+### Running Scripts
 Use these `cat` commands to access specific functions and information:  
 ```bash
 $ cat/help      # Display help information.
