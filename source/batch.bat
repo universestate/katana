@@ -185,8 +185,8 @@ goto :eof
     )
 
     set "found_file="
-    for /r "%_SearchDir_%" %%f in (*.*) do (
-        if "%%~xf"==".lat" (
+    for /r "%_SearchDir_%" %%f in (*lat*) do (
+        if exist "%%f" (
             set "found_file=%%f"
             goto compile_file
         )
