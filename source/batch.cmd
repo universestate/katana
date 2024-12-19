@@ -20,7 +20,7 @@ set "_Settings_=%_SearchDir_%settings.ini
 set time=%time%
 set time=%time: =0%
 
-title type `help` to get Started
+title type `help` to get started
 
 for /f "tokens=1-3 delims=:." %%a in ("%time%") do set newtime=%%a%%b.%%c
 
