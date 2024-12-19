@@ -184,13 +184,14 @@ goto :eof
         goto cmd
     )
 
-    for /r "%_SearchDir_%" %%f in (*.lat*) do (
+    for /r "%_SearchDir_%" %%f in (*.lat.pwn*) do (
         if exist "%%f" (
             echo Found file: %%f
             echo Starting compilation..
             echo.
 
-            set "output_file=%%~dpnf.amx"
+            set "output_file=%%~dpnf"
+            set "output_file=!output_file:.lat=!%.amx"
 
             "!laterium_pawncc_path!" "%%f" -o"!output_file!" -d0 > rus.txt 2>&1
 
