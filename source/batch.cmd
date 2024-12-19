@@ -294,7 +294,7 @@ goto :eof
     echo Starting compilation..
     echo.
 
-    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" -d0 > rus.txt ::
+    "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" -d0 > rus.txt
 
     if exist "!laterium_path_gm!\!laterium_path_file!.amx" (
         echo Compilation !laterium_path_file!!file_extension!...: [yes]
