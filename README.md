@@ -16,6 +16,8 @@
 $ git clone https://github.com/universestate/laterium.git
 ```
 
+### Paste (e.g, `.bat`, or `.batch`) to path\your\gamemodes.
+
 ### Replacing Main Files
 Replace the main files (e.g., `.pwn`, `.p`, etc.) with `.lt` files to adapt to the Laterium system.
 
