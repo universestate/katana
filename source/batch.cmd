@@ -145,24 +145,6 @@ goto end
 
     goto end
 
-) else if "%typeof%"=="-st" (
-
-    echo.
-    echo Please use a Symbol "/" you can't use "\"
-	echo Example dir: C:/Users/pc/Downloads
-    set /p path_st="[%newtime%][%username%@%computername%] Enter Path > "
-
-    echo { > "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
-    echo    "cmd": ["batch.cmd", "-i includes", "$file", "-;+"], >> "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
-    echo    "path": "!path_st!" >> "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
-    echo } >> "%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build"
-
-    echo Creating '%APPDATA%\Sublime Text\Packages\User\laterium.sublime-build'...: [yes]
-
-    start explorer "%APPDATA%\Sublime Text\Packages\User\"
-
-    goto end
-
 ) else if "%typeof%"=="-mk" (
 
 echo.
@@ -192,7 +174,7 @@ call :_hash_
 
 echo usage: command [-b build] [-c compile] [-bc build-compile]
 echo       [-r running server] [-cr compile-running] [-cls clear screen]
-echo       [-v laterium version] [-vsc vscode tasks] [-st sublime text tools build]
+echo       [-v laterium version] [-vsc vscode tasks]
 echo       [-dir directory list] [-mk makedir]
 goto cmd
 
