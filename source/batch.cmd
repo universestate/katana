@@ -107,7 +107,7 @@ echo [System]*Compiling...
     
     goto end
 
-) else if "%typeof%"=="-ct" (
+) else if "%typeof%"=="-cls" (
 
 :clears
     cls
@@ -198,7 +198,7 @@ title %date%
     echo [+] -bc [build-compile]
     echo [+] -r [running server]
     echo [+] -cr [compile-running]
-    echo [+] -ct [clear terminal]
+    echo [+] -cls [clear screen]
     echo [+] -v [laterium version]
     echo [+] -vsc [vscode tasks]
     echo [+] -st [sublime text tools build]
