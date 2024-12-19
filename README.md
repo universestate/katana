@@ -13,5 +13,5 @@
 
 |    Data    |  Pawn-E | Laterium |
 |------------|---------|----------|
-| Features   |    +    |    -     |
-| Speed      |    *    |    *     |
+| Features   | +    |    -     |
+| Speed      | *    |    *     |
