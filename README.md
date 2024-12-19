@@ -1,5 +1,3 @@
-Here is the improved version:
-
 ---
 
 ### Cloning the Repository
