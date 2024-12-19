@@ -1,30 +1,43 @@
-## What's working
-|    Data    |  Pawn-E | Laterium |
-|------------|---------|----------|
-| Features   | +       | +        |
-| Speed      | *       | *        |
-| Error Handling | *   | *        |
-| Code Formatting | *   | +        |
+## Comparison of Features and Performance
 
-## Usage
-```
+|    **Aspect**     | **Pawn-E** | **Laterium** |
+|--------------------|------------|--------------|
+| **Features**       | ✅         | ✅           |
+| **Speed**          | ⭐         | ⭐           |
+| **Error Handling** | ⭐         | ⭐           |
+| **Code Formatting**| ⭐         | ✅           |
+
+---
+
+## Usage Instructions
+
+### Cloning the Repository
+```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
-#
-So, Replace main ".pwn" ".p" or other to ".lt"
-And Use this:
--------------------------------------------------------------------------------
-```bat
-$ batch.bat
+
+### Replacing Main Files
+Replace the main files (e.g., `.pwn`, `.p`, etc.) with `.lt` files to adapt to the Laterium system.
+
+### Running Batch or Shell Scripts
+To execute the appropriate script for your platform:  
+
+- **Windows**  
+  ```bat
+  $ batch.bat
+  ```
+- **Linux/Mac**  
+  ```sh
+  $ ./bash.sh
+  ```
+
+### Additional Commands
+Use the following `cat` commands for help and information:  
+```bash
+$ cat/help      # Display help information.
+$ cat -c        # View basic details.
+$ cat -ci       # View detailed information interactively.
+$ cat -v        # Display version info.
 ```
--------------------------------------------------------------------------------
-```sh
-$ ./bash.sh
-```
--------------------------------------------------------------------------------
-```
-$ cat/help
-$ cat -c
-$ cat -ci
-$ cat -v
-```
+
+---
