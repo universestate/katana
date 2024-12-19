@@ -1,4 +1,5 @@
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=universestate&bg_color=19000e&color=9e4c98&line=9f509a&point=190000&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=auftrrafi-ai&bg_color=19000e&color=9e4c98&line=9f509a&point=190000&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 ```
 -A<num> alignment in bytes of the data segment and the stack
 -a output assembler code
