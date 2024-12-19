@@ -12,17 +12,22 @@
 ## Usage Instructions
 
 ### Cloning the Repository
+Clone the Laterium repository using the following command:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
 
-### Paste (e.g, `.bat`, or `.batch`) to path\your\gamemodes.
+### Preparing the Environment
+Copy `.bat` or `.batch` files into the appropriate directory:
+```
+path\your\gamemodes
+```
 
 ### Replacing Main Files
-Replace the main files (e.g., `.pwn`, `.p`, etc.) with `.lt` files to adapt to the Laterium system.
+Replace your existing files (e.g., `.pwn`, `.p`, etc.) with `.lt` files to switch to the Laterium system.
 
-### Running Batch or Shell Scripts
-To execute the appropriate script for your platform:  
+### Running Scripts
+Run the script appropriate for your operating system:
 
 - **Windows**  
   ```bat
@@ -34,12 +39,12 @@ To execute the appropriate script for your platform:
   ```
 
 ### Additional Commands
-Use the following `cat` commands for help and information:  
+Use these `cat` commands to access specific functions and information:  
 ```bash
 $ cat/help      # Display help information.
-$ cat -c        # Start Compile with Laterium Compilers.
-$ cat -ci       # Start Compile and Start Your Server's!
-$ cat -v        # Display version info.
+$ cat -c        # Compile with Laterium compilers.
+$ cat -ci       # Compile and launch your server.
+$ cat -v        # Display version information.
 ```
 
 ---
