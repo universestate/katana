@@ -293,7 +293,7 @@ goto :eof
     echo Found file: !laterium_path_file!!!
     echo Starting compilation..
     echo.
-
+	rem don't use any symbols around here
     "!laterium_pawncc_path!" "!laterium_path_gm!\!laterium_path_file!!file_extension!" -o"!laterium_path_gm!\!laterium_path_file!.amx" -d0 > rus.txt
 
     if exist "!laterium_path_gm!\!laterium_path_file!.amx" (
