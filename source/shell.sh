@@ -1,7 +1,7 @@
 #!/bin/bash
 
 _version_="2024.x21 (B-14)"
-_SearchDir_="$(dirname "$0")"
+_SearchDir_="$(pwd)"
 
 _laterium_() {
     echo
@@ -20,7 +20,7 @@ _laterium_
 newtime=$(date +"%H%M.%S")
 
 cmd() {
-    read -p "${USER}@${HOSTNAME}~$ " typeof
+    read -p "$USER@$HOSTNAME~$ " typeof
 
     case "$typeof" in
         "cat -c")
@@ -33,8 +33,7 @@ cmd() {
             ;;
         "cat -ci")
             _compiler_
-
-            if grep -qi "error" rus.txt; then
+            if grep -iq "error" rus.txt; then
                 echo "Error Status...: [yes]"
             else
                 echo "Error Status...: [no]"
@@ -51,7 +50,7 @@ cmd() {
             ;;
         "cat -vsc")
             mkdir -p .vscode
-            cat <<EOL > .vscode/tasks.json
+            cat <<EOT > .vscode/tasks.json
 {
   "version": "2.0.0",
   "tasks": [
@@ -68,7 +67,7 @@ cmd() {
     }
   ]
 }
-EOL
+EOT
             echo "Creating '.vscode/tasks.json'...: [yes]"
             xdg-open .vscode
             ;;
@@ -78,19 +77,17 @@ EOL
         "cat")
             _help
             ;;
-        "")
-            ;;
         *)
             echo
-            echo "    $ $typeof - This typeof does not exist. Please try again.."
+            echo "    \$ $typeof - This typeof does not exist. Please try again.."
             sleep 2
             ;;
     esac
+    cmd
 }
 
 _start_this() {
-    pkill -f samp-server.exe
-
+    pkill -f "samp-server"
     echo
     echo "Press any key to Start Your Server's . . ."
     read -n 1 -s
@@ -99,30 +96,14 @@ _start_this() {
 
 _part() {
     sleep 1
-    samp-server.exe &
+    ./samp-server &
 
     sleep 2
 
-    if ! pgrep -f samp-server.exe > /dev/null; then
+    if ! pgrep -f "samp-server" > /dev/null; then
         echo "samp-server.exe not found.."
         sleep 1
         xdg-open "https://sa-mp.app/"
-        cmd
-    elif [ $? -ne 0 ]; then
-        echo
-        echo "Status Starting...: [no]"
-        echo "Server failed to run.."
-        echo
-
-        if [ -f "server_log.txt" ]; then
-            xdg-open "server_log.txt"
-        else
-            echo "server_log.txt not found."
-        fi
-    else
-        echo
-        echo "Status Starting... [yes]"
-        echo
     fi
 }
 
@@ -130,65 +111,58 @@ _compiler_() {
     echo "Searching for .lat files..."
 
     laterium_pawncc_path=""
-    for p in $(find "$_SearchDir_" -name pawncc.exe); do
-        if [ -e "$p" ]; then
-            laterium_pawncc_path="$p"
+    for pawncc in $(find "$_SearchDir_" -name "pawncc.exe"); do
+        if [[ -f "$pawncc" ]]; then
+            laterium_pawncc_path="$pawncc"
             break
         fi
     done
 
-    if [ -z "$laterium_pawncc_path" ]; then
+    if [[ -z "$laterium_pawncc_path" ]]; then
         echo
         echo "pawncc.exe not found in any subdirectories."
         echo
         sleep 1
         xdg-open "https://github.com/pawn-lang/compiler/releases"
-        cmd
+        return
     fi
 
-    found_file=""
-    for f in $(find "$_SearchDir_" -name "*.lat*"); do
-        if [ -e "$f" ]; then
-            found_file="$f"
-            break
+    for file in $(find "$_SearchDir_" -name "*.lat*"); do
+        if [[ -f "$file" ]]; then
+            echo "Found file: $file"
+            echo "Starting compilation.."
+            echo
+
+            output_file="${file%.*}.amx"
+
+            "$laterium_pawncc_path" "$file" -o"$output_file" -d0 > rus.txt 2>&1
+
+            cat rus.txt
+
+            if [[ -f "$output_file" ]]; then
+                echo "Compilation $output_file...: [yes]"
+                echo
+                echo "Total Size $output_file / $(stat -c %s "$output_file") bytes"
+            else
+                echo "Compilation $output_file...: [no]"
+            fi
+
+            echo
         fi
     done
-
-    if [ -z "$found_file" ]; then
-        echo "No .lat files found in: $_SearchDir_"
-        sleep 1
-        cmd
-    fi
-
-    echo "Found file: $found_file"
-    echo "Starting compilation.."
-    echo
-
-    output_file="${found_file%.lat*}.amx"
-
-    "$laterium_pawncc_path" "$found_file" -o"$output_file" -d0 > rus.txt 2>&1
-
-    cat rus.txt
-
-    if [ -e "$output_file" ]; then
-        echo "Compilation $output_file...: [yes]"
-        echo
-
-        echo "Total Size $output_file / $(du -b "$output_file" | cut -f1) bytes"
-    else
-        echo "Compilation $output_file...: [no]"
-    fi
-
-    echo
 }
 
 _help() {
-    compn="${USER}@${HOSTNAME}"
-    hash=$(echo -n "$compn" | sha1sum | awk '{print $1}')
+    _hash_
+
     echo "usage: cat [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]"
     echo "      [-v laterium version] [-vsc vscode tasks]"
 }
 
-while true; do
-    cmd
-done
+_hash_() {
+    compn="$USER@$HOSTNAME"
+    hash=$(echo -n "$compn" | sha1sum | awk '{print $1}')
+    echo -ne "\033]0;$compn | $hash\007"
+}
+
+cmd
