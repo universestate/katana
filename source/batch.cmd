@@ -149,7 +149,7 @@ goto end
     goto end
 
 ) else if "%typeof%"=="-st" (
-:________back
+:_____build_
     echo.
     echo [Warning]*Please use a Symbol "/" you can't use "\"
     set /p path_st="[%mytime%][%username%@%computername%]*Enter Batch Path > "
@@ -331,7 +331,7 @@ goto :eof
     echo.
     echo           *** S E T U P ***
     
-    :____menus____
+    :_menus_
     set /p input="[%mytime%][System]*Enter drive > "
 
 set input=%input%
@@ -341,7 +341,7 @@ set input=%input: =0%
 
     if not exist "!input!" (
         echo [ERROR]*The specified directory '!input!' does not exist." > "%tmp%\tmp.vbs
-        goto ____menus____
+        goto _menus_
     )
 
     echo [System]*Found =^> !input!
@@ -351,7 +351,7 @@ set input=%input: =0%
     echo.
     dir /b "!input!"
 
-:____back
+:_build_
     echo.
     echo [System]*Input "back" back to build . .
     echo [System]*Input "end" back to menu . .
@@ -365,7 +365,7 @@ set inputs=%inputs: =0%
         echo.
         echo           *** B A C K ***
         echo. 
-        goto ____menus____
+        goto _menus_
     ) else if "%inputs%"=="end" (
         call :clears
     )
@@ -374,12 +374,12 @@ set inputs=%inputs: =0%
     if not errorlevel 1 (
         echo.
         echo [ERROR]*The file name should not contain a period '.'
-        goto ____back
+        goto _build_
     )
 
     if exist "!input!\!inputs!.pwn" ( echo [System]*Found =^> !inputs!.pwn ) else if exist "!input!\!inputs!.p" ( echo [System]*Found =^> !inputs!.p ) else if exist "!input!\!inputs!.lt" ( echo [System]*Found =^> !inputs!.lt ) else (
             echo :: [ERROR]*"!input!" =^> "!inputs!.pwn - !inputs!.p - !inputs!.lt" not found..
-        goto ____back
+        goto _build_
     )
 
     echo.
