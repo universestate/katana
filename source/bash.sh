@@ -24,14 +24,14 @@ newtime=$(date +"%H%M.%S")
 function cmd {
     read -p "$USER@$(hostname)~$ " typeof
 
-    if [ "$typeof" == "cat -c" ]; then
+    if [ "$typeof" == "-c" ]; then
         echo
         echo "Compiling..."
         _compiler_
-    elif [ "$typeof" == "cat -r" ]; then
+    elif [ "$typeof" == "-r" ]; then
         _part
         end
-    elif [ "$typeof" == "cat -ci" ]; then
+    elif [ "$typeof" == "-ci" ]; then
         _compiler_
 
         if grep -qi "error" rus.txt; then
@@ -41,13 +41,13 @@ function cmd {
             echo "Error Status...: [no]"
             _start_this
         fi
-    elif [ "$typeof" == "cat -cls" ]; then
+    elif [ "$typeof" == "-cls" ]; then
         clears
-    elif [ "$typeof" == "cat -v" ]; then
+    elif [ "$typeof" == "-v" ]; then
         echo
         echo "    Laterium Version : $_version_"
         end
-    elif [ "$typeof" == "cat -vsc" ]; then
+    elif [ "$typeof" == "-vsc" ]; then
         mkdir -p .vscode
         
         cat <<EOL > .vscode/tasks.json
@@ -73,10 +73,13 @@ EOL
         xdg-open .vscode/
         end
     elif [ "$typeof" == "help" ]; then
+    :_help
         _hash_
-        echo "usage: cat [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]"
+        echo "usage: command [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]"
         echo "      [-v laterium version] [-vsc vscode tasks]"
         cmd
+    elif [ "$typeof" == "cat" ]; then
+        _help
     else
         echo
         echo "    \$ $typeof - This typeof does not exist. Please try again.."
