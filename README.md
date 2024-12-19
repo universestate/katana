@@ -1,3 +1,5 @@
+![win](win.png)
+![linux](linux.png)
 
 ## Usage Instructions
 
