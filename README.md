@@ -1,20 +1,14 @@
-### Cloning the Repository
-Clone the Laterium repository using the following command:
+- [x] Clone the Laterium repository using the following command:
 ```bash
-git clone https://github.com/universestate/laterium.git
+$ git clone https://github.com/universestate/laterium.git
 ```
-
-### Preparing the Environment
-Copy .bat or .sh files into the appropriate directory:
+- [x] Copy .bat or .sh files into the appropriate directory:
 ```
 path\to\your\gamemodes
 ```
+- [x] Add the extension ".lat" to the main gamemode file. For example, rename `main.pwn` to `main.lat.pwn` (lowercase only).
 
-### Rename the Files
-Add the extension ".lat" to the main gamemode file. For example, rename `main.pwn` to `main.lat.pwn` (lowercase only).
-
-### Running Programs
-Run the script appropriate for your operating system:
+- [x] Run the script appropriate for your operating system:
 
 - **Windows**
   ```bat
