@@ -9,3 +9,9 @@
 - [ ] Automatically fix warnings & errors
 - [ ] features as many text editor pawn code
 - [ ] reduce amx size
+## Comparison
+
+|    Data    |  Pawn-E | Laterium |
+|------------|---------|----------|
+| Features   |    +    |    -     |
+| Speed      |    *    |    *     |
