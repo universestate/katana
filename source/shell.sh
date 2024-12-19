@@ -1,55 +1,57 @@
 #!/bin/bash
 
-set -e
+version="2024.x21 (B-14)"
+search_dir=$(dirname "$0")
 
-_version_="2024.x21 (B-14)"
-_SearchDir_="$(dirname "$0")"
-
-function laterium {
+_laterium_() {
     echo
     echo "    ooooo"
-    echo "    \`888'"
+    echo "    '888'"
     echo "     888"
     echo "     888"
     echo "     888"
-    echo "     888       o   $_version_"
+    echo "     888       o   $version"
     echo "    o888ooooood8"
     echo
 }
 
-laterium
+_laterium_
 
-newtime=$(date +"%H%M.%S")
+time=$(date +%H%M.%S)
+newtime=$time
 
-function cmd {
-    read -p "$USER@$(hostname)~$ " typeof
+cmd() {
+    read -p "$USER@$HOSTNAME~$ " typeof
 
-    if [ "$typeof" == "-c" ]; then
+    if [[ "$typeof" == "cat -c" ]]; then
         echo
         echo "Compiling..."
         _compiler_
-    elif [ "$typeof" == "-r" ]; then
+    elif [[ "$typeof" == "cat -r" ]]; then
         _part
-        end
-    elif [ "$typeof" == "-ci" ]; then
+        return
+    elif [[ "$typeof" == "cat -ci" ]]; then
         _compiler_
 
         if grep -qi "error" rus.txt; then
             echo "Error Status...: [yes]"
-            end
+            return
         else
             echo "Error Status...: [no]"
             _start_this
         fi
-    elif [ "$typeof" == "-cls" ]; then
+    elif [[ "$typeof" == "cat -cls" ]]; then
         clears
-    elif [ "$typeof" == "-v" ]; then
+        _laterium_
+        cmd
+    elif [[ "$typeof" == "cat -v" ]]; then
         echo
-        echo "    Laterium Version : $_version_"
-        end
-    elif [ "$typeof" == "-vsc" ]; then
+        echo "    Laterium Version : $version"
+        echo
+        return
+    elif [[ "$typeof" == "cat -vsc" ]]; then
         mkdir -p .vscode
-        
+
         cat <<EOL > .vscode/tasks.json
 {
   "version": "2.0.0",
@@ -57,7 +59,7 @@ function cmd {
     {
       "label": "Run Batch File",
       "type": "shell",
-      "file": "${workspaceFolder}/shell.sh",
+      "file": "\${workspaceFolder}/batch.bat",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -70,16 +72,15 @@ function cmd {
 EOL
 
         echo "Creating '.vscode/tasks.json'...: [yes]"
-        xdg-open .vscode/
-        end
-    elif [ "$typeof" == "help" ]; then
-    :_help
-        _hash_
-        echo "usage: command [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]"
-        echo "      [-v laterium version] [-vsc vscode tasks]"
-        cmd
-    elif [ "$typeof" == "cat" ]; then
+
+        xdg-open ".vscode/"
+        return
+    elif [[ "$typeof" == "help" ]]; then
         _help
+    elif [[ "$typeof" == "cat" ]]; then
+        _help
+    elif [[ -z "$typeof" ]]; then
+        cmd
     else
         echo
         echo "    \$ $typeof - This typeof does not exist. Please try again.."
@@ -88,85 +89,19 @@ EOL
     fi
 }
 
-function end {
-    echo "Press any key to return . . ."
-    read -n 1
-    cmd
-}
-
-function clears {
-    clear
-    laterium
-    cmd
-}
-
-function _compiler_ {
-    echo "Searching for .lat files..."
-
-    laterium_pawncc_path=""
-    for p in $(find "$_SearchDir_" -name "pawncc" -type f); do
-        if [ -f "$p" ]; then
-            laterium_pawncc_path="$p"
-            break
-        fi
-    done
-
-    if [ -z "$laterium_pawncc_path" ]; then
-        echo
-        echo "pawncc.exe not found in any subdirectories."
-        echo
-        sleep 1
-        xdg-open "https://github.com/pawn-lang/compiler/releases"
-        cmd
-    fi
-
-    found_file=""
-    for f in $(find "$_SearchDir_" -name "*.lat" -type f); do
-        if [ -f "$f" ]; then
-            found_file="$f"
-            break
-        fi
-    done
-
-    if [ -z "$found_file" ]; then
-        echo "No .lat files found in: $_SearchDir_"
-        sleep 1
-        cmd
-    fi
-
-    echo "Found file: $found_file"
-    echo "Starting compilation.."
-    echo
-
-    "$laterium_pawncc_path" "$found_file" -o"$found_file.amx" -d0 > rus.txt 2>&1
-
-    cat rus.txt
-
-    if [ -f "$found_file.amx" ]; then
-        echo "Compilation $found_file...: [yes]"
-        echo
-
-        echo "Total Size $found_file.amx / $(stat -c %s "$found_file.amx") bytes"
-    else
-        echo "Compilation $found_file...: [no]"
-    fi
-
-    echo
-}
-
-function _start_this {
+_start_this() {
     pkill -f "samp-server.exe"
 
     echo
     echo "Press any key to Start Your Server's . . ."
-    read -n 1
+    read -n 1 -s
 
     _part
 }
 
-function _part {
+_part() {
     sleep 1
-    nohup ./samp-server.exe &
+    xdg-open "samp-server.exe"
 
     sleep 2
 
@@ -175,15 +110,13 @@ function _part {
         sleep 1
         xdg-open "https://sa-mp.app/"
         cmd
-    fi
-
-    if ! pgrep -f "samp-server.exe" > /dev/null; then
+    elif [[ $? -eq 1 ]]; then
         echo
         echo "Status Starting...: [no]"
         echo "Server failed to run.."
         echo
 
-        if [ -f "server_log.txt" ]; then
+        if [[ -f "server_log.txt" ]]; then
             xdg-open "server_log.txt"
         else
             echo "server_log.txt not found."
@@ -195,8 +128,75 @@ function _part {
     fi
 }
 
-function _hash_ {
-    compn="$USER@$(hostname)"
+clears() {
+    clear
+}
+
+_help() {
+    _hash_
+    echo "usage: cat [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]"
+    echo "      [-v laterium version] [-vsc vscode tasks]"
+    cmd
+}
+
+_compiler_() {
+    echo "Searching for .lat files..."
+
+    laterium_pawncc_path=""
+    for p in $(find "$search_dir" -name pawncc.exe); do
+        if [[ -f "$p" ]]; then
+            laterium_pawncc_path="$p"
+            break
+        fi
+    done
+
+    if [[ -z "$laterium_pawncc_path" ]]; then
+        echo
+        echo "pawncc.exe not found in any subdirectories."
+        echo
+        sleep 1
+        xdg-open "https://github.com/pawn-lang/compiler/releases"
+        cmd
+    fi
+
+    found_file=""
+    for f in $(find "$search_dir" -name "*.lat"); do
+        if [[ -f "$f" ]]; then
+            found_file="$f"
+            break
+        fi
+    done
+
+    if [[ -z "$found_file" ]]; then
+        echo "No .lat files found in: $search_dir"
+        sleep 1
+        cmd
+    fi
+
+    echo "Found file: $found_file"
+    echo "Starting compilation..."
+    echo
+
+    output_file="${found_file%.lat}.amx"
+
+    "$laterium_pawncc_path" "$found_file" -o"$output_file" -d0 > rus.txt 2>&1
+
+    cat rus.txt
+
+    if [[ -f "$output_file" ]]; then
+        echo "Compilation $output_file...: [yes]"
+        echo
+
+        echo "Total Size $output_file / $(stat -c%s "$output_file") bytes"
+    else
+        echo "Compilation $output_file...: [no]"
+    fi
+
+    echo
+}
+
+_hash_() {
+    compn="$USER@$HOSTNAME"
     hash=$(echo -n "$compn" | sha1sum | awk '{print $1}')
     echo "$compn | $hash"
 }
