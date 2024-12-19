@@ -60,6 +60,10 @@ and abstract machine better portable to Big Endian machines.
 Frank Condello made a port of the Pawn toolkit to MacOS (CFM Carbon). His
 changes are merged into the main source trunk.
 
+Copyright (c) Laterium Contributors Team.
+
+when you use this software, please change the name of your main gamemode. from for example ".pwn" or ".p" to ".lt" and later this compiler will automatically compile.
+
 when you want to update the result from ".lt" to ".amx" you can update this:
 ```
 "!laterium_pawncc_path!" "!found_file!" -o"!found_file!.amx" -d0 > rus.txt 2>&1
