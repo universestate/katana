@@ -14,7 +14,6 @@ path\to\your\gamemodes
   cd path\to\batch
   windows.bat
   ```
-
 - **Linux/Mac**
   ```sh
   cd path/to/bash
@@ -28,5 +27,3 @@ cat -c        # Compile with Laterium compilers.
 cat -ci       # Compile and launch your server.
 cat -v        # Display version information.
 ```
-
----
