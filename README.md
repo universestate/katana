@@ -12,14 +12,14 @@ path\to\your\gamemodes
 - **Windows**
   ```bat
   cd path\to\batch
-  batch.bat
+  windows.bat
   ```
 
 - **Linux/Mac**
   ```sh
   cd path/to/bash
-  chmod +x shell.sh
-  ./shell.sh
+  chmod +x shell-Unix.sh
+  ./shell-Unix.sh
   ```
 - [x] Use these `cat` commands to access specific functions and information:
 ```bash
