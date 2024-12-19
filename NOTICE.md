@@ -70,6 +70,7 @@ when you want to update the result from ".lt" to ".amx" you can update this:
 ```
 "!laterium_pawncc_path!" "!found_file!" -o"!found_file!.amx" -d0 > rus.txt 2>&1
 ```
+-------------------------------------------------------------------------------
 ```
 -A<num> alignment in bytes of the data segment and the stack
 -a output assembler code
