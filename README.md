@@ -35,8 +35,8 @@ To execute the appropriate script for your platform:
 Use the following `cat` commands for help and information:  
 ```bash
 $ cat/help      # Display help information.
-$ cat -c        # View basic details.
-$ cat -ci       # View detailed information interactively.
+$ cat -c        # Start Compile with Laterium Compilers.
+$ cat -ci       # Start Compile and Start Your Server's!
 $ cat -v        # Display version info.
 ```
 
