@@ -57,7 +57,7 @@ function cmd {
     {
       "label": "Run Batch File",
       "type": "shell",
-      "file": "${workspaceFolder}/batch.cmd",
+      "file": "${workspaceFolder}/bash.sh",
       "group": {
         "kind": "build",
         "isDefault": true
