@@ -6,7 +6,7 @@
 | **Speed**          | ⭐         | ✅           |
 | **Size AMX**       | ⭐         | ⭐           |
 | **Error Handling** | ⭐         | ⭐           |
-| **Code Formatting**| ⭐         | ✅           |
+| **Code Formatting**| ⭐         | ⭐           |
 
 ---
 
