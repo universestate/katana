@@ -157,7 +157,7 @@ goto end
     echo    "path": "!path_st!" >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
     echo } >> "%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build"
 
-    echo    Creating '%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build' .. Yes
+    echo Creating '%APPDATA%\Sublime Text\Packages\User\terminal.sublime-build'...: [yes]
 
     start explorer "%APPDATA%\Sublime Text\Packages\User\"
 
