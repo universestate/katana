@@ -39,5 +39,3 @@ Ikuti langkah-langkah berikut untuk menjalankan program berdasarkan sistem opera
   ```
 
 ---
-
-Semoga petunjuk ini lebih jelas dan memudahkan Anda dalam menggunakan Laterium! Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya.
