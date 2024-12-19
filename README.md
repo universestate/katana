@@ -3,5 +3,5 @@
 |------------|---------|----------|
 | Features   | +       | +        |
 | Speed      | *       | *        |
-| Error Handling | -   | +        |
-| Code Formatting | -   | +        |
+| Error Handling | *   | *        |
+| Code Formatting | *   | +        |
