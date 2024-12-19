@@ -12,7 +12,7 @@ $ git clone https://github.com/universestate/laterium.git
 path\your\gamemodes
 ```
 
-### Rename
+### Rename the Files
 *please add the word `".lat"` in the file name that serves as the main gamemode file. example, from `main.pwn` to `main.lat.pwn`*
 
 ### Running Programs
