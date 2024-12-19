@@ -218,7 +218,7 @@ goto :eof
     if not exist "%_Settings_%" (
             echo settings.ini is required to determine the gamemode..
             timeout /t 1 >nul
-            call _builds_
+            goto _builds_
     )
 
     echo settings.ini found..
@@ -246,7 +246,7 @@ goto :eof
     if not defined laterium_path_file (
         echo settings.ini is missing gamemode information..
         timeout /t 1 >nul
-        call :_builds_
+        goto _builds_
     )
 
     set "laterium_path_gm=%_SearchDir_%!laterium_path_gm!"
