@@ -1,4 +1,3 @@
-![Screenshot](https://github.com/universestate/laterium/blob/e9145c94f7660a06f13ba8c5767c2d5d0ceb5cbe/see.png)
 [![Ashutosh's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=universestate&bg_color=19000e&color=9e4c98&line=9f509a&point=190000&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 ```
 -A<num> alignment in bytes of the data segment and the stack
