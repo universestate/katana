@@ -4,6 +4,7 @@
 - [x] better server power efficiency
 - [x] supports IDE/Text Editor (VSCode Only)
 - [x] can be updated at will
+- [x] requires pawncc.exe
 - [ ] Automatically fix warnings & errors
 - [ ] features as many text editor pawn code
 - [ ] reduce amx size
