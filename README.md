@@ -10,6 +10,9 @@
 ```
 $ git clone https://github.com/universestate/laterium.git
 ```
+#
+So, Replace main ".pwn" ".p" or other to ".lt"
+And Use this:
 -------------------------------------------------------------------------------
 ```bat
 $ batch.bat
