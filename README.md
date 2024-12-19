@@ -3,8 +3,8 @@
 |    **Aspect**     | **Pawn-E** | **Laterium** |
 |--------------------|------------|--------------|
 | **Features**       | ✅         | ✅           |
-| **Speed**          | ⭐         | ⭐           |
-| **Size AMX**          | ⭐         | ⭐           |
+| **Speed**          | ⭐         | ✅           |
+| **Size AMX**       | ⭐         | ⭐           |
 | **Error Handling** | ⭐         | ⭐           |
 | **Code Formatting**| ⭐         | ✅           |
 
