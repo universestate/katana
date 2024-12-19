@@ -1,4 +1,4 @@
-- [x] Clone the Laterium repository using the following command:
+- [x] Clone the Laterium repository:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
@@ -7,7 +7,6 @@ $ git clone https://github.com/universestate/laterium.git
 path\to\your\gamemodes
 ```
 - [x] Add the extension ".lat" to the main gamemode file. For example, rename `main.pwn` to `main.lat.pwn` (lowercase only).
-
 - [x] Run the script appropriate for your operating system:
 
 - **Windows**
@@ -22,9 +21,7 @@ path\to\your\gamemodes
   chmod +x shell.sh
   ./shell.sh
   ```
-
-### Running Scripts
-Use these `cat` commands to access specific functions and information:
+- [x] Use these `cat` commands to access specific functions and information:
 ```bash
 cat/help      # Display help information.
 cat -c        # Compile with Laterium compilers.
