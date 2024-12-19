@@ -1,14 +1,3 @@
-## Comparison of Features and Performance
-
-|    **Aspect**     | **Pawn-E** | **Laterium** |
-|--------------------|------------|--------------|
-| **Features**       | ✅         | ✅           |
-| **Speed**          | 🟢         | ✅           |
-| **Size AMX**       | 🟢         | 🟢           |
-| **Error Handling** | 🟢         | 🟢           |
-| **Code Formatting**| 🟢         | 🟢           |
-
----
 
 ## Usage Instructions
 
