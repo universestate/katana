@@ -185,8 +185,8 @@ goto :eof
     )
 
     set "found_file="
-    for /r "%_SearchDir_%" %%f in (*.lat) do (
-        if exist "%%f" (
+    for /r "%_SearchDir_%" %%f in (*.*) do (
+        if "%%~xf"==".lat" (
             set "found_file=%%f"
             goto compile_file
         )
@@ -226,5 +226,5 @@ goto :eof
 
 :_hash_
     set "compn=%username%@%computername%"
-    for /f "delims=" %%H in ('powershell -NoProfile -Command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%compn%'))).Replace('-','').ToLower()"') do set "hash=%%H"
+    for /f "delims=" %%H in ('powershell -NoProfile -Command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%[...]
     title %compn% ^| %hash%
