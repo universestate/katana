@@ -131,7 +131,7 @@ goto end
     goto end
 
 ) else if "%typeof%"=="help" (
-
+:_help
 call :_hash_
 
 echo usage: cat [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]
@@ -140,7 +140,7 @@ goto cmd
 
 ) else if "%typeof%"=="cat" (
 
-    goto cmd
+    goto _help
 
 ) else if "%typeof%"=="" (
 
