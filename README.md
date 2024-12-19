@@ -12,8 +12,8 @@ $ git clone https://github.com/universestate/laterium.git
 path\your\gamemodes
 ```
 
-### Replacing Main Files
-*Rename the file (for example: .pwn, .p, etc.) that serves as the main gamemode file to .lat, according to the Laterium system file format.*
+### Rename
+*please add the word ".lat" in the file name that serves as the main gamemode file. example, from main.pwn to main.lat.pwn*
 
 ### Running Programs
 *Run the script appropriate for your operating system:*
