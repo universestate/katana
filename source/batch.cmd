@@ -222,7 +222,7 @@ goto :eof
             call _builds_
     )
 
-    echo [System]/settings.ini found..
+    echo settings.ini found..
 
     set "laterium_path_gm="
     for /f "tokens=1,2 delims==" %%a in ('findstr /c:"drive=" "%_Settings_%"') do (
