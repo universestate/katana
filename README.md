@@ -23,14 +23,12 @@ path\your\gamemodes
   $ cd path\to\batch
   $ batch.bat
   ```
-  ![win](win.png)
 - **Linux/Mac**  
   ```sh
   $ cd path\to\bash
   $ chmod +x shell.sh
   $ ./shell.sh
   ```
-  ![linux](linux.png)
   
 ### Running Scripts
 *Use these `cat` commands to access specific functions and information:*
