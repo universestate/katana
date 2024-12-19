@@ -167,7 +167,7 @@ goto end
 
 echo.
 :___backs
-    echo [System]*Input "end" for back to menu . .
+    echo **Input "end" for back to menu . .
     set /p dirs="[%newtime%][%username%@%computername%] Enter Name > "
 
 
@@ -210,7 +210,7 @@ goto cmd
 )
 
 :end
-echo [System]*Press any key to return . . .
+echo Press any key to return . . .
 pause >nul
 goto cmd
 goto :eof
@@ -253,7 +253,7 @@ goto :eof
     set "laterium_path_gm=%_SearchDir_%!laterium_path_gm!"
 
     if not exist "!laterium_path_gm!" (
-        echo [System]*Gamemodes folder not found: !laterium_path_gm!.
+        echo folder not found: !laterium_path_gm!.
             goto cmd
     )
 
@@ -329,15 +329,15 @@ set input=%input: =0%
         goto _menus_
     )
 
-    echo [System]*Found =^> !input!
+    echo Found =^> !input!
 
     echo.
     dir /b "!input!"
 
 :_build_
     echo.
-    echo [System]*Input "back" back to build . .
-    echo [System]*Input "end" back to menu . .
+    echo **Input "back" back to build . .
+    echo **Input "end" back to menu . .
     set /p inputs="[%newtime%][System] Enter target > "
 
 set inputs=%inputs%
@@ -360,7 +360,7 @@ set inputs=%inputs: =0%
         goto _build_
     )
 
-    if exist "!input!\!inputs!.pwn" ( echo [System]*Found =^> !inputs!.pwn ) else if exist "!input!\!inputs!.p" ( echo [System]*Found =^> !inputs!.p ) else if exist "!input!\!inputs!.lt" ( echo [System]*Found =^> !inputs!.lt ) else (
+    if exist "!input!\!inputs!.pwn" ( echo Found =^> !inputs!.pwn ) else if exist "!input!\!inputs!.p" ( echo Found =^> !inputs!.p ) else if exist "!input!\!inputs!.lt" ( echo Found =^> !inputs!.lt ) else (
             echo "!input!" =^> "!inputs!.pwn - !inputs!.p - !inputs!.lt" not found..
         goto _build_
     )
