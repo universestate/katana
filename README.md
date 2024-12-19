@@ -13,7 +13,6 @@
 - [ ] Built-in code formatter
 - [ ] Improved compatibility with existing Pawn plugins
 - [ ] Customizable syntax highlighting
-- [ ] Real-time code suggestions
 - [ ] Optimized for large-scale projects
 
 ## Comparison
