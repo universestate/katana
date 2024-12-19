@@ -16,7 +16,7 @@ path\your\gamemodes
 ```
 
 ### Replacing Main Files
-Replace your existing files (e.g., `.pwn`, `.p`, etc.) with `.lat` files to switch to the Laterium system.
+Replace your existing gamemode main files (e.g., `.pwn`, `.p`, etc.) with `.lat` files to switch to the Laterium system.
 
 ### Running Programs
 Run the script appropriate for your operating system:
