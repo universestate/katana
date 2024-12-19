@@ -190,8 +190,8 @@ goto ___backs
 
 ) else if "%typeof%"=="help" (
 
-    :help
-title %date%
+call :_hash_
+
     echo.
     echo [+] -b [build]
     echo [+] -c [compile]
@@ -405,3 +405,13 @@ set inputs=%inputs: =0%
     echo.
     echo    End Status .. Yes
     echo.
+
+goto :eof
+
+:_hash_
+
+	set "before=%username%@%computername%"
+
+	for /f "delims=" %%H in ('powershell -command "[System.BitConverter]::ToString((New-Object 	System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%before%'))).Replace('-','').ToLower()"') do set "hash=%%H"
+
+	title %before% ^| %hash%
