@@ -1,42 +1,87 @@
+Here’s an improved and clearer version of your instructions:
+
+---
+
 ![image](logo.png)
----
-### Cloning the Repository
-*Clone the Laterium repository using the following command:*
+
+## Cloning the Repository  
+Clone the Laterium repository using the following command:  
 ```bash
-$ git clone https://github.com/universestate/laterium.git
-```
-
-### Preparing the Environment
-*Copy `.bat` or `.sh` files into the appropriate directory:*
-```
-path\your\gamemodes
-```
-
-### Rename the Files
-*please add the word `".lat"` in the file name that serves as the main gamemode file. example, from `main.pwn` to `main.lat.pwn`* - (lowercase only)
-
-### Running Programs
-*Run the script appropriate for your operating system:*
-
-- **Windows**  
-  ```bat
-  $ cd path\to\batch
-  $ batch.bat
-  ```
-- **Linux/Mac**  
-  ```sh
-  $ cd path\to\bash
-  $ chmod +x shell.sh
-  $ ./shell.sh
-  ```
-  
-### Running Scripts
-*Use these `cat` commands to access specific functions and information:*
-```bash
-$ cat/help      # Display help information.
-$ cat -c        # Compile with Laterium compilers.
-$ cat -ci       # Compile and launch your server.
-$ cat -v        # Display version information.
+git clone https://github.com/universestate/laterium.git
 ```
 
 ---
+
+## Preparing the Environment  
+Copy the `.bat` or `.sh` files into the appropriate directory:  
+```plaintext
+path\to\your\gamemodes
+```
+
+---
+
+## Renaming the Files  
+Rename the main gamemode file by adding `".lat"` to its name.  
+For example:  
+```plaintext
+main.pwn → main.lat.pwn
+```  
+*Note: Use lowercase only.*
+
+---
+
+## Running Programs  
+
+### On Windows  
+1. Navigate to the batch directory:  
+   ```bat
+   cd path\to\batch
+   ```
+2. Run the batch script:  
+   ```bat
+   batch.bat
+   ```
+
+### On Linux/Mac  
+1. Navigate to the shell script directory:  
+   ```bash
+   cd path/to/bash
+   ```
+2. Make the shell script executable:  
+   ```bash
+   chmod +x shell.sh
+   ```
+3. Run the shell script:  
+   ```bash
+   ./shell.sh
+   ```
+
+---
+
+## Running Scripts  
+
+Use the following `cat` commands to access various functions:  
+
+- **Display help information:**  
+  ```bash
+  cat/help
+  ```
+
+- **Compile with Laterium compilers:**  
+  ```bash
+  cat -c
+  ```
+
+- **Compile and launch the server:**  
+  ```bash
+  cat -ci
+  ```
+
+- **Display version information:**  
+  ```bash
+  cat -v
+  ```
+
+---
+
+This version enhances clarity and organization while maintaining the original details.
