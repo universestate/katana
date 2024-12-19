@@ -13,7 +13,7 @@ path\your\gamemodes
 ```
 
 ### Rename
-*please add the word ".lat" in the file name that serves as the main gamemode file. example, from main.pwn to main.lat.pwn*
+*please add the word `".lat"` in the file name that serves as the main gamemode file. example, from `main.pwn` to `main.lat.pwn`*
 
 ### Running Programs
 *Run the script appropriate for your operating system:*
