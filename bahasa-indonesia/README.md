@@ -1,4 +1,4 @@
-### Silahkan Clone Repository ini:
+## Clone repository ini:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
@@ -9,8 +9,8 @@ Copy `.bat` atau linuc/mac `.sh` ke bagian direktori gamemode utama.
 path\your\gamemodes
 ```
 
-### Ganti tipe file:
-Ganti nama file (e.g., `.pwn`, `.p`, dll.) menjadi `.lat` Seperti tipe File System Laterium.
+### dan Setelahnya:
+Ganti nama file (e.g., `.pwn`, `.p`, dll.) - khusus file gamemode utama. menjadi `.lat` Seperti tipe File System Laterium.
 
 ### Menjalankan Program:
 Silahkan ikuti tutorial tersebut:
