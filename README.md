@@ -18,7 +18,7 @@ $ git clone https://github.com/universestate/laterium.git
 ```
 
 ### Preparing the Environment
-Copy `.bat` or `.batch` files into the appropriate directory:
+Copy `.bat` or `.sh` files into the appropriate directory:
 ```
 path\your\gamemodes
 ```
