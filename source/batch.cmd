@@ -21,7 +21,6 @@ set time=%time%
 set time=%time: =0%
 
 title Type "help"
-color 2
 
 for /f "tokens=1-3 delims=:." %%a in ("%time%") do set newtime=%%a%%b.%%c
 
