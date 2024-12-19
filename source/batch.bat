@@ -138,6 +138,10 @@ echo usage: cat [-c compile] [-r running server] [-ci compile-running] [-cls cle
 echo       [-v laterium version] [-vsc vscode tasks]
 goto cmd
 
+) else if "%typeof%"=="cat" (
+
+    goto cmd
+
 ) else if "%typeof%"=="" (
 
     goto cmd
