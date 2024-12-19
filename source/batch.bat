@@ -184,47 +184,35 @@ goto :eof
         goto cmd
     )
 
-    set "found_file="
-    for /r "%_SearchDir_%" %%f in (*lat*) do (
+    for /r "%_SearchDir_%" %%f in (*.lat*) do (
         if exist "%%f" (
-            set "found_file=%%f"
-            goto compile_file
+            echo Found file: %%f
+            echo Starting compilation..
+            echo.
+
+            set "output_file=%%~dpnf.amx"
+
+            "!laterium_pawncc_path!" "%%f" -o"!output_file!" -d0 > rus.txt 2>&1
+
+            type rus.txt
+
+            if exist "!output_file!" (
+                echo Compilation !output_file!...: [yes]
+                echo.
+
+                for %%A in ("!output_file!") do (
+                    echo Total Size !output_file! / %%~zA bytes
+                )
+            ) else (
+                echo Compilation !output_file!...: [no]
+            )
+
+            echo.
         )
     )
-
-    if not defined found_file (
-        echo No .lat files found in: "%_SearchDir_%"
-        timeout /t 1 >nul
-        goto cmd
-    )
-
-:compile_file
-    echo Found file: !found_file!
-    echo Starting compilation..
-    echo.
-
-    set "output_file=!found_file:~0,-4!.amx"
-
-    "!laterium_pawncc_path!" "!found_file!" -o"!output_file!" -d0 > rus.txt 2>&1
-
-    type rus.txt
-
-    if exist "!output_file!" (
-        echo Compilation !output_file!...: [yes]
-        echo.
-
-        for %%A in ("!output_file!") do (
-            echo Total Size !output_file! / %%~zA bytes
-        )
-    ) else (
-        echo Compilation !output_file!...: [no]
-    )
-
-    echo.
-
 goto :eof
 
 :_hash_
     set "compn=%username%@%computername%"
-    for /f "delims=" %%H in ('powershell -NoProfile -Command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%[...]
+    for /f "delims=" %%H in ('powershell -NoProfile -Command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%compn%')) -replace '-', ''"') do set hash=%%H
     title %compn% ^| %hash%
