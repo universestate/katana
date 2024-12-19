@@ -1,20 +1,22 @@
-# Bahasa-Indonesia.
-### Clone repository ini:
+## Panduan Instalasi dan Penggunaan Laterium
+
+### **Clone Repository**
+Pertama, clone repository ini ke dalam direktori lokal Anda:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
 
-### Setelahnya:
-Copy `.bat` atau linux/mac `.sh` ke bagian direktori gamemode utama.
+### **Menyiapkan File**
+Setelah berhasil meng-clone repository, salin file `.bat` (untuk Windows) atau `.sh` (untuk Linux/Mac) ke direktori gamemode utama Anda:
 ```
-path\your\gamemodes
+path\to\your\gamemodes
 ```
 
-### dan Setelahnya:
-Ganti nama file (e.g., `.pwn`, `.p`, dll.) - khusus file gamemode utama. menjadi `.lat` Seperti tipe File System Laterium.
+### **Mengubah Nama File**
+Ganti nama file (misalnya: `.pwn`, `.p`, dll.) yang berfungsi sebagai file gamemode utama menjadi `.lat`, sesuai dengan format file sistem Laterium.
 
-### Menjalankan Program:
-Silahkan ikuti tutorial berikut:
+### **Menjalankan Program**
+Ikuti langkah-langkah berikut untuk menjalankan program berdasarkan sistem operasi yang Anda gunakan:
 
 - **Windows**  
   ```bat
@@ -28,13 +30,14 @@ Silahkan ikuti tutorial berikut:
   $ ./shell.sh
   ```
 
-### Menjalankan Fungsi-Fungsi:
-Gunakan kunci `cat` dan masukan Opsi dibawah ini:
-```bash
-$ cat/help      # Informasi tentang opsi lebih lanjut.
-$ cat -c        # Untuk menjalankan Compiler.
-$ cat -ci       # Untuk menjalankan Compiler beserta menjalankan Server.
-$ cat -v        # Untuk melihat Versi Laterium yang digunakan.
-```
+### 5. **Menjalankan Fungsi-Fungsi Laterium**
+  ```bash
+  $ cat/help      # Menampilkan informasi opsi lebih lanjut.
+  $ cat -c        # Untuk menjalankan Compiler.
+  $ cat -ci       # Untuk menjalankan Compiler beserta Server.
+  $ cat -v        # Menampilkan versi Laterium yang sedang digunakan.
+  ```
 
 ---
+
+Semoga petunjuk ini lebih jelas dan memudahkan Anda dalam menggunakan Laterium! Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya.
