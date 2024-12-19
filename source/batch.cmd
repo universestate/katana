@@ -217,7 +217,7 @@ goto :eof
 
 :_compiler_
     if not exist "%_Settings_%" (
-            echo [System]/settings.ini is required to determine the gamemode..
+            echo settings.ini is required to determine the gamemode..
             timeout /t 1 >nul
             call _builds_
     )
