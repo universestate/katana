@@ -1,5 +1,5 @@
 ![image](logo.png)
-
+---
 ### Cloning the Repository
 *Clone the Laterium repository using the following command:*
 ```bash
