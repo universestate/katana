@@ -21,11 +21,14 @@ Run the script appropriate for your operating system:
 
 - **Windows**  
   ```bat
+  $ cd path\to\batch
   $ batch.bat
   ```
 - **Linux/Mac**  
   ```sh
-  $ ./bash.sh
+  $ cd path\to\bash
+  $ chmod +x shell.sh
+  $ ./shell.sh
   ```
 
 ### Running Scripts
