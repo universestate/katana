@@ -149,7 +149,7 @@ goto end
     goto end
 
 ) else if "%typeof%"=="-st" (
-:_____build_
+:___build
     echo.
     echo [Warning]*Please use a Symbol "/" you can't use "\"
     set /p path_st="[%mytime%][%username%@%computername%]*Enter Batch Path > "
