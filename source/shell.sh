@@ -59,7 +59,7 @@ cmd() {
     {
       "label": "Run Batch File",
       "type": "shell",
-      "file": "\${workspaceFolder}/batch.bat",
+      "file": "\${workspaceFolder}/shell.sh",
       "group": {
         "kind": "build",
         "isDefault": true
