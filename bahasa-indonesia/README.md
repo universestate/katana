@@ -13,7 +13,7 @@ path\your\gamemodes
 Ganti nama file (e.g., `.pwn`, `.p`, dll.) - khusus file gamemode utama. menjadi `.lat` Seperti tipe File System Laterium.
 
 ### Menjalankan Program:
-Silahkan ikuti tutorial tersebut:
+Silahkan ikuti tutorial berikut:
 
 - **Windows**  
   ```bat
