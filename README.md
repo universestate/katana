@@ -1,5 +1,6 @@
 ## What's working
 - [x] Accelerate compilation time (only a few percent)
+- [x] better and more scalable use of structures
 - [x] lighten the load of pawn editors
 - [x] better server power efficiency
 - [x] supports IDE/Text Editor (VSCode Only)
