@@ -113,7 +113,7 @@ goto end
         echo     { > ".vscode\tasks.json"
         echo       "label": "Run Batch File", > ".vscode\tasks.json"
         echo       "type": "shell", > ".vscode\tasks.json"
-        echo       "file": "${workspaceFolder}/batch.cmd", > ".vscode\tasks.json"
+        echo       "file": "${workspaceFolder}/batch.bat", > ".vscode\tasks.json"
         echo       "group": { > ".vscode\tasks.json"
         echo           "kind": "build", > ".vscode\tasks.json"
         echo           "isDefault": true > ".vscode\tasks.json"
