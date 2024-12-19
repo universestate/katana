@@ -24,14 +24,14 @@ newtime=$(date +"%H%M.%S")
 function cmd {
     read -p "$USER@$(hostname)~$ " typeof
 
-    if [ "$typeof" == "-c" ]; then
+    if [ "$typeof" == "cat -c" ]; then
         echo
         echo "Compiling..."
         _compiler_
-    elif [ "$typeof" == "-r" ]; then
+    elif [ "$typeof" == "cat -r" ]; then
         _part
         end
-    elif [ "$typeof" == "-ci" ]; then
+    elif [ "$typeof" == "cat -ci" ]; then
         _compiler_
 
         if grep -qi "error" rus.txt; then
@@ -41,13 +41,13 @@ function cmd {
             echo "Error Status...: [no]"
             _start_this
         fi
-    elif [ "$typeof" == "-cls" ]; then
+    elif [ "$typeof" == "cat -cls" ]; then
         clears
-    elif [ "$typeof" == "-v" ]; then
+    elif [ "$typeof" == "cat -v" ]; then
         echo
         echo "    Laterium Version : $_version_"
         end
-    elif [ "$typeof" == "-vsc" ]; then
+    elif [ "$typeof" == "cat -vsc" ]; then
         mkdir -p .vscode
         
         cat <<EOL > .vscode/tasks.json
@@ -74,7 +74,7 @@ EOL
         end
     elif [ "$typeof" == "help" ]; then
         _hash_
-        echo "usage: command [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]"
+        echo "usage: cat [-c compile] [-r running server] [-ci compile-running] [-cls clear screen]"
         echo "      [-v laterium version] [-vsc vscode tasks]"
         cmd
     else
