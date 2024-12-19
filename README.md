@@ -1,5 +1,3 @@
-Here’s an improved and clearer version of your instructions:
-
 ---
 
 ![image](logo.png)
@@ -83,5 +81,3 @@ Use the following `cat` commands to access various functions:
   ```
 
 ---
-
-This version enhances clarity and organization while maintaining the original details.
