@@ -1,15 +1,6 @@
-:: How to Install?
-:: Paste "batch.cmd" to path\your\gamemode.
-:: Docs Command list : https://github.com/universestate/laterium/tree/main/doc
-
 @echo off
 
 setlocal enabledelayedexpansion
-color 9
-title Loading.. ^| Uptime Boot.
-systeminfo | find "System Boot Time"
-timeout /t 1 >nul
-cls
 
 set "_version_=12/19/2024 ^(B-14^)"
 set "_SearchDir_=%~dp0"
@@ -35,34 +26,34 @@ color 2
 for /f "tokens=1-3 delims=:." %%a in ("%time%") do set mytime=%%a%%b.%%c
 
 :cmd
-set /p command="[%mytime%][%username%@%computername%] ~$ "
+set /p typeof="[%mytime%][%username%@%computername%] ~$ "
 
-if "%command%"=="-b" (
+if "%typeof%"=="-b" (
 
     call :_builds_
         echo [System]*Press any key to return . . .
         pause >nul
     call :clears
 
-) else if "%command%"=="-c" (
+) else if "%typeof%"=="-c" (
 
 echo.
 echo [System]*Compiling...
     call :_compiler_
 
-) else if "%command%"=="-bc" (
+) else if "%typeof%"=="-bc" (
 
     call :_builds_
     echo Press any key to open Compiler . . .
         pause >nul
             call :_compiler_
 
-) else if "%command%"=="-r" (
+) else if "%typeof%"=="-r" (
 
     call :_part
     goto end
 
-) else if "%command%"=="-cr" (
+) else if "%typeof%"=="-cr" (
 
     call :_compiler_
 
@@ -116,21 +107,21 @@ echo [System]*Compiling...
     
     goto end
 
-) else if "%command%"=="-ct" (
+) else if "%typeof%"=="-ct" (
 
 :clears
     cls
     goto _laterium_
     goto cmd
 
-) else if "%command%"=="-v" (
+) else if "%typeof%"=="-v" (
 
     echo.
         echo    Laterium Version : %_version_%
     echo.
 goto end
 
-) else if "%command%"=="-vsc" (
+) else if "%typeof%"=="-vsc" (
 
     mkdir .vscode
         
@@ -140,7 +131,7 @@ goto end
         echo     { > ".vscode\tasks.json"
         echo       "label": "Run Batch File", > ".vscode\tasks.json"
         echo       "type": "shell", > ".vscode\tasks.json"
-        echo       "command": "${workspaceFolder}/batch.cmd", > ".vscode\tasks.json"
+        echo       "typeof": "${workspaceFolder}/batch.cmd", > ".vscode\tasks.json"
         echo       "group": { > ".vscode\tasks.json"
         echo           "kind": "build", > ".vscode\tasks.json"
         echo           "isDefault": true > ".vscode\tasks.json"
@@ -157,7 +148,7 @@ goto end
 
     goto end
 
-) else if "%command%"=="-st" (
+) else if "%typeof%"=="-st" (
 :________back
     echo.
     echo [Warning]*Please use a Symbol "/" you can't use "\"
@@ -174,7 +165,7 @@ goto end
 
     goto end
 
-) else if "%command%"=="-mk" (
+) else if "%typeof%"=="-mk" (
 
 echo.
 :___backs
@@ -190,14 +181,14 @@ echo.
     
 goto ___backs
 
-) else if "%command%"=="git clone" (
+) else if "%typeof%"=="git clone" (
     git clone https://github.com/universestate/laterium.git
     cd laterium
-) else if "%command%"=="-dir" (
+) else if "%typeof%"=="-dir" (
 
     dir
 
-) else if "%command%"=="help" (
+) else if "%typeof%"=="help" (
     :help
 title %date%
     echo.
@@ -214,14 +205,14 @@ title %date%
     echo [+] -mk [makedir]
     echo.
 goto cmd
-) else if "%command%"=="" (
+) else if "%typeof%"=="" (
 
     goto cmd
 
 ) else (
 
     echo.
-        echo    $ %command% - This command does not exist. Please try again..
+        echo    $ %typeof% - This typeof does not exist. Please try again..
     timeout /t 2
         goto cmd
 
