@@ -71,8 +71,8 @@ public OnPlayerConnect(playerid)
   GetPlayerArmour playerid, armour;
 
   if (health >= 120.0 || armour >= 120.5) {
-    SetPlayerHealth playerid, health;
-    SetPlayerArmour playerid, armour;
+    SetPlayerHealth playerid, 100.20;
+    SetPlayerArmour playerid, 100.40;
   }
   getD_Player[playerid][pHealth] = health;
   getD_Player[playerid][pArmour] = armour;
