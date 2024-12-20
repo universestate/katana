@@ -154,7 +154,7 @@ while true; do
     {
       "label": "Run Batch File",
       "type": "shell",
-      "file": "\${workspaceFolder}/windows.bat",
+      "file": "\${workspaceFolder}/shell-Unix.sh",
       "group": {
           "kind": "build",
           "isDefault": true
