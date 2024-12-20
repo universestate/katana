@@ -26,12 +26,12 @@ enum ENUM_PLAYERS
   pHunger, pThirst, pHungerTime, pThirstTime,
   Float:pHealth, Float:pArmour
 }
-new getD_Player[MAX_PLAYERS][ENUM_PLAYERS];
+new getD_Player[MAX_PLAYERS][ENUM_PLAYERS]
 
 CheckNum(num, nums) {
   if (num != nums) {
-    num = 1 / 2;
-    nums = 2 / 1;
+    num = 1 / 2
+    nums = 2 / 1
 
     printf "%i%i", num, nums;
   }
