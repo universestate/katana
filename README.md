@@ -12,7 +12,7 @@
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
-- [x] Copy `".bat"` or `".sh"` files into the appropriate directory:
+- [x] Copy `".bat"` or `".sh"` files into the appropriate directory.
 ```
 path\to\your\gamemodes
 ```
