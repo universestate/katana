@@ -52,7 +52,9 @@ public OnGameModeInit() {
   return
 }
 
-public OnGameModeExit() { return }
+public OnGameModeExit() { 
+  return
+}
 
 new a, b, c
 new Float:x, Float:y, Float:z
@@ -60,7 +62,7 @@ new Float:x, Float:y, Float:z
 stock myName(p_) {
   new _name[MAX_PLAYER_NAME+1]
   GetPlayerName p_, _name, sizeof(_name)
-  return
+  return 1
 }
 
 public OnPlayerConnect(playerid)
@@ -107,9 +109,9 @@ public OnPlayerCommandText(playerid, cmdtext[])
   if (!strcmp(cmdtext, "/cursor", true)) {
     new r = random(3) + 1
     switch (r) {
-      case 1: { SelectTextDraw playerid, COLOR_GREY }
-      case 2: { SelectTextDraw playerid, COLOR_GREEN }
-      case 3: { SelectTextDraw playerid, COLOR_RED }
+      case 1: SelectTextDraw playerid, COLOR_GREY
+      case 2: SelectTextDraw playerid, COLOR_GREEN
+      case 3: SelectTextDraw playerid, COLOR_RED
     }
   }
   if (!strcmp(cmdtext, "/uncursor", true)) {
@@ -137,4 +139,5 @@ message_t:
 
   return 
 }
+
 ```
