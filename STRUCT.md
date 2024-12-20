@@ -12,6 +12,18 @@ main() {
   CheckNum(num1, num2);
 }
 
+#define COLOR_R "{FF0000}"
+#define COLOR_Y "{FFF070}"
+#define COLOR_W "{FFFFFF}"
+#define COLOR_GR "{999999}"
+
+enum ENUM_PLAYERS
+{
+  pHunger, pThirst, pHungerTime, pThirstTime,
+  Float:health, Float:armour
+}
+new getD_Player[MAX_PLAYERS][ENUM_PLAYERS];
+
 CheckNum(num, nums) {
   if (num != nums) {
     num = 1 / 2;
@@ -22,6 +34,7 @@ CheckNum(num, nums) {
 }
 
 public OnGameModeInit() {
+:ctimes
   new timeString[9]
   new currentTime = gettime()
   
@@ -30,7 +43,6 @@ public OnGameModeInit() {
       (currentTime % 3600) / 60,       // Minutes
       currentTime % 60                 // Seconds
   )
-  
   printf "Current Time: %s", timeString;
 
   return 1;
@@ -52,6 +64,22 @@ public OnPlayerConnect(playerid)
   if (a != b || c != a) {
     // logic here
   }
+
+  // reset variables.
+  new Float:health, Float:armour;
+  GetPlayerHealth playerid, health;
+  GetPlayerArmour playerid, armour;
+
+  if (health >= 120.0 || armour >= 120.5) {
+    SetPlayerHealth playerid, health;
+    SetPlayerArmour playerid, armour;
+  }
+  getD_Player[playerid][pHealth] = health;
+  getD_Player[playerid][pArmour] = armour;
+
+  // time select.
+  getD_Player[playerid][pHungerTime] = gettime();
+  getD_Player[playerid][pThirstTime] = gettime();
   return 1;
 }
 
@@ -65,5 +93,20 @@ public OnPlayerCommandText(playerid, cmdtext[])
     SendClientMessageToAll -1, string;
   }
   return 0;
+}
+
+public OnPlayerUpdate(playerid)
+{
+:message_h
+  SendClientMessage playerid, -1, ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger];
+:message_t
+  SendClientMessage playerid, -1, ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst];
+
+  if (++ getD_Player[playerid][pHungerTime] >= 20)
+    goto message_h;
+  if (++ getD_player[playerid][pThirstTime] >= 30)
+    goto message_t;
+
+  return 1;
 }
 ```
