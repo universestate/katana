@@ -217,7 +217,7 @@ goto :eof
                 echo Compilation !_output!...: [no]
             )
 
-            echo.
+            echo .
         )
     )
 goto :eof
