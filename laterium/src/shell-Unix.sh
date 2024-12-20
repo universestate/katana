@@ -129,7 +129,7 @@ while true; do
             if grep -qi "error" rus.txt; then
                 echo "Failure"
             else
-                echo "Success"
+                echo "    [Success]"
                 _part
             fi
             ;;
