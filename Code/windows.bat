@@ -41,12 +41,15 @@ echo Compiling...
  
     call :_compiler_
 
+    ver > nul
     findstr /i "error" rus.txt > nul
-    echo Errorlevel is: %errorlevel%
+    echo Errorlevel after findstr: %errorlevel%
     if %errorlevel% equ 0 (
+        echo Errorlevel is: %errorlevel%
         echo Error Status...: [no]
         goto _start_this
     ) else (
+        echo Errorlevel is: %errorlevel%
         echo Error Status...: [yes]
         goto end
     )
