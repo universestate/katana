@@ -224,5 +224,5 @@ goto :eof
 
 :_hash_
     set "compn=%username%@%computername%"
-    for /f "delims=" %%H in ('powershell -NoProfile -Command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1Managed).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%compn%')) -replace '-', ''"') do set hash=%%H
+    for /f "delims=" %%H in ('powershell -command "[System.BitConverter]::ToString((New-Object System.Security.Cryptography.SHA1CryptoServiceProvider).ComputeHash([System.Text.Encoding]::UTF8.GetBytes('%compn%'))).Replace('-','').ToLower()"') do set hash=%%H
     title %compn% ^| %hash%
