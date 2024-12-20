@@ -80,6 +80,9 @@ public OnPlayerConnect(playerid)
 {
   if (a != b || c != a) {
     // Logic here
+    a = 1
+    b = 2
+    c = 3
   }
 
   // Reset variables
