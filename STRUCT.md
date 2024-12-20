@@ -1,4 +1,8 @@
 ```c++
+/**
+* Thanks to SA-MP Team, ITB CompuPhase.
+*/
+
 #include "a_samp"
 
 main() {
