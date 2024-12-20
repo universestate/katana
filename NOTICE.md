@@ -62,10 +62,9 @@ changes are merged into the main source trunk.
 
 Copyright (c) Laterium Contributors Team.
 
--------------------------------------------------------------------------------
-```
-"!laterium_pawncc_path!" "!found_file!" -o"!found_file!.amx" -d0 > rus.txt 2>&1
-```
+#Product
+Buatan Orang Indonesia.
+
 -------------------------------------------------------------------------------
 ```
 -A<num> alignment in bytes of the data segment and the stack
