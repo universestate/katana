@@ -108,25 +108,31 @@ goto end
 
 ) else if "%typeof%"=="cat -vsc" (
 
+    if exist ".vscode" (
+        echo A subdirectory or file .vscode already exists.
+        goto end
+    )
     mkdir .vscode
-        
-    echo { > ".vscode\tasks.json"
-        echo   "version": "2.0.0", > ".vscode\tasks.json"
-        echo   "tasks": [ > ".vscode\tasks.json"
-        echo     { > ".vscode\tasks.json"
-        echo       "label": "Run Batch File", > ".vscode\tasks.json"
-        echo       "type": "shell", > ".vscode\tasks.json"
-        echo       "file": "${workspaceFolder}/windows.bat", > ".vscode\tasks.json"
-        echo       "group": { > ".vscode\tasks.json"
-        echo           "kind": "build", > ".vscode\tasks.json"
-        echo           "isDefault": true > ".vscode\tasks.json"
-        echo       }, > ".vscode\tasks.json"
-        echo       "problemMatcher": [], > ".vscode\tasks.json"
-        echo       "detail": "Task to run the batch file" > ".vscode\tasks.json"
-        echo     } > ".vscode\tasks.json"
-        echo   ] > ".vscode\tasks.json"
-    echo } > ".vscode\tasks.json"
 
+    mkdir ".vscode"
+(
+    echo {
+    echo   "version": "2.0.0",
+    echo   "tasks": [
+    echo     {
+    echo       "label": "Run Batch File",
+    echo       "type": "shell",
+    echo       "file": "${workspaceFolder}/windows.bat",
+    echo       "group": {
+    echo           "kind": "build",
+    echo           "isDefault": true
+    echo       },
+    echo       "problemMatcher": [],
+    echo       "detail": "Task to run the batch file"
+    echo     }
+    echo   ]
+    echo }
+) > ".vscode\tasks.json"
     echo Creating '.vscode\tasks.json'...: [yes]
 
     start explorer ".vscode\"
