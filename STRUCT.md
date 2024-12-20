@@ -17,10 +17,14 @@ main() {
 #define COLOR_W "{FFFFFF}"
 #define COLOR_GR "{999999}"
 
+#define COLOR_GREY 0xAFAFAFAA
+#define COLOR_GREEN 0x33AA33AA
+#define COLOR_RED 0xAA3333AA
+
 enum ENUM_PLAYERS
 {
   pHunger, pThirst, pHungerTime, pThirstTime,
-  Float:health, Float:armour
+  Float:pHealth, Float:pArmour
 }
 new getD_Player[MAX_PLAYERS][ENUM_PLAYERS];
 
@@ -34,7 +38,6 @@ CheckNum(num, nums) {
 }
 
 public OnGameModeInit() {
-:ctimes
   new timeString[9]
   new currentTime = gettime()
   
@@ -99,12 +102,11 @@ public OnPlayerCommandText(playerid, cmdtext[])
     SendClientMessageToAll -1, string;
   }
   if (!strcmp(cmdtext, "/cursor", true)) {
-    new r = random(4) + 1;
+    new r = random(3) + 1;
     switch (r) {
-      case 1: { SelectTextDraw playerid, COLOR_R; }
-      case 2: { SelectTextDraw playerid, COLOR_Y; }
-      case 3: { SelectTextDraw playerid, COLOR_W; }
-      case 4: { SelectTextDraw playerid, COLOR_GR; }
+      case 1: { SelectTextDraw playerid, COLOR_GREY; }
+      case 2: { SelectTextDraw playerid, COLOR_GREEN; }
+      case 3: { SelectTextDraw playerid, COLOR_RED; }
     }
   }
   if (!strcmp(cmdtext, "/uncursor", true)) {
@@ -115,15 +117,18 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 public OnPlayerUpdate(playerid)
 {
-:message_h
-  SendClientMessage playerid, -1, ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger];
-:message_t
-  SendClientMessage playerid, -1, ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst];
-
   if (++ getD_Player[playerid][pHungerTime] >= 20)
     goto message_h;
-  if (++ getD_player[playerid][pThirstTime] >= 30)
+  if (++ getD_Player[playerid][pThirstTime] >= 30)
     goto message_t;
+
+  new str[200], str2[200];
+  format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger];
+  format str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst];
+message_h:
+  SendClientMessage playerid, -1, str;
+message_t:
+  SendClientMessage playerid, -1, str2;
 
   return 1;
 }
