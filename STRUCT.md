@@ -123,10 +123,14 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 public OnPlayerUpdate(playerid)
 {
-  if (++ getD_Player[playerid][pHungerTime] >= 20)
+  if (++ getD_Player[playerid][pHungerTime] >= 20) {
+    getD_Player[playerid][pHunger]--;
     goto message_h
-  if (++ getD_Player[playerid][pThirstTime] >= 30)
+  }
+  if (++ getD_Player[playerid][pThirstTime] >= 30) {
+    getD_Player[playerid][pThirst]--;
     goto message_t
+  }
 
   new str[200], str2[200]
   format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger]
