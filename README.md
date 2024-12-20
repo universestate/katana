@@ -21,19 +21,19 @@ path\to\your\gamemodes
 
 - **Windows**
   ```bat
-  cd path\to\batch
-  windows.bat
+  $ cd path\to\batch
+  $ windows.bat
   ```
 - **Linux/Mac**
   ```sh
-  cd path/to/bash
-  chmod +x shell-Unix.sh
-  ./shell-Unix.sh
+  $ cd path/to/bash
+  $ chmod +x shell-Unix.sh
+  $ ./shell-Unix.sh
   ```
 - [x] Use these `cat` commands to access specific functions and information:
 ```bash
-cat/help      # More commands Information.
-cat -c        # Compile with Laterium compilers.
-cat -ci       # Compile and launch your server.
-cat -v        # Display version information.
+$ cat/help      # More commands Information.
+$ cat -c        # Compile with Laterium compilers.
+$ cat -ci       # Compile and launch your server.
+$ cat -v        # Display version information.
 ```
