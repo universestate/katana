@@ -22,14 +22,14 @@ CheckNum(num, nums) {
 }
 
 public OnGameModeInit() {
-  new timeString[9];
-  new currentTime = gettime();
+  new timeString[9]
+  new currentTime = gettime()
   
-  format(timeString, sizeof(timeString), "%02d:%02d:%02d",
+  format( timeString, sizeof(timeString), "%02d:%02d:%02d",
       currentTime / 3600,              // Hours
       (currentTime % 3600) / 60,       // Minutes
       currentTime % 60                 // Seconds
-  );
+  )
   
   printf "Current Time: %s", timeString;
 
