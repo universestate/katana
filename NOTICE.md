@@ -62,8 +62,7 @@ changes are merged into the main source trunk.
 
 Copyright (c) Laterium Contributors Team.
 
-#Product
-Buatan Orang Indonesia.
+> Buatan Orang Indonesia.
 
 -------------------------------------------------------------------------------
 ```
