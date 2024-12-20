@@ -16,7 +16,7 @@ $ git clone https://github.com/universestate/laterium.git
 ```
 path\to\your\gamemodes
 ```
-- [x] Add the extension ".lat" to the main file. example, rename `main.pwn` to `main.lat.pwn` (lowercase only).
+- [x] Add the extension `".lat"` to the main file. example, rename `main.pwn` to `main.lat.pwn` (lowercase only).
 - [x] Run the script appropriate for your operating system:
 
 - **Windows**
