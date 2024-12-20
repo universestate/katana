@@ -35,7 +35,7 @@ enum PLAYERS // Example enums for the player
   pHungerTime, pThirstTime, // Hunger time and thirst time
   Float:pHealth, Float:pArmour // Health and armor values
 }
-new getD_Player[MAX_PLAYERS][PLAYERS]
+new DPlayer[MAX_PLAYERS][PLAYERS]
 
 // Function to check numbers
 CheckNum(num, nums) {
@@ -100,12 +100,8 @@ public OnPlayerConnect(playerid)
     SetPlayerHealth playerid, 100.20
     SetPlayerArmour playerid, 100.40
   }
-  getD_Player[playerid][pHealth] = health
-  getD_Player[playerid][pArmour] = armour
-
-  // Set times
-  getD_Player[playerid][pHungerTime] = gettime()
-  getD_Player[playerid][pThirstTime] = gettime()
+  DPlayer[playerid][pHealth] = health
+  DPlayer[playerid][pArmour] = armour
 
   return 1
 }
@@ -116,6 +112,9 @@ public OnPlayerSpawn(playerid)
   // Send client message
   SendClientMessage playerid, -1, "Use \"/cursor\" to show your cursor, Use \"/uncursor\" to hide your cursor."
 
+  // Set times
+  DPlayer[playerid][pHungerTime] = gettime()
+  DPlayer[playerid][pThirstTime] = gettime()
   return 1
 }
 
@@ -151,20 +150,20 @@ public OnPlayerCommandText(playerid, cmdtext[])
 public OnPlayerUpdate(playerid)
 {
   // Update hunger time
-  if (++getD_Player[playerid][pHungerTime] >= 20) { // Increment hunger time
-    getD_Player[playerid][pHunger]--;
+  if (++DPlayer[playerid][pHungerTime] >= 20) { // Increment hunger time
+    DPlayer[playerid][pHunger]--;
     goto message_h
   }
   // Update thirst time
-  if (++getD_Player[playerid][pThirstTime] >= 30) { // Increment thirst time
-    getD_Player[playerid][pThirst]--;
+  if (++DPlayer[playerid][pThirstTime] >= 30) { // Increment thirst time
+    DPlayer[playerid][pThirst]--;
     goto message_t
   }
 
   // Format warning messages
   new str[200], str2[200]
-  format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger]
-  format str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst]
+  format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", DPlayer[playerid][pHunger]
+  format str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", DPlayer[playerid][pThirst]
 
   // Send warning messages
 message_h: // Logic for hunger message
