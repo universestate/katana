@@ -44,13 +44,11 @@ echo Compiling...
     ver > nul
     findstr /i "error" rus.txt > nul
     echo Errorlevel after findstr: %errorlevel%
-    if %errorlevel% equ 0 (
+    if errorlevel 0 (
         echo Errorlevel is: %errorlevel%
-        echo Error Status...: [no]
         goto _start_this
     ) else (
         echo Errorlevel is: %errorlevel%
-        echo Error Status...: [yes]
         goto end
     )
 
