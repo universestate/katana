@@ -139,22 +139,22 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 public OnPlayerUpdate(playerid)
 {
-  if (++ getD_Player[playerid][pHungerTime] >= 20) {
+  if (++ getD_Player[playerid][pHungerTime] >= 20) { // use of "++" to fetch data if data is time
     getD_Player[playerid][pHunger]--;
     goto message_h // Goto example
   }
   if (++ getD_Player[playerid][pThirstTime] >= 30) {
     getD_Player[playerid][pThirst]--;
-    goto message_t // Goto example
+    goto message_t
   }
 
   new str[200], str2[200]
   format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger]
   format str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst]
 
-message_h: // Your goto logic
+message_h: // Your logic
   SendClientMessage playerid, -1, str
-message_t: // Your goto logic
+message_t: 
   SendClientMessage playerid, -1, str2
 
   return 1
