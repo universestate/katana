@@ -3,6 +3,7 @@
 * Thanks to SA-MP Team, ITB CompuPhase.
 */
 
+/* call the main library sa-mp */
 #include "a_samp"
 
 main() {
@@ -12,11 +13,14 @@ main() {
   CheckNum(num1, num2)
 }
 
-#define COLOR_R "{FF0000}"
-#define COLOR_Y "{FFF070}"
-#define COLOR_W "{FFFFFF}"
-#define COLOR_GR "{999999}"
+/* color defines */
+// Embedded Color Codes
+#define COLOR_R "{FF0000}" // RED
+#define COLOR_Y "{FFF070}" // YELLOW
+#define COLOR_W "{FFFFFF}" // WHITE
+#define COLOR_GR "{999999}" // GREY
 
+// RGBA Color Codes
 #define COLOR_GREY 0xAFAFAFAA
 #define COLOR_GREEN 0x33AA33AA
 #define COLOR_RED 0xAA3333AA
