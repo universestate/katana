@@ -6,7 +6,7 @@
 #include "a_samp"
 
 main() {
-  print "\mHello, World!\n";
+  print "\nHello, World!\n";
 
   new num1, num2;
   CheckNum(num1, num2);
