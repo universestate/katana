@@ -32,7 +32,7 @@ path\to\your\gamemodes
   ```
 - [x] Use these `cat` commands to access specific functions and information:
 ```bash
-cat/help      # Display help information.
+cat/help      # More commands Information.
 cat -c        # Compile with Laterium compilers.
 cat -ci       # Compile and launch your server.
 cat -v        # Display version information.
