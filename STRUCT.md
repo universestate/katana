@@ -49,11 +49,11 @@ public OnGameModeInit() {
   )
   printf "Current Time: %s", timeString
 
-  return
+  return 1
 }
 
 public OnGameModeExit() { 
-  return
+  return 1
 }
 
 new a, b, c
@@ -87,14 +87,14 @@ public OnPlayerConnect(playerid)
   getD_Player[playerid][pHungerTime] = gettime()
   getD_Player[playerid][pThirstTime] = gettime()
 
-  return
+  return 1
 }
 
 public OnPlayerSpawn(playerid)
 {
   SendClientMessage playerid, -1, "Use a \"/cursor\" for show your cursor, Use a \"/uncursor\" for hide your cursor."
 
-  return
+  return 1
 }
 
 public OnPlayerCommandText(playerid, cmdtext[])
@@ -137,7 +137,6 @@ message_h:
 message_t:
   SendClientMessage playerid, -1, str2
 
-  return 
+  return 1
 }
-
 ```
