@@ -21,6 +21,23 @@ CheckNum(num, nums) {
   }
 }
 
+public OnGameModeInit() {
+  new timeString[9];
+  new currentTime = gettime();
+  
+  format(timeString, sizeof(timeString), "%02d:%02d:%02d",
+      currentTime / 3600,              // Hours
+      (currentTime % 3600) / 60,       // Minutes
+      currentTime % 60                 // Seconds
+  );
+  
+  printf "Current Time: %s", timeString;
+
+  return 1;
+}
+
+public OnGameModeExit() { return 1; }
+
 new a, b, c
 new Float:x, Float:y, Float:z
 
