@@ -83,6 +83,12 @@ public OnPlayerConnect(playerid)
   return 1;
 }
 
+public OnPlayerSpawn(playerid)
+{
+  SendClientMessage playerid, -1, "Use a \"/cursor"\ for show your cursor, Use a \"/uncursor"\ for hide your cursor.";
+  return 1;
+}
+
 public OnPlayerCommandText(playerid, cmdtext[])
 {
   if (!strcmp(cmdtext, "/slap", true)) {
@@ -91,6 +97,18 @@ public OnPlayerCommandText(playerid, cmdtext[])
     new string[299];
     format string, sizeof(string), "%s has slapped", myName(playerid);
     SendClientMessageToAll -1, string;
+  }
+  if (!strcmp(cmdtext, "/cursor", true)) {
+    new r = random(4) + 1;
+    switch (r) {
+      case 1: { SelectTextDraw playerid, COLOR_R; }
+      case 2: { SelectTextDraw playerid, COLOR_Y; }
+      case 3: { SelectTextDraw playerid, COLOR_W; }
+      case 4: { SelectTextDraw playerid, COLOR_GR; }
+    }
+  }
+  if (!strcmp(cmdtext, "/uncursor", true)) {
+    CancelSelectTextDraw playerid;
   }
   return 0;
 }
