@@ -152,6 +152,10 @@ goto end
 
     goto _help
 
+) else if "%typeof%"==" " (
+
+    goto cmd
+
 ) else if "%typeof%"=="" (
 
     goto cmd
