@@ -4,7 +4,8 @@
   > [Licenses](https://github.com/universestate/laterium/blob/main/LICENSE.md)
   > [Notices](https://github.com/universestate/laterium/blob/main/NOTICE.md)
   > [Example](https://github.com/universestate/laterium/blob/main/STRUCT.md)
-  
+  > [Report/Help](https://github.com/universestate/laterium/pulls)
+
 </details>
 
 - [x] Clone the Laterium repository:
