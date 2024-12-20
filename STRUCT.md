@@ -76,7 +76,7 @@ public OnGameModeExit() {
 // Function to handle player names
 stock myName(p_) { // Handling for getting player names
   new _name[MAX_PLAYER_NAME+1]
-  GetPlayerName(p_, _name, sizeof(_name))
+  GetPlayerName p_, _name, sizeof(_name)
   return 1 // Just use return 1
 }
 
@@ -92,13 +92,13 @@ public OnPlayerConnect(playerid)
 
   // Reset variables
   new Float:health, Float:armour
-  GetPlayerHealth(playerid, health)
-  GetPlayerArmour(playerid, armour)
+  GetPlayerHealth playerid, health
+  GetPlayerArmour playerid, armour
 
   // Set player health and armor
   if (health >= 120.0 || armour >= 120.5) {
-    SetPlayerHealth(playerid, 100.20)
-    SetPlayerArmour(playerid, 100.40)
+    SetPlayerHealth playerid, 100.20
+    SetPlayerArmour playerid, 100.40
   }
   getD_Player[playerid][pHealth] = health
   getD_Player[playerid][pArmour] = armour
@@ -114,7 +114,7 @@ public OnPlayerConnect(playerid)
 public OnPlayerSpawn(playerid)
 {
   // Send client message
-  SendClientMessage(playerid, -1, "Use \"/cursor\" to show your cursor, Use \"/uncursor\" to hide your cursor.")
+  SendClientMessage playerid, -1, "Use \"/cursor\" to show your cursor, Use \"/uncursor\" to hide your cursor."
 
   return 1
 }
@@ -123,25 +123,25 @@ public OnPlayerSpawn(playerid)
 public OnPlayerCommandText(playerid, cmdtext[])
 {
   if (!strcmp(cmdtext, "/slap", true)) { // Example command
-    GetPlayerPos(playerid, x, y, z)
-    SetPlayerPos(playerid, x, y, z + 4.0 /* Z to give a higher vertical, by adding 4.0 to the player's vertical. */
+    GetPlayerPos playerid, x, y, z
+    SetPlayerPos playerid, x, y, z + 4.0 /* Z to give a higher vertical, by adding 4.0 to the player's vertical. */
 
     // Format and send message
     new string[299]
     format(string, sizeof(string), "%s has slapped", myName(playerid))
-    SendClientMessageToAll(-1, string)
+    SendClientMessageToAll -1, string
   }
   if (!strcmp(cmdtext, "/cursor", true)) {
     new r = random(3) + 1 // Example random creation
     switch (r) { // Switch statement
-      case 1: SelectTextDraw(playerid, COLOR_GREY) // If random is 1
-      case 2: SelectTextDraw(playerid, COLOR_GREEN) // If random is 2
-      case 3: SelectTextDraw(playerid, COLOR_RED) // If random is 3
-      default: SelectTextDraw(playerid, COLOR_WHITE) // If random is unknown
+      case 1: SelectTextDraw playerid, COLOR_GREY // If random is 1
+      case 2: SelectTextDraw playerid, COLOR_GREEN // If random is 2
+      case 3: SelectTextDraw playerid, COLOR_RED // If random is 3
+      default: SelectTextDraw playerid, COLOR_WHITE // If random is unknown
     }
   }
   if (!strcmp(cmdtext, "/uncursor", true)) {
-    CancelSelectTextDraw(playerid)
+    CancelSelectTextDraw playerid
   }
 
   return 0
@@ -163,14 +163,14 @@ public OnPlayerUpdate(playerid)
 
   // Format warning messages
   new str[200], str2[200]
-  format(str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger])
-  format(str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst])
+  format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger]
+  format str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst]
 
   // Send warning messages
 message_h: // Logic for hunger message
-  SendClientMessage(playerid, -1, str)
+  SendClientMessage playerid, -1, str
 message_t: // Logic for thirst message
-  SendClientMessage(playerid, -1, str2)
+  SendClientMessage playerid, -1, str2
 
   return 1
 }
