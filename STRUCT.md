@@ -49,10 +49,10 @@ public OnGameModeInit() {
   )
   printf "Current Time: %s", timeString
 
-  return 1
+  return
 }
 
-public OnGameModeExit() { return 1 }
+public OnGameModeExit() { return }
 
 new a, b, c
 new Float:x, Float:y, Float:z
@@ -60,7 +60,7 @@ new Float:x, Float:y, Float:z
 stock myName(p_) {
   new _name[MAX_PLAYER_NAME+1]
   GetPlayerName p_, _name, sizeof(_name)
-  return 1
+  return
 }
 
 public OnPlayerConnect(playerid)
@@ -84,13 +84,13 @@ public OnPlayerConnect(playerid)
   // time select.
   getD_Player[playerid][pHungerTime] = gettime()
   getD_Player[playerid][pThirstTime] = gettime()
-  return 1
+  return
 }
 
 public OnPlayerSpawn(playerid)
 {
   SendClientMessage playerid, -1, "Use a \"/cursor\" for show your cursor, Use a \"/uncursor\" for hide your cursor."
-  return 1
+  return
 }
 
 public OnPlayerCommandText(playerid, cmdtext[])
