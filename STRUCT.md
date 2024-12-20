@@ -125,6 +125,7 @@ public OnPlayerUpdate(playerid)
   new str[200], str2[200];
   format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", getD_Player[playerid][pHunger];
   format str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", getD_Player[playerid][pThirst];
+
 message_h:
   SendClientMessage playerid, -1, str;
 message_t:
