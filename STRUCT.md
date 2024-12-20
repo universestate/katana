@@ -40,8 +40,8 @@ new getD_Player[MAX_PLAYERS][PLAYERS]
 CheckNum(num, nums) {
   if (num != nums) {
     // Logic here
-    num = 1 % 2
-    nums = 2 % 1
+    num = (1 % 2) / 0
+    nums = (2 % 1) / 0
 
     printf "num1 %i num2 %i", num, nums // Example printf
   }
