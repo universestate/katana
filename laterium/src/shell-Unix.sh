@@ -55,7 +55,7 @@ _compiler() {
                 echo "Compilation $output...: [no]"
             fi
 
-            echo
+            echo "."
         fi
     done < <(find "$search_dir" -name "*.lat.pwn*" -print0)
 }
