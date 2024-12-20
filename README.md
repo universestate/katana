@@ -1,3 +1,10 @@
+<details>
+  <summary>Laterium</summary>
+  - [Licenses](https://github.com/universestate/laterium/blob/main/LICENSE.md)
+  - [Notices](https://github.com/universestate/laterium/blob/main/NOTICE.md)
+  - [Example](https://github.com/universestate/laterium/blob/main/STRUCT.md)
+</details>
+
 - [x] Clone the Laterium repository:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
