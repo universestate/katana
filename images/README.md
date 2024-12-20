@@ -1,2 +1,2 @@
-![Kali](kali.png)
+![Kali](kalis.png)
 ![win](windows.png)
