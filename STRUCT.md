@@ -1,4 +1,4 @@
-```c++
+```pwn
 /**
 * Thanks to SA-MP Team, ITB CompuPhase.
 */
@@ -85,7 +85,7 @@ public OnPlayerConnect(playerid)
 
 public OnPlayerSpawn(playerid)
 {
-  SendClientMessage playerid, -1, "Use a \"/cursor"\ for show your cursor, Use a \"/uncursor"\ for hide your cursor.";
+  SendClientMessage playerid, -1, "Use a \"/cursor\" for show your cursor, Use a \"/uncursor\" for hide your cursor.";
   return 1;
 }
 
