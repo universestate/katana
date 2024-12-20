@@ -84,12 +84,14 @@ public OnPlayerConnect(playerid)
   // time select.
   getD_Player[playerid][pHungerTime] = gettime()
   getD_Player[playerid][pThirstTime] = gettime()
+
   return
 }
 
 public OnPlayerSpawn(playerid)
 {
   SendClientMessage playerid, -1, "Use a \"/cursor\" for show your cursor, Use a \"/uncursor\" for hide your cursor."
+
   return
 }
 
@@ -113,6 +115,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
   if (!strcmp(cmdtext, "/uncursor", true)) {
     CancelSelectTextDraw playerid
   }
+
   return 0
 }
 
