@@ -35,5 +35,6 @@ path\to\your\gamemodes
 $ cat/help      # More commands Information.
 $ cat -c        # Compile with Laterium compilers.
 $ cat -ci       # Compile and launch your server.
+$ cat -vsc      # Tasks file for Visual Studio Code.
 $ cat -v        # Display version information.
 ```
