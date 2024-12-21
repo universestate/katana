@@ -39,17 +39,19 @@ echo Compiling...
 ) else if "%typeof%"=="cat -ci" (
  
     call :_compiler_
+    findstr /i "error" rus.txt >nul && goto interface_1 || goto interface_2
 
-    ver > nul
-    findstr /i "error" rus.txt > nul
-    echo Errorlevel after findstr: %errorlevel%
-    if %errorlevel% equ 0 (
-        echo   [Success]
-        goto _start_this
-    ) else (
-        echo Failure
-        goto end
-    )
+    goto :eof
+
+    :interface_1
+    echo    Status...: [no] .. Fail .. Undone
+    goto end
+
+    goto :eof
+
+    :interface_2
+    echo    Status...: [yes] .. Ok .. Done
+    goto _start_this
 
 :_start_this
     taskkill /f /im "samp-server.exe" >nul 2>&1
