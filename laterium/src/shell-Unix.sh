@@ -72,13 +72,6 @@ _part() {
     sleep 2
 
     if ! pgrep -f "samp03svr" > /dev/null; then
-        echo "samp03svr not found.."
-        sleep 1
-        xdg-open "https://sa-mp.app/"
-        return
-    fi
-
-    if ! pgrep -f "samp03svr" > /dev/null; then
         echo
         echo "Status Starting...: [no]"
         echo "Server failed to run.."
