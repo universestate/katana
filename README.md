@@ -10,13 +10,13 @@
 </details>
 
 - [x] **A.** Clone the Laterium repository:
-```bash
-$ git clone https://github.com/universestate/laterium.git
-```
+  ```bash
+  $ git clone https://github.com/universestate/laterium.git
+  ```
 - [x] **B.** Copy `".bat"` or `".sh"` files into the appropriate directory:
-```
-path\to\your\project
-```
+  ```
+  path\to\your\project
+  ```
 - [x] **C.** Please create a `".cat"` extension to mark the file to be compiled.
   ```sh
   # Before #
