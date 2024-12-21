@@ -1,26 +1,22 @@
 <details>
   <summary>More Information</summary>
-  
   > [Licenses](https://github.com/universestate/laterium/blob/main/LICENSE.md)
   > [Notices](https://github.com/universestate/laterium/blob/main/NOTICE.md)
   > [Example](https://github.com/universestate/laterium/blob/main/STRUCT.md)
   > [Report/Help](https://github.com/universestate/laterium/pulls)
-
 </details>
 
-> - [x] easier, faster, smaller size.
-
-- [x] Clone the Laterium repository:
+- [x] (1). Clone the Laterium repository:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
-- [x] Copy `".bat"` or `".sh"` files into the appropriate directory.
+- [x] (2). Copy `".bat"` or `".sh"` files into the appropriate directory:
 ```
-path\to\your\gamemodes
+path\to\your\project
 ```
-- [x] Add the extension `".cat"` for files to be marked. -example, rename `main.pwn` to `main.cat.pwn` (lowercase only).
-- [x] Run the script appropriate for your operating system:
+- [x] (3). Please create a `".cat"` extension to mark the file to be compiled. (Example): from `main.pwn` to `main.cat.pwn` (lowercase only).
 
+- [x] (4). Run the script appropriate for your operating system:
 - **Windows**
   ```bat
   $ cd path\to\batch
