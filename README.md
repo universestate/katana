@@ -32,7 +32,7 @@ path\to\your\project
   $ ./shell-Unix.sh
   ```
 - [x] Use these `cat` commands to access specific functions and information:
-  ```bat
+  ```sh
   $ cat/help      # More commands Information.
   $ cat -c        # Compile with Laterium compilers.
   $ cat -ci       # Compile and launch your server.
