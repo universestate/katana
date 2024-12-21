@@ -40,7 +40,7 @@ path\to\your\gamemodes
   $ cat -vsc      # Tasks file for Visual Studio Code.
   $ cat -v        # Display version information.
 ```
-- [x] How to Use tasks vscode in Linux.
+- [x] How to Use vscode tasks in Linux.
 ```sh
     # Download libpawnc.so:
     # Download the libpawnc.so file from the Pawn compiler releases.
