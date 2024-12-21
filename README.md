@@ -106,5 +106,3 @@ path\to\your\gamemodes
   sym= define constant "sym" with value 0
   ```
 #
-> And thanks to open.mp team `*for this`
-![History](HISTORY.png)
