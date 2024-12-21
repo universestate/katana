@@ -179,7 +179,7 @@ goto cmd
 goto :eof
 
 :_compiler_
-    echo Searching for .clat files...
+    echo Searching for .cat files...
 
     set "_pawncc="
     for /r "%_SearchDir_%" %%p in (pawncc.exe) do (
@@ -200,14 +200,14 @@ goto :eof
         goto cmd
     )
 
-    for /r "%_SearchDir_%" %%f in (*.clat.pwn*) do (
+    for /r "%_SearchDir_%" %%f in (*.cat.pwn*) do (
         if exist "%%f" (
             echo Found file: %%f
             echo Starting compilation..
             echo.
 
             set "_output_=%%~dpnf"
-            set "_output_=!_output_:.clat=!%.amx"
+            set "_output_=!_output_:.cat=!%.amx"
 
             "!_pawncc!" "%%f" -o"!_output_!" -d0 > rus.txt 2>&1
 
