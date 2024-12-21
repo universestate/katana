@@ -173,7 +173,7 @@ EOM
         *)
             echo
             echo "$ $typeof - This typeof does not exist. Please try again.."
-            sleep 2
+            sleep 1
             ;;
     esac
 done
