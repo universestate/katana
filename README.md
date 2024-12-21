@@ -40,4 +40,6 @@ $ cat -ci       # Compile and launch your server.
 $ cat -vsc      # Tasks file for Visual Studio Code.
 $ cat -v        # Display version information.
 ```
+#
+> And thanks to open.mp team ||for this||
 ![History](HISTORY.png)
