@@ -20,7 +20,7 @@ path\to\your\project
 - [x] (3). Please create a `".cat"` extension to mark the file to be compiled. (Example): from `main.pwn` to `main.cat.pwn` (lowercase only).
 
 - [x] (4). Run the script appropriate for your operating system:
-- **Windows**
+- **Windows (you can run the batch file directly)**
   ```bat
   $ cd path\to\batch
   $ windows.bat
