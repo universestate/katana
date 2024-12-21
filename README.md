@@ -8,7 +8,7 @@
 
 </details>
 
-> - [x] easier, faster, smaller size, carries the structure of the original pawn code, multi-function.
+> - [x] easier, faster, smaller size.
 
 - [x] Clone the Laterium repository:
 ```bash
