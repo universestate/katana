@@ -68,14 +68,14 @@ path\to\your\gamemodes
     # Replace /path/to/downloaded/libpawnc.so and /path/to/pawncc with the actual paths on your system. If the issue persists, ensure there are no permission issues with libpawnc.so and that the library path is correctly set.
 ```
 #
-- Shell
-```sh
+- **Shell**
+  ```bat
   "!_pawncc!" "%%f" -o"!_output!" -d0 > rus.txt 2>&1
-```
-- Batch
-```bat
- "$pawncc" "$file" -o"$output" -d0 > rus.txt 2>&1
-```
+  ```
+- **Batch**
+  ```sh
+  "$pawncc" "$file" -o"$output" -d0 > rus.txt 2>&1
+  ```
 ```
 -A<num> alignment in bytes of the data segment and the stack
 -a output assembler code
