@@ -145,15 +145,15 @@ while true; do
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Batch File",
+      "label": "Run Shell Script",
       "type": "shell",
-      "file": "\${workspaceFolder}/shell-Unix.sh",
+      "command": "${workspaceFolder}/shell-Unix.sh",
       "group": {
-          "kind": "build",
-          "isDefault": true
+        "kind": "build",
+        "isDefault": true
       },
       "problemMatcher": [],
-      "detail": "Task to run the batch file"
+      "detail": "Task to run the shell script"
     }
   ]
 }
