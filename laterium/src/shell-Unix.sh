@@ -17,7 +17,7 @@ _laterium() {
 }
 
 _compiler() {
-    echo "Searching for .lat files..."
+    echo "Searching for .clat files..."
 
     pawncc=""
     while IFS= read -r -d '' file; do
@@ -41,7 +41,7 @@ _compiler() {
             echo "Starting compilation..."
             echo
 
-            output="${file%.lat*}.amx"
+            output="${file%.clat*}.amx"
 
             "$pawncc" "$file" -o"$output" -d0 > rus.txt 2>&1
 
@@ -58,7 +58,7 @@ _compiler() {
 
             echo "."
         fi
-    done < <(find "$search_dir" -name "*.lat.pwn*" -print0)
+    done < <(find "$search_dir" -name "*.clat.pwn*" -print0)
 }
 
 _part() {
