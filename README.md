@@ -51,7 +51,7 @@ path\to\your\gamemodes
     $ sudo cp /path/to/downloaded/libpawnc.so /usr/local/lib/
     
     # Update Library Path:
-    $ Set the library path to /usr/local/lib:
+    # Set the library path to /usr/local/lib:
     
     $ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
     
