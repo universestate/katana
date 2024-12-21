@@ -8,6 +8,8 @@
 
 </details>
 
+> - [x] easier, faster, less size
+
 - [x] Clone the Laterium repository:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
