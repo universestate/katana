@@ -17,8 +17,8 @@ set "_SearchDir_=%~dp0"
     echo    o888ooooood8
     echo.
 
-:: set time=%time%
-:: set time=%time: =0%
+set time=%time%
+set time=%time: =0%
 
 title type `help` to get started
 
