@@ -17,7 +17,7 @@ $ git clone https://github.com/universestate/laterium.git
 ```
 path\to\your\project
 ```
-- [x] **C.** Please create a `".cat"` extension to mark the file to be compiled. **`(Example)`**: from `main.pwn` to `main.cat.pwn` (lowercase only).
+- [x] **C.** Please create a `".cat"` extension to mark the file to be compiled. **`(Example):`** from `main.pwn` to `main.cat.pwn` (lowercase only).
 
 - [x] **D.** Run the script appropriate for your operating system:
 - **Windows `(you can run the batch file directly)`**
