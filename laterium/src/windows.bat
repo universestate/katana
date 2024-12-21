@@ -2,7 +2,8 @@
 
 setlocal enabledelayedexpansion
 
-set "_version_=2024.x21 ^(B-14^)" :: 2024.2x1 Build 0.0.14
+:: 2024.2x1 Build 0.0.14
+set "_version_=2024.x21 ^(B-14^)"
 set "_SearchDir_=%~dp0"
 
 :_laterium_
