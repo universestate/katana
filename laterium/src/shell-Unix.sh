@@ -121,9 +121,9 @@ while true; do
             _compiler
 
             if grep -qi "error" rus.txt; then
-                echo "Failure"
+                echo "    Status...: [no] .. Fail .. Undone"
             else
-                echo "    [Success]"
+                echo "    Status...: [yes] .. Ok .. Done"
                 _part
             fi
             ;;
