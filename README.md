@@ -25,7 +25,7 @@ path\to\your\project
   $ cd path\to\batch
   $ windows.bat
   ```
-- **Linux/Mac**
+- **Linux/macOS**
   ```sh
   $ cd path/to/bash
   $ chmod +x shell-Unix.sh
