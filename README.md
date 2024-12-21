@@ -40,32 +40,32 @@ path\to\your\gamemodes
   $ cat -vsc      # Tasks file for Visual Studio Code.
   $ cat -v        # Display version information.
 ```
-- [x] How to Use tasks in vscode Linux.
-```
-    Download libpawnc.so:
-    Download the libpawnc.so file from the Pawn compiler releases.
+- [x] How to Use tasks vscode in Linux.
+```sh
+    # Download libpawnc.so:
+    # Download the libpawnc.so file from the Pawn compiler releases.
 
-    Place libpawnc.so in the correct directory:
-    Place the libpawnc.so file in /usr/local/lib:
+    # Place libpawnc.so in the correct directory:
+    # Place the libpawnc.so file in /usr/local/lib:
 
     sudo cp /path/to/downloaded/libpawnc.so /usr/local/lib/
     
-    Update Library Path:
+    # Update Library Path:
     Set the library path to /usr/local/lib:
     
     export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
     
-    Run ldconfig:
+    # Run ldconfig:
     Update the library cache:
     
     sudo ldconfig
     
-    Verify Installation:
-    Verify if the library is installed correctly:
+    # Verify Installation:
+    # Verify if the library is installed correctly:
     
     ldd /path/to/pawncc
     
-    Replace /path/to/downloaded/libpawnc.so and /path/to/pawncc with the actual paths on your system. If the issue persists, ensure there are no permission issues with libpawnc.so and that the library path is correctly set.
+    # Replace /path/to/downloaded/libpawnc.so and /path/to/pawncc with the actual paths on your system. If the issue persists, ensure there are no permission issues with libpawnc.so and that the library path is correctly set.
 ```
 #
 > And thanks to open.mp team `*for this`
