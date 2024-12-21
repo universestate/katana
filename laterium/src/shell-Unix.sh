@@ -40,7 +40,7 @@ _compiler() {
             echo "Starting compilation..."
             echo
 
-            output="${file%.lat}.amx"
+            output="${file%.lat*}.amx"
 
             "$pawncc" "$file" -o"$output" -d0 > rus.txt 2>&1
 
