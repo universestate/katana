@@ -65,7 +65,7 @@ path\to\your\gamemodes
     
     $ ldd /path/to/pawncc
     
-    # Replace /path/to/downloaded/libpawnc.so and /path/to/libpawnc.so with the actual paths on your system. If the issue persists, ensure there are no permission issues with libpawnc.so and that the library path is correctly set.
+    # Replace /path/to/downloaded/libpawnc.so and /path/to/pawncc with the actual paths on your system. If the issue persists, ensure there are no permission issues with libpawnc.so and that the library path is correctly set.
 ```
 #
 > And thanks to open.mp team `*for this`
