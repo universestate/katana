@@ -177,7 +177,7 @@ goto cmd
 goto :eof
 
 :_compiler_
-    echo Searching for .lat files...
+    echo Searching for .clat files...
 
     set "_pawncc="
     for /r "%_SearchDir_%" %%p in (pawncc.exe) do (
@@ -198,14 +198,14 @@ goto :eof
         goto cmd
     )
 
-    for /r "%_SearchDir_%" %%f in (*.lat.pwn*) do (
+    for /r "%_SearchDir_%" %%f in (*.clat.pwn*) do (
         if exist "%%f" (
             echo Found file: %%f
             echo Starting compilation..
             echo.
 
             set "_output=%%~dpnf"
-            set "_output=!_output:.lat=!%.amx"
+            set "_output=!_output:.clat=!%.amx"
 
             "!_pawncc!" "%%f" -o"!_output!" -d0 > rus.txt 2>&1
 
