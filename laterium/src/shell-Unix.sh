@@ -1,6 +1,7 @@
 #!/bin/bash
 
-version="2024.x21 (B-14)"
+:: 2024.2x1 Build 0.0.13
+version="2024.x21 (B-13)"
 search_dir="$(dirname "$(realpath "$0")")"
 
 _laterium() {
