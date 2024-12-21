@@ -61,24 +61,24 @@ _compiler() {
 }
 
 _part() {
-    pkill -f "samp-server" 2>/dev/null
+    pkill -f "samp03svr" 2>/dev/null
 
     echo
     echo "Press any key to start your server's..."
     read -n 1 -s
 
-    ./samp-server &
+    ./samp03svr &
 
     sleep 2
 
-    if ! pgrep -f "samp-server" > /dev/null; then
-        echo "samp-server not found.."
+    if ! pgrep -f "samp03svr" > /dev/null; then
+        echo "samp03svr not found.."
         sleep 1
         xdg-open "https://sa-mp.app/"
         return
     fi
 
-    if ! pgrep -f "samp-server" > /dev/null; then
+    if ! pgrep -f "samp03svr" > /dev/null; then
         echo
         echo "Status Starting...: [no]"
         echo "Server failed to run.."
