@@ -19,13 +19,11 @@
   ```
 - [x] **C.** Please create a `".cat"` extension to mark the file to be compiled.
   ```sh
-  # Before #
-  /home/path/to/target.pwn
-  /home/path/to/target2.pwn
+  /home/path/to/target.pwn # before 1
+  /home/path/to/target2.pwn # before 2
   
-  # After #
-  /home/path/to/target.cat.pwn
-  /home/path/to/target2.cat.pwn
+  /home/path/to/target.cat.pwn # after 1
+  /home/path/to/target2.cat.pwn # after 2
   ```
 - [x] **D.** Run the script appropriate for your operating system:
 - **Windows `(you can run the batch file directly)`**
