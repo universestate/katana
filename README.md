@@ -21,11 +21,11 @@
   ```sh
   # Before #
   /home/path/to/target.pwn
-  /home/path/to/target3.pwn
+  /home/path/to/target2.pwn
   
   # After #
   /home/path/to/target.cat.pwn
-  /home/path/to/target3.cat.pwn
+  /home/path/to/target2.cat.pwn
   ```
 - [x] **D.** Run the script appropriate for your operating system:
 - **Windows `(you can run the batch file directly)`**
