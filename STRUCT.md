@@ -1,4 +1,4 @@
-```pwn
+```
 /**
  * Thanks to SA-MP Team, ITB CompuPhase.
  */
