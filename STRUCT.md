@@ -1,9 +1,8 @@
 ```pwn
 /**
-* Thanks to SA-MP Team, ITB CompuPhase.
-*/
+ * Thanks to SA-MP Team, ITB CompuPhase.
+ */
 
-/* Call the main SA-MP library */
 #include "a_samp"
 
 main() {
@@ -165,7 +164,8 @@ public OnPlayerUpdate(playerid)
   format str, sizeof(str), ""COLOR_R"[WARNING]: "COLOR_GR"Your Hunger is %d!!", DPlayer[playerid][pHunger]
   format str2, sizeof(str2), ""COLOR_R"[WARNING]: "COLOR_GR"Your Thirst is %d!!", DPlayer[playerid][pThirst]
 
-  // Send warning messages
+/**
+* 
 message_h: // Logic for hunger message
   SendClientMessage playerid, -1, str
 message_t: // Logic for thirst message
