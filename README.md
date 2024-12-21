@@ -9,17 +9,17 @@
   
 </details>
 
-- [x] **a)** Clone the Laterium repository:
+- [x] **A)** Clone the Laterium repository:
 ```bash
 $ git clone https://github.com/universestate/laterium.git
 ```
-- [x] **b)** Copy `".bat"` or `".sh"` files into the appropriate directory:
+- [x] **B)** Copy `".bat"` or `".sh"` files into the appropriate directory:
 ```
 path\to\your\project
 ```
-- [x] **c)** Please create a `".cat"` extension to mark the file to be compiled. (Example): from `main.pwn` to `main.cat.pwn` (lowercase only).
+- [x] **C)** Please create a `".cat"` extension to mark the file to be compiled. (Example): from `main.pwn` to `main.cat.pwn` (lowercase only).
 
-- [x] **d)** Run the script appropriate for your operating system:
+- [x] **D)** Run the script appropriate for your operating system:
 - **Windows `(you can run the batch file directly)`**
   ```bat
   $ cd path\to\batch
