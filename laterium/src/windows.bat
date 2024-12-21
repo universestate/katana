@@ -206,22 +206,22 @@ goto :eof
             echo Starting compilation..
             echo.
 
-            set "_output=%%~dpnf"
-            set "_output=!_output:.clat=!%.amx"
+            set "_output_=%%~dpnf"
+            set "_output_=!_output_:.clat=!%.amx"
 
-            "!_pawncc!" "%%f" -o"!_output!" -d0 > rus.txt 2>&1
+            "!_pawncc!" "%%f" -o"!_output_!" -d0 > rus.txt 2>&1
 
             type rus.txt
 
-            if exist "!_output!" (
-                echo Compilation !_output!...: [yes]
+            if exist "!_output_!" (
+                echo Compilation !_output_!...: [yes]
                 echo.
 
-                for %%A in ("!_output!") do (
-                    echo Total Size !_output! / %%~zA bytes
+                for %%A in ("!_output_!") do (
+                    echo Total Size !_output_! / %%~zA bytes
                 )
             ) else (
-                echo Compilation !_output!...: [no]
+                echo Compilation !_output_!...: [no]
             )
 
             echo .
